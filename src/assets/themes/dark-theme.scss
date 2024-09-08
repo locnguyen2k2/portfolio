@@ -1,0 +1,23 @@
+@import "./../color";
+
+main.dark {
+  background-color: #202023;
+
+  .label, p, h1, a {
+    color: #fff0c5 !important;
+  }
+
+  #heading {
+    background: none;
+
+    a:hover,
+    button:hover {
+      color: $orange-200 !important;
+    }
+
+    a, button {
+      color: $blueGray-400 !important;
+    }
+  }
+
+}

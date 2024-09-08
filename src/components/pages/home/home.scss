@@ -1,0 +1,44 @@
+.my-self, .welcome {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .info {
+    > .image {
+      margin: 8px;
+      img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .content {
+    z-index: 1;
+    position: relative;
+    height: max-content;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    //align-items: center;
+
+    h1 {
+      margin-top: calc(160px / 2);
+      color: #FFFFFF;
+      font-family: 'Lemonada-Medium';
+    }
+
+    p {
+      font-family: 'Lemonada-Medium';
+      font-size: 14px;
+      padding: 8px;
+      color: white;
+      text-align: justify;
+    }
+  }
+}

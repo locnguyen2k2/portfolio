@@ -1,0 +1,16 @@
+.cards {
+  margin: 0 auto;
+
+  .card {
+    .card-body {
+      p, a {
+        margin: 5px;
+        font-family: 'Lemonada-Medium', sans-serif;
+      }
+      .body {
+        font-size: .7rem;
+        font-family: Lemonada-Medium, sans-serif;
+      }
+    }
+  }
+}

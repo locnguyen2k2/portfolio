@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+
+  h1 {
+    font-size: 1rem;
+    font-family: Lemonada-Medium, sans-serif;
+  }
+
+  a, p {
+    color: #FFFFFF;
+  }
+
+  .card-footer {
+    a {
+      font-family: AlumniSans-Medium !important;
+    }
+  }
+}
