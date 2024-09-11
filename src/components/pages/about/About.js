@@ -6,8 +6,8 @@ export default function About() {
     return (
         <div className={'about'}>
             <Label content={"It's time for me to talk a bit about myself . . ."}/>
-            <div>
-                <p>
+            <div className={'content'}>
+                <div>
                     My full name is Nguyen Tan Loc, I am 22 years old, and I was born and raised in Duyen Hai district -
                     Tra Vinh city <Image type={'circle'} image={'beach.gif'} />.
                     <br/>Because I am a student and my major is software engineer <Image image={'typing.gif'} /> at Can Tho University Of Technology then I am have been living
@@ -16,7 +16,7 @@ export default function About() {
                     willing to find a job in here.
                     I am also excited about the possibility of working and learning in a new place if the opportunity
                     comes.
-                </p>
+                </div>
             </div>
 
         </div>

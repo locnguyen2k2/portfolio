@@ -1,5 +1,4 @@
 import './Image.scss'
-import styled from "styled-components";
 
 export default function Image(props) {
     return (

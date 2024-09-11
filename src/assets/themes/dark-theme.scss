@@ -18,6 +18,12 @@ main.dark {
     a, button {
       color: $blueGray-400 !important;
     }
+
+    .mobile-menu {
+      ul {
+        background: rgba(72, 69, 78, 0.8);
+      }
+    }
   }
 
 }
