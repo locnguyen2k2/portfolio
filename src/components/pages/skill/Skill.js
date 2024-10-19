@@ -2,6 +2,8 @@ import CardList from "../../organisms/List/CardList";
 
 import './skill.scss';
 import Label from "../../atoms/Lable/Label";
+import Skeleton from "../../molecules/Skeleton/Skeleton";
+import {useEffect} from "react";
 
 const frontend = [
     {
@@ -157,6 +159,7 @@ export default function Skill() {
     return (
         <div className={'skills'}>
             <Label content={'Skill stack'}/>
+            <Skeleton/>
             <CardList title={'Backend'} data={backend}/>
             <CardList title={'Database'} data={database}/>
             <CardList title={'Frontend'} data={frontend}/>

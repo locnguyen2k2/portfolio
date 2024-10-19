@@ -10,6 +10,7 @@ main.dark {
   #heading {
     background: none;
 
+    a.active,
     a:hover,
     button:hover {
       color: $orange-200 !important;

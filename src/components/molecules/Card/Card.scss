@@ -10,9 +10,68 @@
     color: #FFFFFF;
   }
 
+  .card-header {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   .card-footer {
+    display: flex;
+
     a {
+      font-size: 1rem;
       font-family: AlumniSans-Medium !important;
+    }
+  }
+}
+
+.skills {
+  .card {
+    .card-body {
+      .body {
+        display: flex;
+        align-items: center;
+      }
+
+      justify-content: flex-start;
+    }
+  }
+}
+
+.project {
+  .card {
+    width: calc(50% - 10px);
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 10px;
+    margin: 5px;
+    backdrop-filter: blur(20px);
+
+    .card-body {
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-header {
+      .image {
+        width: 190px;
+        height: 150px;
+      }
+    }
+
+    .card-body {
+      .body {
+        height: 90px;
+        padding-right: 10px;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        scroll-behavior: smooth;
+        scrollbar-color: #e9c46a #264653;
+      }
     }
   }
 }

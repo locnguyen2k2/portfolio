@@ -17,6 +17,12 @@ const data = [
         image: 'labs.jpg'
     },
     {
+        title: 'Laboratory borrowing application',
+        body: 'The application is used to manage information and support borrowing the items (android only) for the Laboratory management system',
+        github: 'https://github.com/locnguyen2k2/laboratory-management-application',
+        image: 'labs-app.jpg'
+    },
+    {
         title: 'Hi-Coffee management system',
         body: 'The POS system for Fnb (not included raw materials management) used to manage products, categories, areas, tables, users, permission, ordering, cash payment, invoices and statistics',
         image: 'hicoffee-management.jpg',

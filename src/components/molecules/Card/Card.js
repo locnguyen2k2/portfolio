@@ -10,7 +10,9 @@ export default function Card(props) {
                 {props.image && <Image image={props.image}/>}
             </div>
             <div className="card-body">
-                <Label content={props.title} />
+                {
+                    props?.title && <Label content={props.title}/>
+                }
                 <p className={'body'}>{props.body}</p>
                 <div className="card-footer">
                     {props.github && <a href={`${props.github}`}><GithubOutlined/> Github</a>}

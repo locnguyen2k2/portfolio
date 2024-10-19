@@ -1,24 +1,37 @@
-import Label from "../../atoms/Lable/Label";
-import './about.scss';
 import Image from "../../atoms/Image/Image";
+import './about.scss'
+import Label from "../../atoms/Lable/Label";
 
 export default function About() {
     return (
-        <div className={'about'}>
-            <Label content={"It's time for me to talk a bit about myself . . ."}/>
-            <div className={'content'}>
-                <div>
-                    My full name is Nguyen Tan Loc, I am 22 years old, and I was born and raised in Duyen Hai district -
-                    Tra Vinh city <Image type={'circle'} image={'beach.gif'} />.
-                    <br/>Because I am a student and my major is software engineer <Image image={'typing.gif'} /> at Can Tho University Of Technology then I am have been living
-                    at Can Tho city for now, and this is my fourth year.
-                    <br/>With my experience when I'm staying in Can Tho in along time, I am
-                    willing to find a job in here.
-                    I am also excited about the possibility of working and learning in a new place if the opportunity
-                    comes.
+        <>
+            <div className={'welcome'}>
+                <Label content={'Hi, welcome to my website!'}/>
+            </div>
+            <div className={'my-self'}>
+                <div className={'content'}>
+                    <div className={'info'}>
+                        <div>
+                            <Label content={'Loc Nguyen'}/>
+                            <p><i>Software Engineer(Backend Developer)</i></p>
+                        </div>
+                        <Image image={'avatar.jpg'} type={"circle"}/>
+                    </div>
+                    <div>
+                        <p>
+                            a software engineer, with a passion for coding, and the excitement of completing something
+                            drives me to continuously learn and practice, always striving to improve my skills.
+                        </p>
+                    </div>
+                    <div className={'contact'}>
+                        <Label content={'Contact'}/>
+                        <p>
+                            The easiest way to connect with me is through <a href={'mailto:locnguyen071102@gmail.com'}><i>Email</i></a>, <a href={'https://www.linkedin.com/in/nguyen-loc-171793311/'}><i>LinkedIn</i></a>,
+                            or <a href={'https://www.facebook.com/nguyentanloc0711/'}><i>Facebook</i></a>.
+                        </p>
+                    </div>
                 </div>
             </div>
-
-        </div>
+        </>
     )
 }

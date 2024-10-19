@@ -12,19 +12,5 @@
     border: 1px solid white;
     border-radius: 5px;
     padding: 5px;
-    .card {
-      .card-body {
-        .label {
-          min-height: 0;
-        }
-
-        .body {
-          display: flex;
-          align-items: center;
-        }
-
-        justify-content: flex-start;
-      }
-    }
   }
 }

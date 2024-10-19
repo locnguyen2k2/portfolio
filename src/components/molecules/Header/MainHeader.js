@@ -1,13 +1,14 @@
-import {GithubOutlined, HomeOutlined, MoonOutlined, SunOutlined} from '@ant-design/icons';
+import {GithubOutlined, MoonOutlined, SunOutlined} from '@ant-design/icons';
 import IconButton from "../../atoms/Button/IconButton";
 import {Context} from "../../../Context";
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import './Header.scss';
 import {Link} from "react-router-dom";
 
-export default function MainHeader(props) {
+export default function MainHeader({...props}) {
     const {theme, toggleTheme} = useContext(Context);
     const [isClickBar, setIsClickBar] = useState(false);
+    const [isActiveTab, setIsActiveTab] = useState('/');
     const [barsState] = useState([`CloseLHead`, `OpenLHeadOne`, `CloseLHead`, `OpenLHeadTwo`]);
 
     const toggleMenu = () => {
@@ -15,11 +16,6 @@ export default function MainHeader(props) {
     };
 
     const path = [
-        {
-            icon: <HomeOutlined/>,
-            title: "Home",
-            link: `/`,
-        },
         {
             title: "Projects",
             link: `/projects`,
@@ -38,22 +34,29 @@ export default function MainHeader(props) {
         },
         {
             icon: <GithubOutlined/>,
-            title: 'Github',
             link: `https://github.com/locnguyen2k2`,
         }
     ]
+
+    useEffect(() => {
+        props.currentRoute && setIsActiveTab(props.currentRoute);
+    }, [props.currentRoute]);
 
     return (
         <div id={'heading'}>
             <div className={`model ${isClickBar ? 'open' : ''}`}></div>
             <div className={"left"}>
-                <span className={'logo'}>LOCNGUYEN</span>
+                <Link className={`logo`}
+                      to={`/`}>
+                    <span>LOCNGUYEN</span>
+                </Link>
             </div>
             <div className={"center"}>
                 <ul>
                     {path.map((item, index) => (
                         <li key={index}>
-                            <Link to={`${item.link}`}><span>{item.icon && item.icon} {item?.title && item.title}</span></Link>
+                            <Link className={`${isActiveTab === item.link ? 'active' : ''}`}
+                                  to={`${item.link}`}><span>{item.icon && item.icon} {item?.title && item.title}</span></Link>
                         </li>
                     ))}
                 </ul>
@@ -77,6 +80,7 @@ export default function MainHeader(props) {
                             {path.map((item, index) => (
                                 <li key={index}>
                                     <Link
+                                        className={`${isActiveTab === item.link ? 'active' : ''}`}
                                         to={`${item.link}`}><span>{item.icon && item.icon} {item?.title && item.title}</span></Link>
                                 </li>
                             ))}
