@@ -14,6 +14,7 @@ export default function CardList(props) {
                                       body={item.body}
                                       github={item.github}
                                       link={item.link}
+                                      tags={item?.tags ? item.tags : []}
                         />)
                     })
 

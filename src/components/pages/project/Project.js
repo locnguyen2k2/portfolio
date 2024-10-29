@@ -8,19 +8,22 @@ const data = [
         image: 'ems.jpg',
         link: 'https://exam-management-system-z76m.onrender.com/graphql',
         github: 'https://github.com/locnguyen2k2/exam-management-system/',
+        tags: ['nestjs', 'mongodb', 'graphql', 'typescript']
     },
     {
         title: 'Laboratory management system',
         body: 'A RESTful API system have been designed to boring, returning or transferring items from rooms and management equipment, tools, chemicals, rooms, users.',
         github: 'https://github.com/locnguyen2k2/laboratory-management-system',
         link: 'https://laboratory-management-system.onrender.com/apis',
-        image: 'labs.jpg'
+        image: 'labs.jpg',
+        tags: ['nestjs', 'mysql', 'swagger']
     },
     {
         title: 'Laboratory borrowing application',
         body: 'The application is used to manage information and support borrowing the items (android only) for the Laboratory management system',
         github: 'https://github.com/locnguyen2k2/laboratory-management-application',
-        image: 'labs-app.jpg'
+        image: 'labs-app.jpg',
+        tags: ['react-native', 'axios'],
     },
     {
         title: 'Hi-Coffee management system',
@@ -28,13 +31,15 @@ const data = [
         image: 'hicoffee-management.jpg',
         link: '',
         github: 'https://github.com/locnguyen2k2/hi-coffee-management-system',
+        tags: ['core-php', 'mvc', 'axios', 'bootstrap5', 'html', 'css', 'javascript'],
     },
     {
         title: 'Hi-Coffee ordering application',
         body: 'The order application is build for staffs to help customers ordering products at shop(by Hi-Coffee APIs).',
         github: 'https://github.com/locnguyen2k2/hi-coffee-order-application',
         link: '',
-        image: 'hicoffee-mobile.jpg'
+        image: 'hicoffee-mobile.jpg',
+        tags: ['react-native', 'axios']
     }
 ]
 

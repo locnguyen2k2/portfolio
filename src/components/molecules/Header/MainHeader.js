@@ -33,6 +33,7 @@ export default function MainHeader({...props}) {
             link: `/resume`,
         },
         {
+            title: "Source",
             icon: <GithubOutlined/>,
             link: `https://github.com/locnguyen2k2`,
         }
@@ -62,7 +63,7 @@ export default function MainHeader({...props}) {
                 </ul>
             </div>
             <div className={"right"}>
-                <IconButton handleAction={() => toggleTheme()}
+                <IconButton width={35} height={35} background={true} handleAction={() => toggleTheme()}
                             icon={theme === 'dark' ? <SunOutlined/> : <MoonOutlined/>}/>
 
                 <div className={`mobile-menu`} onClick={toggleMenu}>

@@ -15,8 +15,17 @@ export default function Card(props) {
                 }
                 <p className={'body'}>{props.body}</p>
                 <div className="card-footer">
-                    {props.github && <a href={`${props.github}`}><GithubOutlined/> Github</a>}
-                    {props.link && <a href={`${props.link}`}><LinkOutlined/> Demo</a>}
+                    <div className={'tags'}>
+                        {props?.tags && props.tags.map((tag, key) => {
+                            return (
+                                <a key={key}>{tag}</a>
+                            )
+                        })}
+                    </div>
+                    <div className={'links'}>
+                        {props.github && <a href={`${props.github}`}><GithubOutlined/> Github</a>}
+                        {props.link && <a href={`${props.link}`}><LinkOutlined/> Demo</a>}
+                    </div>
                 </div>
             </div>
         </div>

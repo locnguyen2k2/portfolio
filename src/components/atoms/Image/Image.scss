@@ -1,11 +1,11 @@
 .image {
-  width: max-content;
-  padding: 3px;
   display: flex;
-  background: #484a55;
+  padding: 2px;
+  width: max-content;
+  border-radius: 8px;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border: 2px solid #ffffff;
   img {
     border-radius: 5px;
   }

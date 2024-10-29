@@ -21,6 +21,9 @@
 
   .left {
     flex: .3;
+    a {
+      margin: 0 20px;
+    }
   }
 
   .center {
@@ -137,11 +140,6 @@
       .CloseLHead {
         display: none;
       }
-    }
-
-    .icon-button {
-      width: 50px;
-      height: 100%;
     }
 
     button {

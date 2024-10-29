@@ -1,6 +1,6 @@
 import {Outlet, useLocation} from "react-router-dom";
 import MainHeader from "../molecules/Header/MainHeader";
-import {Context} from './../../Context';
+import {Context} from '../../Context';
 import {useContext, useEffect, useState} from "react";
 import Footer from "../molecules/Footer/Footer";
 
@@ -15,6 +15,7 @@ export default function BaseLayout() {
 
     return (
         <main className={`${theme}`}>
+            <div className={'dark-filter'}></div>
             <MainHeader currentRoute={currentRoute}/>
 
             <div className={`container`}>

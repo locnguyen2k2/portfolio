@@ -19,6 +19,21 @@
 
   .card-footer {
     display: flex;
+    flex-direction: column;
+
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 5px 0;
+    }
+
+    .tags {
+      a {
+        padding: 0 5px;
+        border-radius: 4px;
+        border: 1px solid #FFFFFF;
+      }
+    }
 
     a {
       font-size: 1rem;

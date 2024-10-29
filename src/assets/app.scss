@@ -23,12 +23,12 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'RainyHearts';
   box-sizing: border-box;
+  font-family: 'RainyHearts', serif;
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
   background: transparent;
 }
 
@@ -54,10 +54,11 @@ main {
   background: url('./public/wallpaper.gif') center/cover no-repeat;
 
   > .container {
-    height: calc(100vh - 56px);
-    padding: 0 20px;
-    padding-top: 56px;
+    z-index: 1;
+    padding: 56px 20px 0;
+    position: relative;
     overflow-y: scroll;
+    height: calc(100vh - 56px);
   }
 }
 
@@ -100,7 +101,7 @@ main {
     flex-direction: column;
 
     .card-body {
-      margin: 0px !important;
+      margin: 0 !important;
     }
 
     .image {
