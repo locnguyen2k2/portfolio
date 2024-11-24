@@ -5,6 +5,7 @@ import Project from "./components/pages/project/Project";
 import About from "./components/pages/about/About";
 import Resume from "./components/pages/resume/Resume";
 import Skill from "./components/pages/skill/Skill";
+import PageNotFound from "./components/pages/404";
 
 const routes = createBrowserRouter([
     {
@@ -34,15 +35,15 @@ const routes = createBrowserRouter([
                     {
                         path: "/resume",
                         element: <Resume/>,
+                    },
+                    {
+                        path: '*',
+                        element: <PageNotFound/>
                     }
                 ]
             },
         ]
     },
-    {
-        path: '*',
-        element: <h1>Not Found</h1>
-    }
 ])
 
 export default routes;
