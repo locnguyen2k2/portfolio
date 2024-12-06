@@ -4,9 +4,13 @@ import {Context} from "../../../Context";
 import {useContext, useEffect, useState} from "react";
 import './Header.scss';
 import {Link} from "react-router-dom";
+import Image from "../../atoms/Image/Image";
+import {languages} from "../../../i18n";
+import {useTranslation} from "react-i18next";
 
 export default function MainHeader({...props}) {
-    const {theme, toggleTheme} = useContext(Context);
+    const {t} = useTranslation();
+    const {theme, language, toggleTheme, toggleLanguage} = useContext(Context);
     const [isClickBar, setIsClickBar] = useState(false);
     const [isActiveTab, setIsActiveTab] = useState('/');
     const [barsState] = useState([`CloseLHead`, `OpenLHeadOne`, `CloseLHead`, `OpenLHeadTwo`]);
@@ -18,18 +22,22 @@ export default function MainHeader({...props}) {
     const path = [
         {
             title: "Projects",
+            name: "projects",
             link: `/projects`,
         },
         {
             title: "Skill",
+            name: "skill",
             link: `/skill`,
         },
         {
             title: "About",
+            name: "about",
             link: `/about`,
         },
         {
             title: "Resume",
+            name: "resume",
             link: `/resume`,
         },
         {
@@ -41,10 +49,10 @@ export default function MainHeader({...props}) {
 
     useEffect(() => {
         props.currentRoute && setIsActiveTab(props.currentRoute);
-    }, [props.currentRoute]);
+    }, [props.currentRoute, language]);
 
     return (
-        <div id={'heading'}>
+        <div id={'heading'} className={`${language}`}>
             <div className={`model ${isClickBar ? 'open' : ''}`}></div>
             <div className={"left"}>
                 <Link className={`logo`}
@@ -57,13 +65,21 @@ export default function MainHeader({...props}) {
                     {path.map((item, index) => (
                         <li key={index}>
                             <Link className={`${isActiveTab === item.link ? 'active' : ''}`}
-                                  to={`${item.link}`}><span>{item.icon && item.icon} {item?.title && item.title}</span></Link>
+                                  to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
                         </li>
                     ))}
                 </ul>
             </div>
             <div className={"right"}>
-                <IconButton width={35} height={35} background={true} handleAction={() => toggleTheme()}
+                <div className={'image'}>
+                    <span className={'label'}
+                          style={{display: 'flex', alignItems: 'center'}}>{languages[language]?.name}</span>
+                    <IconButton width={35} height={35} handleAction={() => toggleLanguage()}
+                                icon={
+                                    <Image style={{width: '100%', height: '100%'}}
+                                           image={languages[language]?.flag || 'vn_flag.png'}/>}/>
+                </div>
+                <IconButton width={35} height={35} handleAction={() => toggleTheme()}
                             icon={theme === 'dark' ? <SunOutlined/> : <MoonOutlined/>}/>
 
                 <div className={`mobile-menu`} onClick={toggleMenu}>

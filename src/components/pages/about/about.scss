@@ -8,7 +8,7 @@
   .info {
     i {
       font-size: 18px;
-      font-family: "RainyHearts", serif;
+      font-family: "RainyHearts", "Handjet";
     }
 
     > .image {
@@ -48,6 +48,12 @@
       padding: 8px;
       text-align: justify;
     }
+  }
+}
+
+#about.vi {
+  i {
+    font-family: 'Handjet';
   }
 }
 

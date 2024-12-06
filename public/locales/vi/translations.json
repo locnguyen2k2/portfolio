@@ -1,0 +1,38 @@
+{
+  "navigation": {
+    "home": "Trang chủ",
+    "about": "Thông tin",
+    "projects": "Các dự án",
+    "skill": "Kỹ năng",
+    "resume": "Hồ sơ"
+  },
+  "greeting": "Chào mừng đến với trang web của tôi!",
+  "about": {
+    "name": "Nguyễn Tấn Lộc",
+    "major": "Kỹ sư phần mềm",
+    "profile": "Sinh viên năm tư trường Đại học Kỹ thuật - Công nghệ Cần thơ chuyên ngành kỹ thuật phần mềm, với đam mê trong việc thiết kế và lập trình website (thế mạnh back-end) luôn luyện tập và học hỏi để cũng cố kiến thức để cải thiện kỹ năng.",
+    "contact": "Liên hệ thông qua các kênh: "
+  },
+  "projects": {
+    "ems": {
+      "name": "Quản lý đề thi và câu hỏi trắc nghiệm",
+      "body": "Hệ thống gồm: Tạo bộ đề ngẫu nhiên với tỷ lệ đầu vào, quản lý đề thi, quản lý câu hỏi và phân loại theo loại và độ khó, quản lý chương, quản lý chương học phần, quản lý học phần, quản lý lớp học phần."
+    },
+    "lms": {
+      "name": "Quản lý phòng thí nghiệm",
+      "body": "Hệ thống RESTful APIs, quản lý việc mượn, trả và chuyển đổi các trang thiết bị giữa các phòng, một số chức năng liên quan như quản lý thiết bị, dụng cụ, hóa chất, phòng, người dùng và phân quyền."
+    },
+    "lmsApp": {
+      "name": "Ứng dụng LMS (chỉ android)",
+      "body": "Giúp người dùng dễ dàng muượn, trả trang thiết bị tại phòng thí nghiệm và theo dõi thông tin cũng như số lượng hiện có của trang thiết bị theo từng phòng (thông qua LMS APIs)."
+    },
+    "hiCoffeePos": {
+      "name": "Hi-Coffee POS",
+      "body": "Hệ thống POS phục vụ ngành FnB (chưa gồm quản lý nguyên vật liệu) được thiết kế để phục vụ việc đặt món tại quán, hổ trợ quản lý danh mục sản phẩm, khu vực, phòng, bàn và nhóm các chức năng như quản lý người dùng, phân quyền, đơn đặt, thanh toán(tiền mặt), quản lý hóa và thống kê doanh thu (bàn, món) theo từng mốc thời gian!"
+    },
+    "hiCoffeeApp": {
+      "name": "Ứng dụng Hi-Coffee",
+      "body": "Ứng dụng hổ trợ nhân viên đặt món tại quầy(thông qua Hi-Coffee POS APIs)."
+    }
+  }
+}

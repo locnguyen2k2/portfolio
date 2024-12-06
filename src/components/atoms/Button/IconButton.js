@@ -3,6 +3,7 @@ import './IconButton.scss';
 export default function IconButton(props) {
     return (
         <div className={'icon-button'} style={{
+            display: "flex",
             width: props.width,
             height: props.height,
         }}>

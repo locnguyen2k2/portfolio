@@ -191,7 +191,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    font-family: 'RainyHearts', sans-serif;
     justify-content: center;
 
     span {
@@ -210,6 +209,12 @@
     li {
       width: calc(100% / 6);
     }
+  }
+}
+
+#heading.vi {
+  span {
+    font-family: 'Handjet';
   }
 }
 

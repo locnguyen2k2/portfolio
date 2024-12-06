@@ -5,13 +5,22 @@ import {useContext, useEffect, useState} from "react";
 import Footer from "../molecules/Footer/Footer";
 
 export default function BaseLayout() {
-    const {theme} = useContext(Context);
+    const {theme, language} = useContext(Context);
     const location = useLocation();
-    const [currentRoute, setCurrentRoute] = useState("About");
+    const [currentRoute, setCurrentRoute] = useState(location.pathname);
 
     useEffect(() => {
-        setCurrentRoute(`${location.pathname}`);
-    }, [location.pathname])
+        if (location.pathname !== currentRoute) {
+            setCurrentRoute(`${location.pathname}`);
+        }
+    }, [location.pathname]);
+
+    useEffect(() => {
+        if (language !== localStorage.getItem('language')) {
+            window.location.href = currentRoute;
+            localStorage.setItem('language', language);
+        }
+    }, [language]);
 
     return (
         <main className={`${theme}`}>

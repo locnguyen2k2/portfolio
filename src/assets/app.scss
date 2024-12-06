@@ -16,6 +16,11 @@
   src: url('./public/fonts/rainyhearts.ttf');
 }
 
+@font-face {
+  font-family: Handjet;
+  src: url('./public/fonts/Handjet-Bold.ttf');
+}
+
 :root {
   cursor: url("./public/pointer.png"), auto;
 }
@@ -24,7 +29,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'RainyHearts', serif;
+}
+
+.label {
+  font-family: 'RainyHearts';
+}
+
+.label.vi {
+  font-family: 'Handjet';
 }
 
 ::-webkit-scrollbar {
@@ -44,6 +56,10 @@ a {
   cursor: url("./public/link.png"), auto !important;
   text-decoration: none;
   color: #FFFFFF;
+}
+
+.border {
+  border: 2px solid #ffffff;
 }
 
 main {
@@ -102,7 +118,7 @@ main {
 @media only screen and (max-width: 636px) {
   .project {
     .card {
-      width: calc(100% - 10px)!important;
+      width: calc(100% - 10px) !important;
     }
   }
 

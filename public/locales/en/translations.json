@@ -1,0 +1,38 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skill": "Skills",
+    "resume": "Resume"
+  },
+  "greeting": "Hi, welcome to my website!",
+  "about": {
+    "name": "Loc Nguyen",
+    "major": "Software Engineer",
+    "profile": "A fourth-year software engineering student at Can Tho University Of Technology, with a passion and excitement for web development drives me to continuously learn and practice, always striving to improve my skills.",
+    "contact": "The easiest way to connect with me is through"
+  },
+  "projects": {
+    "ems": {
+      "name": "Quizzes & Exam papers management system",
+      "body": "The system was developed following GraphQL and is used to manage questions, answers, users, authentication, permission, classes, lessons, and chapters, as well as for creating or automatically generating exam papers."
+    },
+    "lms": {
+      "name": "Laboratory management system",
+      "body": "A RESTful API system have been designed to boring, returning or transferring items from rooms and management equipment, tools, chemicals, rooms, users."
+    },
+    "lmsApp": {
+      "name": "Laboratory borrowing application(android only)",
+      "body": "The application is used to manage information and support borrowing the items for the Laboratory management system (by LMS APIs)."
+    },
+    "hiCoffeePos": {
+      "name": "Hi-Coffee POS",
+      "body": "The POS system for Fnb (not included raw materials management) used to manage products, categories, areas, tables, users, permission, ordering, cash payment, invoices and statistics"
+    },
+    "hiCoffeeApp": {
+      "name": "Hi-Coffee Application",
+      "body": "The order application is build for staffs to help customers ordering products at shop(by Hi-Coffee APIs)."
+    }
+  }
+}
