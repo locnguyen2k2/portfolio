@@ -32,6 +32,9 @@ const routes = createBrowserRouter([
                         element: <About/>,
                     },
                     {
+                        path: 'https://locnguyen2k2-portfolio.vercel.app/static/media/LOCNGUYEN_CV_1.0.c80a0899b4d675f4d192.pdf'
+                    },
+                    {
                         path: '*',
                         element: <PageNotFound/>
                     }
