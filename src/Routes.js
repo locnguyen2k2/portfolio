@@ -3,7 +3,6 @@ import App from "./App";
 import BaseLayout from "./components/templates/BaseLayout";
 import Project from "./components/pages/project/Project";
 import About from "./components/pages/about/About";
-import Resume from "./components/pages/resume/Resume";
 import Skill from "./components/pages/skill/Skill";
 import PageNotFound from "./components/pages/404";
 
@@ -31,10 +30,6 @@ const routes = createBrowserRouter([
                     {
                         path: "/about",
                         element: <About/>,
-                    },
-                    {
-                        path: "/resume",
-                        element: <Resume/>,
                     },
                     {
                         path: '*',

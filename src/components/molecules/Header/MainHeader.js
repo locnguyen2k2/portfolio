@@ -38,7 +38,7 @@ export default function MainHeader({...props}) {
         {
             title: "Resume",
             name: "resume",
-            link: `/resume`,
+            link: `https://github.com/locnguyen2k2/portfolio/blob/main/src/assets/public/files/LOCNGUYEN_CV_1.0.pdf`,
         },
         {
             title: "Source",

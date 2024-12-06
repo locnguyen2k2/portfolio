@@ -31,12 +31,14 @@
   box-sizing: border-box;
 }
 
-.label {
+a, p, i, .label, h1 {
   font-family: 'RainyHearts';
 }
 
-.label.vi {
-  font-family: 'Handjet';
+.vi {
+  a, p, i, .label, h1 {
+    font-family: 'Handjet';
+  }
 }
 
 ::-webkit-scrollbar {

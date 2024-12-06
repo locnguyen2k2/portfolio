@@ -6,12 +6,12 @@
     "skill": "Kỹ năng",
     "resume": "Hồ sơ"
   },
-  "greeting": "Chào mừng đến với trang web của tôi!",
+  "greeting": "Chào mọi người đã đến với trang thông tin của tui!",
   "about": {
     "name": "Nguyễn Tấn Lộc",
     "major": "Kỹ sư phần mềm",
-    "profile": "Sinh viên năm tư trường Đại học Kỹ thuật - Công nghệ Cần thơ chuyên ngành kỹ thuật phần mềm, với đam mê trong việc thiết kế và lập trình website (thế mạnh back-end) luôn luyện tập và học hỏi để cũng cố kiến thức để cải thiện kỹ năng.",
-    "contact": "Liên hệ thông qua các kênh: "
+    "profile": "Sinh viên năm tư (tui đang chuẩn bị cho lễ tốt nghiệp hehe) trường Đại học Kỹ thuật - Công nghệ Cần thơ chuyên ngành kỹ thuật phần mềm, với đam mê cũng như thích thú trong việc thiết kế và viết code (dành nhiều thời gian cho back-end) sẵn sàng dành thời gian để luyện tập và học hỏi để cải thiện kỹ năng (đặc biệt là để fixbug T.T ).",
+    "contact": "Liên hệ với tui thông qua các kênh: "
   },
   "projects": {
     "ems": {
