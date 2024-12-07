@@ -101,9 +101,14 @@ export default function MainHeader({...props}) {
                         <ul className={`${isClickBar ? 'open' : ''}`}>
                             {path.map((item, index) => (
                                 <li key={index}>
-                                    <Link
-                                        className={`${isActiveTab === item.link ? 'active' : ''}`}
-                                        to={`${item.link}`}><span>{item.icon && item.icon} {item?.title && item.title}</span></Link>
+                                    {
+                                        item?.link ?
+                                            <Link className={`${isActiveTab === item.link ? 'active' : ''}`}
+                                                  to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
+                                            :
+                                            <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/LOCNGUYEN_CV_1.0.c80a0899b4d675f4d192.pdf')}>
+                                                <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
+                                            </a>}
                                 </li>
                             ))}
                         </ul>
