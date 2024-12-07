@@ -68,6 +68,7 @@ main {
   width: 100vw;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
   height: calc(100vh + 20px);
   background: url('./public/wallpaper.gif') center/cover no-repeat;
 

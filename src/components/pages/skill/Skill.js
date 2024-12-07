@@ -158,7 +158,7 @@ const tools = [
 export default function Skill() {
     return (
         <div className={'skills'}>
-            <Label content={'Skill stack'}/>
+            <Label content={``}/>
             <Skeleton/>
             <CardList title={'Backend'} data={backend}/>
             <CardList title={'Database'} data={database}/>

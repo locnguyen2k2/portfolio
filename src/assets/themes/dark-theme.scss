@@ -3,12 +3,15 @@
 main.dark {
   .dark-filter {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    border-radius: 50%;
+    width: 250vw;
+    height: 250vh;
     opacity: .6;
     z-index: 0;
+    transform: scale(2);
+    transition: 900ms ease-in-out;
     background-color: #202023;
   }
 

@@ -49,7 +49,7 @@ export default function Project() {
     return (
         <>
             <div className={'project'}>
-                <CardList title={'My projects'} data={data}/>
+                <CardList title={``} data={data}/>
             </div>
         </>
     )

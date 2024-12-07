@@ -15,3 +15,18 @@ i {
 main {
   background-color: #f0e7db;
 }
+
+main.light {
+  .dark-filter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    opacity: .6;
+    border-radius: 50%;
+    width: 250vw;
+    height: 250vh;
+    transform: scale(0);
+    transition: 900ms ease-in-out;
+  }
+}
