@@ -7,7 +7,7 @@ export default function Card(props) {
     return (
         <div className="card">
             <div className="card-header">
-                {props.image && <Image image={props.image}/>}
+                {props.image && <Image border={true} image={props.image}/>}
             </div>
             <div className="card-body">
                 {
