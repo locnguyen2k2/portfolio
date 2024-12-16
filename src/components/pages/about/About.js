@@ -2,12 +2,34 @@ import Image from "../../atoms/Image/Image";
 import './about.scss'
 import Label from "../../atoms/Lable/Label";
 import {useTranslation} from "react-i18next";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {Context} from "../../../Context";
+import CustomInput from "../../atoms/Input/Input";
+import IconButton from "../../atoms/Button/IconButton";
+import axios from "axios";
 
 export default function About() {
     const {t} = useTranslation();
     const {language} = useContext(Context);
+    const [name, setName] = useState("");
+    const [content, setContent] = useState("");
+    const [email, setEmail] = useState("");
+
+    async function sendEmail() {
+        alert(t('mailer.sending'))
+        axios.post('https://laboratory-management-system.onrender.com/apis/feed-back', {
+            from: email,
+            content: content,
+            key: process.env.REACT_APP_MAILER_PASSWORD
+        }).then((result) => {
+            alert(t('mailer.success'))
+        }).catch(() => alert(t('mailer.failed')))
+    }
+
+    const onSubmit = async () => {
+        await sendEmail()
+    }
+
     return (
         <div id={'about'} className={`${language}`}>
             <div className={'welcome'}>
@@ -26,6 +48,18 @@ export default function About() {
                         <p>
                             {t('about.profile')}
                         </p>
+                    </div>
+                    <div>
+                        <Label content={'Feedback'}/>
+                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
+                                     title={'Your name'} type={'text'}/>
+                        <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} width={'100%'} lines={3}
+                                     title={'Your email'} type={'email'}/>
+                        <CustomInput value={content} onChange={(e) => setContent(e.target.value)} width={'100%'}
+                                     lines={10} title={'Your content'} type={'textarea'}/>
+                        <IconButton border={true} width={100} height={'max-content'}
+                                    handleAction={onSubmit}
+                                    icon={<p style={{padding: 0, textAlign: 'center', fontSize: 'small'}}>Send</p>}/>
                     </div>
                     <div className={'contact'}>
                         <Label content={'Contact'}/>

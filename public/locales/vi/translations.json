@@ -6,6 +6,11 @@
     "skill": "Kỹ năng",
     "resume": "Hồ sơ"
   },
+  "mailer": {
+    "sending": "Đã gửi phản hồi!",
+    "success": "Gửi phản hồi thành công!",
+    "failed": "Gửi phản hồi thất bại!"
+  },
   "greeting": "Chào mọi người đã đến với trang thông tin của tui!",
   "about": {
     "name": "Nguyễn Tấn Lộc",

@@ -6,6 +6,11 @@
     "skill": "Skills",
     "resume": "Resume"
   },
+  "mailer": {
+    "sending": "Your mail is sending!",
+    "success": "Successfully!",
+    "failed": "Failed!"
+  },
   "greeting": "Hi, welcome to my website!",
   "about": {
     "name": "Loc Nguyen",
