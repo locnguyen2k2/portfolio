@@ -9,7 +9,10 @@
   "mailer": {
     "sending": "Your mail is sending!",
     "success": "Successfully!",
-    "failed": "Failed!"
+    "failed": "Failed!",
+    "name": "Your name",
+    "email": "Your email",
+    "content": "Content"
   },
   "greeting": "Hi, welcome to my website!",
   "about": {
