@@ -9,7 +9,10 @@
   "mailer": {
     "sending": "Đã gửi phản hồi!",
     "success": "Gửi phản hồi thành công!",
-    "failed": "Gửi phản hồi thất bại!"
+    "failed": "Gửi phản hồi thất bại!",
+    "name": "Họ và tên",
+    "email": "Email",
+    "content": "Nội dung"
   },
   "greeting": "Chào mọi người đã đến với trang thông tin của tui!",
   "about": {
