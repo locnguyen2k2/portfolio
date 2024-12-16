@@ -52,11 +52,11 @@ export default function About() {
                     <div>
                         <Label content={'Feedback'}/>
                         <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
-                                     title={'Your name'} type={'text'}/>
+                                     title={t('mailer.name')} type={'text'}/>
                         <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} width={'100%'} lines={3}
-                                     title={'Your email'} type={'email'}/>
+                                     title={t('mailer.email')} type={'email'}/>
                         <CustomInput value={content} onChange={(e) => setContent(e.target.value)} width={'100%'}
-                                     lines={10} title={'Your content'} type={'textarea'}/>
+                                     lines={10} title={t('mailer.content')} type={'textarea'}/>
                         <IconButton border={true} width={100} height={'max-content'}
                                     handleAction={onSubmit}
                                     icon={<p style={{padding: 0, textAlign: 'center', fontSize: 'small'}}>Send</p>}/>
