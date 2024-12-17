@@ -50,6 +50,10 @@ export default function MainHeader({...props}) {
         props.currentRoute && setIsActiveTab(props.currentRoute);
     }, [props.currentRoute, language]);
 
+    window.addEventListener('resize', () => {
+        setIsClickBar(false)
+    });
+
     return (
         <div id={'heading'} className={`${language}`}>
             <div className={`model ${isClickBar ? 'open' : ''}`}></div>

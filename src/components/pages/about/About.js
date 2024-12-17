@@ -23,7 +23,11 @@ export default function About() {
             key: process.env.REACT_APP_MAILER_PASSWORD
         }).then((result) => {
             alert(t('mailer.success'))
-        }).catch(() => alert(t('mailer.failed')))
+        }).catch(() => alert(t('mailer.failed'))).finally(() => {
+            setContent("");
+            setEmail("");
+            setName("");
+        })
     }
 
     const onSubmit = async () => {
@@ -50,7 +54,7 @@ export default function About() {
                         </p>
                     </div>
                     <div className={'contact'}>
-                        <Label content={'Contact'}/>
+                        <Label content={t('about.title.contact')}/>
                         <p>
                             {t('about.contact')} <a
                             href={'mailto:locnguyen071102@gmail.com'}><i>Email</i></a>, <a
@@ -59,7 +63,7 @@ export default function About() {
                         </p>
                     </div>
                     <div>
-                        <Label content={'Feedback'}/>
+                        <Label content={t('about.title.feedback')}/>
                         <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
                                      title={t('mailer.name')} type={'text'}/>
                         <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} width={'100%'} lines={3}

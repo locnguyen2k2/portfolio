@@ -16,6 +16,10 @@
   },
   "greeting": "Chào mọi người đã đến với trang thông tin của tui!",
   "about": {
+    "title": {
+      "contact": "Liên hệ với tôi",
+      "feedback": "Phản hồi"
+    },
     "name": "Nguyễn Tấn Lộc",
     "major": "Kỹ sư phần mềm",
     "profile": "Sinh viên năm tư (tui đang chuẩn bị cho lễ tốt nghiệp hehe) trường Đại học Kỹ thuật - Công nghệ Cần thơ chuyên ngành kỹ thuật phần mềm, với đam mê cũng như thích thú trong việc thiết kế và viết code (dành nhiều thời gian cho back-end) sẵn sàng dành thời gian để luyện tập và học hỏi để cải thiện kỹ năng (đặc biệt là để fixbug T.T ).",

@@ -3,11 +3,25 @@ import MainHeader from "../molecules/Header/MainHeader";
 import {Context} from '../../Context';
 import {useContext, useEffect, useState} from "react";
 import Footer from "../molecules/Footer/Footer";
+import axios from "axios";
 
 export default function BaseLayout() {
     const {theme, language} = useContext(Context);
     const location = useLocation();
+    const [count, setCount] = useState(0);
     const [currentRoute, setCurrentRoute] = useState(location.pathname);
+
+    const callSend = () => {
+        axios.get('https://laboratory-management-system.onrender.com/apis/categories').then((response) => {
+            setCount(count + 1);
+        })
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            callSend()
+        }, 20000)
+    }, [count]);
 
     useEffect(() => {
         if (location.pathname !== currentRoute) {

@@ -16,6 +16,10 @@
   },
   "greeting": "Hi, welcome to my website!",
   "about": {
+    "title": {
+      "contact": "Contact with me",
+      "feedback": "Feedback"
+    },
     "name": "Loc Nguyen",
     "major": "Software Engineer",
     "profile": "A fourth-year software engineering student at Can Tho University Of Technology, with a passion and excitement for web development drives me to continuously learn and practice, always striving to improve my skills.",
