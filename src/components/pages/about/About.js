@@ -49,18 +49,6 @@ export default function About() {
                             {t('about.profile')}
                         </p>
                     </div>
-                    <div>
-                        <Label content={'Feedback'}/>
-                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
-                                     title={'Your name'} type={'text'}/>
-                        <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} width={'100%'} lines={3}
-                                     title={'Your email'} type={'email'}/>
-                        <CustomInput value={content} onChange={(e) => setContent(e.target.value)} width={'100%'}
-                                     lines={10} title={'Your content'} type={'textarea'}/>
-                        <IconButton border={true} width={100} height={'max-content'}
-                                    handleAction={onSubmit}
-                                    icon={<p style={{padding: 0, textAlign: 'center', fontSize: 'small'}}>Send</p>}/>
-                    </div>
                     <div className={'contact'}>
                         <Label content={'Contact'}/>
                         <p>
@@ -69,6 +57,18 @@ export default function About() {
                             href={'https://www.linkedin.com/in/nguyen-loc-171793311/'}><i> LinkedIn</i></a>,
                             <a href={'https://www.facebook.com/nguyentanloc0711/'}><i> Facebook</i></a>.
                         </p>
+                    </div>
+                    <div>
+                        <Label content={'Feedback'}/>
+                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
+                                     title={t('mailer.name')} type={'text'}/>
+                        <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} width={'100%'} lines={3}
+                                     title={t('mailer.email')} type={'email'}/>
+                        <CustomInput value={content} onChange={(e) => setContent(e.target.value)} width={'100%'}
+                                     lines={10} title={t('mailer.content')} type={'textarea'}/>
+                        <IconButton border={true} width={100} height={'max-content'}
+                                    handleAction={onSubmit}
+                                    icon={<p style={{padding: 0, textAlign: 'center', fontSize: 'small'}}>Send</p>}/>
                     </div>
                 </div>
             </div>
