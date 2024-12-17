@@ -49,6 +49,15 @@ export default function About() {
                             {t('about.profile')}
                         </p>
                     </div>
+                    <div className={'contact'}>
+                        <Label content={'Contact'}/>
+                        <p>
+                            {t('about.contact')} <a
+                            href={'mailto:locnguyen071102@gmail.com'}><i>Email</i></a>, <a
+                            href={'https://www.linkedin.com/in/nguyen-loc-171793311/'}><i> LinkedIn</i></a>,
+                            <a href={'https://www.facebook.com/nguyentanloc0711/'}><i> Facebook</i></a>.
+                        </p>
+                    </div>
                     <div>
                         <Label content={'Feedback'}/>
                         <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
@@ -60,15 +69,6 @@ export default function About() {
                         <IconButton border={true} width={100} height={'max-content'}
                                     handleAction={onSubmit}
                                     icon={<p style={{padding: 0, textAlign: 'center', fontSize: 'small'}}>Send</p>}/>
-                    </div>
-                    <div className={'contact'}>
-                        <Label content={'Contact'}/>
-                        <p>
-                            {t('about.contact')} <a
-                            href={'mailto:locnguyen071102@gmail.com'}><i>Email</i></a>, <a
-                            href={'https://www.linkedin.com/in/nguyen-loc-171793311/'}><i> LinkedIn</i></a>,
-                            <a href={'https://www.facebook.com/nguyentanloc0711/'}><i> Facebook</i></a>.
-                        </p>
                     </div>
                 </div>
             </div>
