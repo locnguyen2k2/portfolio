@@ -73,7 +73,7 @@ export default function MainHeader({...props}) {
                                           to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
                                     :
                                     // eslint-disable-next-line
-                                    <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/LOC_NGUYEN_CV_1.0.8668d121c6de56b48e16.pdf')}>
+                                    <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/LOCNGUYEN_CV.1.0.70af7e819142a0491bc4.pdf')}>
                                         <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
                                     </a>}
                         </li>
@@ -112,7 +112,7 @@ export default function MainHeader({...props}) {
                                                   to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
                                             :
                                             // eslint-disable-next-line
-                                            <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/LOC_NGUYEN_CV_1.0.8668d121c6de56b48e16.pdf')}>
+                                            <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/LOCNGUYEN_CV.1.0.70af7e819142a0491bc4.pdf')}>
                                                 <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
                                             </a>}
                                 </li>
