@@ -14,7 +14,7 @@
     "email": "Email",
     "content": "Nội dung"
   },
-  "greeting": "Chào mọi người đã đến với trang thông tin của tui!",
+  "greeting": "Xin chào.",
   "about": {
     "title": {
       "contact": "Liên hệ với tôi",
@@ -22,8 +22,8 @@
     },
     "name": "Nguyễn Tấn Lộc",
     "major": "Kỹ sư phần mềm",
-    "profile": "Sinh viên năm tư (tui đang chuẩn bị cho lễ tốt nghiệp hehe) trường Đại học Kỹ thuật - Công nghệ Cần thơ chuyên ngành kỹ thuật phần mềm, với đam mê cũng như thích thú trong việc thiết kế và viết code (dành nhiều thời gian cho back-end) sẵn sàng dành thời gian để luyện tập và học hỏi để cải thiện kỹ năng (đặc biệt là để fixbug T.T ).",
-    "contact": "Liên hệ với tui thông qua các kênh: "
+    "profile": "Tôi tên Nguyễn Tấn Lộc và hiện là sinh viên năm tư trường Đại học Kỹ thuật - Công nghệ Cần thơ với chuyên ngành kỹ thuật phần mềm.",
+    "contact": "Liên hệ với tôi thông qua các kênh: "
   },
   "projects": {
     "ems": {
@@ -35,8 +35,8 @@
       "body": "Hệ thống RESTful APIs, quản lý việc mượn, trả và chuyển đổi các trang thiết bị giữa các phòng, một số chức năng liên quan như quản lý thiết bị, dụng cụ, hóa chất, phòng, người dùng và phân quyền."
     },
     "lmsApp": {
-      "name": "Ứng dụng LMS (chỉ android)",
-      "body": "Giúp người dùng dễ dàng muượn, trả trang thiết bị tại phòng thí nghiệm và theo dõi thông tin cũng như số lượng hiện có của trang thiết bị theo từng phòng (thông qua LMS APIs)."
+      "name": "Ứng dụng quản lý việc mượng & trả trang thiết bị phòng thí nghiệm",
+      "body": "Giúp người dùng dễ dàng muượn, trả trang thiết bị tại phòng thí nghiệm và theo dõi thông tin cũng như số lượng hiện có của trang thiết bị theo từng phòng."
     },
     "hiCoffeePos": {
       "name": "Hi-Coffee POS",

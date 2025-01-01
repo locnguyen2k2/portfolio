@@ -39,6 +39,17 @@
       }
     }
 
+    .feedback-info {
+      > div {
+        textarea {
+          width: calc(100% - 5px)!important;
+        }
+      }
+
+      display: flex;
+      justify-content: space-between;
+    }
+
     p, a {
       font-size: 14px;
     }

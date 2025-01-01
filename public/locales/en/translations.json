@@ -23,20 +23,20 @@
     "name": "Loc Nguyen",
     "major": "Software Engineer",
     "profile": "A fourth-year software engineering student at Can Tho University Of Technology, with a passion and excitement for web development drives me to continuously learn and practice, always striving to improve my skills.",
-    "contact": "The easiest way to connect with me is through"
+    "contact": "The easiest way to connect with me: "
   },
   "projects": {
     "ems": {
       "name": "Quizzes & Exam papers management system",
-      "body": "The system was developed following GraphQL and is used to manage questions, answers, users, authentication, permission, classes, lessons, and chapters, as well as for creating or automatically generating exam papers."
+      "body": "Developed a management system for managing quizzes and exam papers and automatic generation of exam papers, and provided data management support for the system."
     },
     "lms": {
       "name": "Laboratory management system",
-      "body": "A RESTful API system have been designed to boring, returning or transferring items from rooms and management equipment, tools, chemicals, rooms, users."
+      "body": "A RESTful API system have been designed to manage lab equipment, tools, and chemicals. The system provides a comfortable way to transfer, borrow, and return items in management processing."
     },
     "lmsApp": {
       "name": "Laboratory borrowing application(android only)",
-      "body": "The application is used to manage information and support borrowing the items for the Laboratory management system (by LMS APIs)."
+      "body": "The application is used to manage information, and borrowing the items for the Laboratory management system."
     },
     "hiCoffeePos": {
       "name": "Hi-Coffee POS",

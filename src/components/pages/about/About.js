@@ -64,10 +64,13 @@ export default function About() {
                     </div>
                     <div>
                         <Label content={t('about.title.feedback')}/>
-                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
-                                     title={t('mailer.name')} type={'text'}/>
-                        <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} width={'100%'} lines={3}
-                                     title={t('mailer.email')} type={'email'}/>
+                        <div className={'feedback-info'}>
+                            <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
+                                         title={t('mailer.name')} type={'text'}/>
+                            <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} width={'100%'}
+                                         lines={3}
+                                         title={t('mailer.email')} type={'email'}/>
+                        </div>
                         <CustomInput value={content} onChange={(e) => setContent(e.target.value)} width={'100%'}
                                      lines={10} title={t('mailer.content')} type={'textarea'}/>
                         <IconButton border={true} width={100} height={'max-content'}

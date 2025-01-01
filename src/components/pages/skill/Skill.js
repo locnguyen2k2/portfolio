@@ -103,7 +103,35 @@ const backend = [
         body: <>
             <object
                 aria-label="this object has text"
+                data={'https://img.shields.io/badge/TypeScript-FFF?logo=TypeScript&logoColor=3178C6&link=https%3A%2F%2Fwww.typescriptlang.org%2F'}/>
+        </>,
+    },
+    {
+        body: <>
+            <object
+                aria-label="this object has text"
+                data={'https://img.shields.io/badge/JavaScript-FFF?logo=JavaScript&logoColor=F7DF1E&link=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript'}/>
+        </>,
+    },
+    {
+        body: <>
+            <object
+                aria-label="this object has text"
                 data={'https://img.shields.io/badge/Php-FFF?logo=php&logoColor=7A86B8&link=https%3A%2F%2Fwww.php.net'}/>
+        </>,
+    },
+    {
+        body: <>
+            <object
+                aria-label="this object has text"
+                data={'https://img.shields.io/badge/Graphql-FFF?logo=graphql&logoColor=e10098&link=https%3A%2F%2Fgraphql.org'}/>
+        </>,
+    },
+    {
+        body: <>
+            <object
+                aria-label="this object has text"
+                data={'https://img.shields.io/badge/Swagger-FFF?logo=swagger&logoColor=38B832&link=https%3A%2F%2Fswagger.io'}/>
         </>,
     },
 ]
