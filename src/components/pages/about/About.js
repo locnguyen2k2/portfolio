@@ -7,6 +7,7 @@ import {Context} from "../../../Context";
 import CustomInput from "../../atoms/Input/Input";
 import IconButton from "../../atoms/Button/IconButton";
 import axios from "axios";
+import Project from "../project/Project";
 
 export default function About() {
     const {t} = useTranslation();
@@ -46,13 +47,18 @@ export default function About() {
                             <Label content={'Loc Nguyen'}/>
                             <p><i>{t('about.major')}</i></p>
                         </div>
-                        <Image border={true} image={'avatar.jpg'}/>
+                        <Image style={{
+                            width: '205px',
+                            height: '269px'
+                        }} blur={true} image={'avatar.png'}/>
                     </div>
-                    <div>
-                        <p>
-                            {t('about.profile')}
-                        </p>
-                    </div>
+                    <p>
+                        {t('about.profile')}
+                    </p>
+                    <p>
+                        {t('projects.title.projects')}:
+                    </p>
+                    <Project className={'slider'}/>
                     <div className={'contact'}>
                         <Label content={t('about.title.contact')}/>
                         <p>
@@ -62,21 +68,19 @@ export default function About() {
                             <a href={'https://www.facebook.com/nguyentanloc0711/'}><i> Facebook</i></a>.
                         </p>
                     </div>
-                    <div>
-                        <Label content={t('about.title.feedback')}/>
-                        <div className={'feedback-info'}>
-                            <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
-                                         title={t('mailer.name')} type={'text'}/>
-                            <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} width={'100%'}
-                                         lines={3}
-                                         title={t('mailer.email')} type={'email'}/>
-                        </div>
-                        <CustomInput value={content} onChange={(e) => setContent(e.target.value)} width={'100%'}
-                                     lines={10} title={t('mailer.content')} type={'textarea'}/>
-                        <IconButton border={true} width={100} height={'max-content'}
-                                    handleAction={onSubmit}
-                                    icon={<p style={{padding: 0, textAlign: 'center', fontSize: 'small'}}>Send</p>}/>
+                    <Label content={t('about.title.feedback')}/>
+                    <div className={'feedback-info'}>
+                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
+                                     title={t('mailer.name')} type={'text'}/>
+                        <CustomInput value={email} onChange={(e) => setEmail(e.target.value)} width={'100%'}
+                                     lines={3}
+                                     title={t('mailer.email')} type={'email'}/>
                     </div>
+                    <CustomInput value={content} onChange={(e) => setContent(e.target.value)} width={'100%'}
+                                 lines={10} title={t('mailer.content')} type={'textarea'}/>
+                    <IconButton border={true} width={100} height={'max-content'}
+                                handleAction={onSubmit}
+                                icon={<p style={{padding: 0, textAlign: 'center', fontSize: 'small'}}>Send</p>}/>
                 </div>
             </div>
         </div>

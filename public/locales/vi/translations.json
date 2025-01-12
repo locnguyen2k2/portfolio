@@ -26,6 +26,9 @@
     "contact": "Liên hệ với tôi thông qua các kênh: "
   },
   "projects": {
+    "title": {
+      "projects": "Sản phẩm đã làm"
+    },
     "ems": {
       "name": "Quản lý đề thi và câu hỏi trắc nghiệm",
       "body": "Hệ thống gồm: Tạo bộ đề ngẫu nhiên với tỷ lệ đầu vào, quản lý đề thi, quản lý câu hỏi và phân loại theo loại và độ khó, quản lý chương, quản lý chương học phần, quản lý học phần, quản lý lớp học phần."

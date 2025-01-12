@@ -32,12 +32,12 @@
 }
 
 a, p, i, .label, h1 {
-  font-family: 'RainyHearts';
+  font-family: 'RainyHearts', 'Times New Roman';
 }
 
 .vi {
   a, p, i, .label, h1, input, textarea {
-    font-family: "AlumniSans-Medium";
+    font-family: "AlumniSans-Medium", 'Times New Roman';
   }
 }
 
@@ -78,6 +78,60 @@ main {
     position: relative;
     overflow-y: scroll;
     height: calc(100vh - 56px);
+
+    /* Slider CSS */
+    .slider {
+      .slide-control {
+        top: 50%;
+        left: 50%;
+        z-index: 999;
+        display: flex;
+        color: #FFFFFF;
+        font-size: 20px;
+        position: absolute;
+        width: calc(100% - 50px);
+        justify-content: space-between;
+        transform: translate(-50%, -50%);
+
+        span {
+          padding: 4px;
+          cursor: pointer;
+          border-radius: 4px;
+          backdrop-filter: blur(10px);
+          transition: background-color .3s ease-in-out 0s !important;
+
+          :hover {
+            transition: background-color .3s ease-in-out 0s !important;
+          }
+        }
+      }
+    }
+
+    /* Slider for Projects CSS */
+    .project.slider {
+      .list-card {
+        width: 100%;
+        overflow: hidden;
+
+        .cards {
+          width: calc(100% * 5);
+          flex-direction: row;
+          flex-wrap: nowrap;
+
+          .card {
+            width: calc(100% - 10px);
+            transition: transform 0.5s ease-in-out 0s !important;
+
+            .card-header {
+              margin: 0 auto;
+            }
+
+            flex-direction: column;
+            font-size: 12px;
+          }
+        }
+      }
+    }
   }
 }
 

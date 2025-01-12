@@ -26,6 +26,9 @@
     "contact": "The easiest way to connect with me: "
   },
   "projects": {
+    "title": {
+      "projects": "My projects"
+    },
     "ems": {
       "name": "Quizzes & Exam papers management system",
       "body": "Developed a management system for managing quizzes and exam papers and automatic generation of exam papers, and provided data management support for the system."

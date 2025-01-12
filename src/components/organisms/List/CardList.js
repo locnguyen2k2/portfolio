@@ -4,7 +4,7 @@ import Label from "../../atoms/Lable/Label";
 
 export default function CardList(props) {
     return (
-        <div>
+        <div className={'list-card'}>
             {props.title && <Label content={props.title}/>}
             <div className={'cards'}>
                 {
@@ -12,6 +12,9 @@ export default function CardList(props) {
                         return (<Card key={key} image={item.image}
                                       title={item.title}
                                       body={item.body}
+                                      style={{
+                                          transform: `translateX(${props.trans})`
+                                      }}
                                       github={item.github}
                                       link={item.link}
                                       tags={item?.tags ? item.tags : []}

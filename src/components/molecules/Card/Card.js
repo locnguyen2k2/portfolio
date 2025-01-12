@@ -5,7 +5,9 @@ import Label from "../../atoms/Lable/Label";
 
 export default function Card(props) {
     return (
-        <div className="card">
+        <div className={`card ${props.className ? props.className : ""}`}
+             style={props.style ? props.style : {}}
+        >
             <div className="card-header">
                 {props.image && <Image border={true} image={props.image}/>}
             </div>
