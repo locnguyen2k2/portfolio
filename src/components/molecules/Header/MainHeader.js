@@ -73,7 +73,7 @@ export default function MainHeader({...props}) {
                                           to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
                                     :
                                     // eslint-disable-next-line
-                                    <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/Nguyen_Tan_Loc_CV.7a00d8278c835acd9f03.pdf')}>
+                                    <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.a0ae15b108e380a9477d.pdf')}>
                                         <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
                                     </a>}
                         </li>
@@ -112,7 +112,7 @@ export default function MainHeader({...props}) {
                                                   to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
                                             :
                                             // eslint-disable-next-line
-                                            <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/Nguyen_Tan_Loc_CV.7a00d8278c835acd9f03.pdf')}>
+                                            <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.a0ae15b108e380a9477d.pdf')}>
                                                 <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
                                             </a>}
                                 </li>
