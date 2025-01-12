@@ -28,7 +28,8 @@
     z-index: 1;
     position: relative;
     height: max-content;
-    width: 500px;
+    width: 100vw;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;

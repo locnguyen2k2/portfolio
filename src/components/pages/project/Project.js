@@ -2,11 +2,12 @@ import './Project.scss'
 import CardList from "../../organisms/List/CardList";
 import {useTranslation} from "react-i18next";
 import {VerticalLeftOutlined, VerticalRightOutlined} from "@ant-design/icons";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function Project(props) {
     const {t} = useTranslation();
     const [trans, setTrans] = useState('');
+    const [width, setWidth] = useState(500);
     const [currentSlide, setCurrentSlide] = useState(0);
     const data = [{
         title: t('projects.ems.name'),
@@ -46,15 +47,34 @@ export default function Project(props) {
 
     const onNext = () => {
         let slide = (currentSlide < data.length - 1) ? currentSlide + 1 : 0;
-        setTrans(`-${slide * 5}00px`);
+        setTrans(`-${slide * width}px`);
         setCurrentSlide(slide);
     }
 
     const onPrev = () => {
         let slide = (currentSlide >= 0) ? currentSlide - 1 : data.length - 1;
-        setTrans(`-${(slide < 0 ? data.length - 1 : slide) * 5}00px`);
+        setTrans(`-${(slide < 0 ? data.length - 1 : slide) * width}px`);
         setCurrentSlide(slide);
     }
+
+    const currentWidth = () => {
+        if (window.innerWidth < 500) {
+            setWidth(window.innerWidth);
+        } else {
+            setWidth(500)
+        }
+    }
+
+    useEffect(() => {
+        currentWidth()
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 500) {
+                setWidth(window.innerWidth);
+            } else {
+                setWidth(500)
+            }
+        })
+    }, []);
 
     return (<>
         <div className={`project ${props.className ? props.className : ''}`}>
