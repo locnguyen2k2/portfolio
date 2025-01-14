@@ -2,6 +2,7 @@ import './Card.scss'
 import Image from "../../atoms/Image/Image";
 import {GithubOutlined, LinkOutlined} from "@ant-design/icons";
 import Label from "../../atoms/Lable/Label";
+import IconButton from "../../atoms/Button/IconButton";
 
 export default function Card(props) {
     return (
@@ -20,13 +21,44 @@ export default function Card(props) {
                     <div className={'tags'}>
                         {props?.tags && props.tags.map((tag, key) => {
                             return (
-                                <a key={key}>{tag}</a>
+                                <IconButton
+                                    key={key}
+                                    style={{
+                                        margin: '0 3px',
+                                        padding: '3px 5px',
+                                    }}
+                                    icon={<a href='#'>#{tag}</a>}
+                                    handleAction={() => {
+                                    }}
+                                />
                             )
                         })}
                     </div>
                     <div className={'links'}>
-                        {props.github && <a href={`${props.github}`}><GithubOutlined/> Github</a>}
-                        {props.link && <a href={`${props.link}`}><LinkOutlined/> Demo</a>}
+                        {props.github &&
+                            <IconButton
+                                hover={true}
+                                style={{
+                                    margin: '0 3px',
+                                    padding: '3px 5px'
+                                }}
+                                border={true}
+                                icon={<a href={`${props.github}`}><GithubOutlined/> Github</a>}
+                                handleAction={() => {
+                                }}
+                            />}
+                        {props.link &&
+                            <IconButton
+                                hover={true}
+                                style={{
+                                    margin: '0 3px',
+                                    padding: '3px 5px'
+                                }}
+                                border={true}
+                                icon={<a href={`${props.link}`}><LinkOutlined/> Demo</a>}
+                                handleAction={() => {
+                                }}
+                            />}
                     </div>
                 </div>
             </div>

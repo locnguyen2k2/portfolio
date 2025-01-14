@@ -8,6 +8,18 @@ h1, a, p, input, textarea {
   color: $gray-50
 }
 
+.icon-button.hover a, .icon-button.hover {
+  color: $blueGray-300 !important;
+  border-color: $blueGray-300 !important;
+}
+
+.icon-button.hover:hover,
+.icon-button.hover:hover a {
+  color: $gray-50 !important;
+  border-color: $gray-50 !important;
+  transition: color 0.25s ease-in-out 0s;
+}
+
 i {
   color: $orange-300
 }

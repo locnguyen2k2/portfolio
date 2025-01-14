@@ -2,7 +2,8 @@ import './IconButton.scss';
 
 export default function IconButton({...props}) {
     return (
-        <div className={'icon-button'} style={{
+        <div className={`icon-button ${props.hover ? 'hover' : ''}`} style={{
+            ...props?.style,
             display: "flex",
             width: props.width,
             height: props.height,

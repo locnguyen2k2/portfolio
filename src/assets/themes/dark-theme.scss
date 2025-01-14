@@ -24,6 +24,18 @@ main.dark {
     color: #fff0c5 !important;
   }
 
+  button a {
+    color: $blueGray-400 !important;
+    border-color: $blueGray-400 !important;
+  }
+
+  .icon-button.hover:hover,
+  .icon-button.hover:hover a {
+    color: $orange-200 !important;
+    border-color: $orange-200 !important;
+    transition: color 0.25s ease-in-out 0s;
+  }
+
   #heading {
     background: none;
 

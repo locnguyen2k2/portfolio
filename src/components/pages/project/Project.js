@@ -15,34 +15,34 @@ export default function Project(props) {
         image: 'ems.jpg',
         link: 'https://exam-management-system-z76m.onrender.com/graphql',
         github: 'https://github.com/locnguyen2k2/exam-management-system/',
-        tags: ['nestjs', 'mongodb', 'graphql', 'typescript']
+        tags: ['NestJS', 'MongoDB', 'GraphQL', 'Apollo', 'TypeScript']
     }, {
         title: t('projects.lms.name'),
         body: t('projects.lms.body'),
         github: 'https://github.com/locnguyen2k2/laboratory-management-system',
         link: 'https://laboratory-management-system.onrender.com/apis',
         image: 'labs.jpg',
-        tags: ['nestjs', 'mysql', 'swagger']
-    }, {
-        title: t('projects.lmsApp.name'),
-        body: t('projects.lmsApp.body'),
-        github: 'https://github.com/locnguyen2k2/laboratory-management-application',
-        image: 'labs-app.jpg',
-        tags: ['react-native', 'axios'],
+        tags: ['NestJS', 'MySQL', 'TypeORM', 'SwaggerAPI', 'TypeScript']
     }, {
         title: t('projects.hiCoffeePos.name'),
         body: t('projects.hiCoffeePos.body'),
         image: 'hicoffee-management.jpg',
         link: '',
         github: 'https://github.com/locnguyen2k2/hi-coffee-management-system',
-        tags: ['core-php', 'mvc', 'axios', 'bootstrap5', 'html', 'css', 'javascript'],
+        tags: ['Php(core - MVC)', 'JavaScript', 'Ajax', 'Axios', 'WebSocket(Ratchet)', 'Phpmailer', 'Bootstrap5', 'HTML', 'CSS'],
     }, {
         title: t('projects.hiCoffeeApp.name'),
         body: t('projects.hiCoffeeApp.body'),
         github: 'https://github.com/locnguyen2k2/hi-coffee-order-application',
         link: '',
         image: 'hicoffee-mobile.jpg',
-        tags: ['react-native', 'axios']
+        tags: ['React-Native', 'Axios', 'Redux', 'TailwindCSS']
+    }, {
+        title: t('projects.lmsApp.name'),
+        body: t('projects.lmsApp.body'),
+        github: 'https://github.com/locnguyen2k2/laboratory-management-application',
+        image: 'labs-app.jpg',
+        tags: ['React-Native', 'Axios', 'Redux', 'TailwindCSS']
     }]
 
     const onNext = () => {

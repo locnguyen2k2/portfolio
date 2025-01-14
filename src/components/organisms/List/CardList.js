@@ -12,7 +12,7 @@ export default function CardList(props) {
                         return (<Card key={key} image={item.image}
                                       title={item.title}
                                       body={item.body}
-                                      style={{
+                                      style={props?.trans && {
                                           transform: `translateX(${props.trans})`
                                       }}
                                       github={item.github}
