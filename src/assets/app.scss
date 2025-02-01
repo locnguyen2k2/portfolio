@@ -64,6 +64,16 @@ a, button {
   border: 2px solid #ffffff;
 }
 
+.fade-effect {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-name: fadeInUp;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: fadeInUp;
+  -webkit-animation-fill-mode: both;
+}
+
 main {
   width: 100vw;
   margin: 0 auto;

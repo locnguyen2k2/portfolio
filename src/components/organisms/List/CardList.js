@@ -6,7 +6,7 @@ export default function CardList(props) {
     return (
         <div className={'list-card'}>
             {props.title && <Label content={props.title}/>}
-            <div className={'cards'}>
+            <div className={`cards ${props.effect ? 'fade-effect' : ''}`}>
                 {
                     props.data.map((item, key) => {
                         return (<Card key={key} image={item.image}

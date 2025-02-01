@@ -41,7 +41,7 @@ export default function About() {
                 <Label content={t('greeting')}/>
             </div>
             <div className={'my-self'}>
-                <div className={'content'}>
+                <div className={'content fade-effect'}>
                     <div className={'info'}>
                         <div>
                             <Label content={'Loc Nguyen'}/>
