@@ -1,15 +1,21 @@
-import './Project.scss'
+import './../project/Project.scss'
 import CardList from "../../organisms/List/CardList";
 import {useTranslation} from "react-i18next";
 import {VerticalLeftOutlined, VerticalRightOutlined} from "@ant-design/icons";
 import {useEffect, useState} from "react";
 
-export default function Project(props) {
+export default function Works(props) {
     const {t} = useTranslation();
     const [trans, setTrans] = useState('');
     const [width, setWidth] = useState(500);
     const [currentSlide, setCurrentSlide] = useState(0);
-    const data = props.data ? props.data : [
+    const data = props.data ? props.data : [{
+        title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
+        body: t('works.datech.body'),
+        image: 'viet247-logo.png',
+        link: 'https://viet247.vn',
+        tags: ['React', 'JavaScript']
+    },
         {
             title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
             body: t('works.datech.body'),
@@ -18,39 +24,25 @@ export default function Project(props) {
             tags: ['React', 'JavaScript']
         },
         {
-            title: t('projects.ems.name'),
-            body: t('projects.ems.body'),
-            image: 'ems.jpg',
-            link: 'https://exam-management-system-z76m.onrender.com/graphql',
-            github: 'https://github.com/locnguyen2k2/exam-management-system/',
-            tags: ['NestJS', 'MongoDB', 'GraphQL', 'Apollo', 'TypeScript']
-        }, {
-            title: t('projects.lms.name'),
-            body: t('projects.lms.body'),
-            github: 'https://github.com/locnguyen2k2/laboratory-management-system',
-            link: 'https://laboratory-management-system.onrender.com/apis',
-            image: 'labs.jpg',
-            tags: ['NestJS', 'MySQL', 'TypeORM', 'SwaggerAPI', 'TypeScript']
-        }, {
-            title: t('projects.hiCoffeePos.name'),
-            body: t('projects.hiCoffeePos.body'),
-            image: 'hicoffee-management.jpg',
-            link: '',
-            github: 'https://github.com/locnguyen2k2/hi-coffee-management-system',
-            tags: ['Php(core - MVC)', 'JavaScript', 'Ajax', 'Axios', 'WebSocket(Ratchet)', 'Phpmailer', 'Bootstrap5', 'HTML', 'CSS'],
-        }, {
-            title: t('projects.hiCoffeeApp.name'),
-            body: t('projects.hiCoffeeApp.body'),
-            github: 'https://github.com/locnguyen2k2/hi-coffee-order-application',
-            link: '',
-            image: 'hicoffee-mobile.jpg',
-            tags: ['React-Native', 'Axios', 'Redux', 'TailwindCSS']
-        }, {
-            title: t('projects.lmsApp.name'),
-            body: t('projects.lmsApp.body'),
-            github: 'https://github.com/locnguyen2k2/laboratory-management-application',
-            image: 'labs-app.jpg',
-            tags: ['React-Native', 'Axios', 'Redux', 'TailwindCSS']
+            title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
+            body: t('works.datech.body'),
+            image: 'viet247-logo.png',
+            link: 'https://viet247.vn',
+            tags: ['React', 'JavaScript']
+        },
+        {
+            title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
+            body: t('works.datech.body'),
+            image: 'viet247-logo.png',
+            link: 'https://viet247.vn',
+            tags: ['React', 'JavaScript']
+        },
+        {
+            title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
+            body: t('works.datech.body'),
+            image: 'viet247-logo.png',
+            link: 'https://viet247.vn',
+            tags: ['React', 'JavaScript']
         }]
 
     const onNext = () => {
@@ -82,7 +74,7 @@ export default function Project(props) {
                 setWidth(500)
             }
         })
-    }, [window.location.pathname]);
+    }, []);
 
     return (<>
         <div className={`project ${props.className ? props.className : ''}`}>

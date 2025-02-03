@@ -2,7 +2,7 @@
   "navigation": {
     "home": "Home",
     "about": "About",
-    "projects": "Projects",
+    "projects": "Projects & Works",
     "skill": "Skills",
     "resume": "Resume"
   },
@@ -22,8 +22,18 @@
     },
     "name": "Loc Nguyen",
     "major": "Software Engineer",
-    "profile": "I am a software engineer seeking an opportunity to apply for a backend developer position. I have been working with JavaScript, TypeScript, NestJS, MySQL, and MongoDB on many projects. I am genuinely interested in and passionate about web development, which drives me to keep learning and practicing. I am always striving to improve my skills and solve problems.",
+    "profile": "I am a software engineer seeking an opportunity to apply for a fullstack developer position. I have been working with JavaScript, TypeScript, NestJS, MySQL, and MongoDB on many projects. I am genuinely interested in and passionate about web development, which drives me to keep learning and practicing. I am always striving to improve my skills and solve problems.",
     "contact": "The easiest way to connect with me: "
+  },
+  "works": {
+    "title": {
+      "works": "Works"
+    },
+    "datech": {
+      "name": "DANG AN TECH COMPANY LIMITED (DA.Tech)",
+      "time": "04/2024 - Present",
+      "body": "Frontend developer - Collaborated to develop and convert the frontend for POS System Viet247.vn and integrated economical invoices"
+    }
   },
   "projects": {
     "title": {

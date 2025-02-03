@@ -2,7 +2,7 @@
   "navigation": {
     "home": "Trang chủ",
     "about": "Thông tin",
-    "projects": "Các dự án",
+    "projects": "Các dự án & Công việc",
     "skill": "Kỹ năng",
     "resume": "Hồ sơ"
   },
@@ -22,8 +22,18 @@
     },
     "name": "Nguyễn Tấn Lộc",
     "major": "Kỹ sư phần mềm",
-    "profile": "Tôi là một kỹ sư phần mềm đang tìm cơ hội ứng tuyển vị trí lập trình viên backend. Từng làm việc với JavaScript, TypeScript, NestJS, MySQL và MongoDB và một số khác trong các dự án cá nhân. Chính sự yêu thích cũng như niềm đam mê với lập trình web luôn thúc đẩy tôi tiếp tục học và luyện tập để nâng cao kỹ năng bản thân và giải quyết các vấn đề.",
+    "profile": "Tôi là một kỹ sư phần mềm đang tìm cơ hội ứng tuyển vị trí lập trình viên fullstack. Từng làm việc với JavaScript, TypeScript, NestJS, MySQL và MongoDB và một số khác trong các dự án cá nhân. Chính sự yêu thích cũng như niềm đam mê với lập trình web luôn thúc đẩy tôi tiếp tục học và luyện tập để nâng cao kỹ năng bản thân và giải quyết các vấn đề.",
     "contact": "Liên hệ với tôi thông qua các kênh: "
+  },
+  "works": {
+    "title": {
+      "works": "Công việc"
+    },
+    "datech": {
+      "name": "CTY TNHH MTV Đăng An Tech (DA.Tech)",
+      "time": "04/2024 - Hiện tại",
+      "body": "Tham gia vào dự án hệ thống POS Việt 247 với vị trí lập trình viên frontend (React)."
+    }
   },
   "projects": {
     "title": {

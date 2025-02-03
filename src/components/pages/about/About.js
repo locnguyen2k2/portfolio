@@ -8,6 +8,7 @@ import CustomInput from "../../atoms/Input/Input";
 import IconButton from "../../atoms/Button/IconButton";
 import axios from "axios";
 import Project from "../project/Project";
+import Works from "../works/Works";
 
 export default function About() {
     const {t} = useTranslation();
@@ -15,6 +16,43 @@ export default function About() {
     const [name, setName] = useState("");
     const [content, setContent] = useState("");
     const [email, setEmail] = useState("");
+
+    const projects = [
+        {
+            title: t('projects.ems.name'),
+            body: t('projects.ems.body'),
+            image: 'ems.jpg',
+            link: 'https://exam-management-system-z76m.onrender.com/graphql',
+            github: 'https://github.com/locnguyen2k2/exam-management-system/',
+            tags: ['NestJS', 'MongoDB', 'GraphQL', 'Apollo', 'TypeScript']
+        }, {
+            title: t('projects.lms.name'),
+            body: t('projects.lms.body'),
+            github: 'https://github.com/locnguyen2k2/laboratory-management-system',
+            link: 'https://laboratory-management-system.onrender.com/apis',
+            image: 'labs.jpg',
+            tags: ['NestJS', 'MySQL', 'TypeORM', 'SwaggerAPI', 'TypeScript']
+        }, {
+            title: t('projects.hiCoffeePos.name'),
+            body: t('projects.hiCoffeePos.body'),
+            image: 'hicoffee-management.jpg',
+            link: '',
+            github: 'https://github.com/locnguyen2k2/hi-coffee-management-system',
+            tags: ['Php(core - MVC)', 'JavaScript', 'Ajax', 'Axios', 'WebSocket(Ratchet)', 'Phpmailer', 'Bootstrap5', 'HTML', 'CSS'],
+        }, {
+            title: t('projects.hiCoffeeApp.name'),
+            body: t('projects.hiCoffeeApp.body'),
+            github: 'https://github.com/locnguyen2k2/hi-coffee-order-application',
+            link: '',
+            image: 'hicoffee-mobile.jpg',
+            tags: ['React-Native', 'Axios', 'Redux', 'TailwindCSS']
+        }, {
+            title: t('projects.lmsApp.name'),
+            body: t('projects.lmsApp.body'),
+            github: 'https://github.com/locnguyen2k2/laboratory-management-application',
+            image: 'labs-app.jpg',
+            tags: ['React-Native', 'Axios', 'Redux', 'TailwindCSS']
+        }]
 
     async function sendEmail() {
         alert(t('mailer.sending'))
@@ -56,9 +94,13 @@ export default function About() {
                         {t('about.profile')}
                     </p>
                     <p>
+                        {t('works.title.works')}:
+                    </p>
+                    <Works className={'slider'}/>
+                    <p>
                         {t('projects.title.projects')}:
                     </p>
-                    <Project className={'slider'}/>
+                    <Project className={'slider'} data={projects}/>
                     <div className={'contact'}>
                         <Label content={t('about.title.contact')}/>
                         <p>

@@ -55,7 +55,7 @@ export default function Card(props) {
                                     padding: '3px 5px'
                                 }}
                                 border={true}
-                                icon={<a href={`${props.link}`}><LinkOutlined/> Demo</a>}
+                                icon={<a href={`${props.link}`}><LinkOutlined/> Link</a>}
                                 handleAction={() => {
                                 }}
                             />}
