@@ -75,13 +75,13 @@ export default function About() {
 
     return (
         <div id={'about'} className={`${language}`}>
-            <div className={'welcome'}>
+            <div className={'welcome fade-effect'}>
                 <Label content={t('greeting')}/>
             </div>
             <div className={'my-self'}>
-                <div className={'content fade-effect'}>
+                <div className={'content'}>
                     <div className={'info'}>
-                        <div>
+                        <div className={'fade-effect'}>
                             <Label content={'Loc Nguyen'}/>
                             <p><i>{t('about.major')}</i></p>
                         </div>
@@ -90,7 +90,7 @@ export default function About() {
                             height: '269px'
                         }} blur={true} image={'avatar.png'}/>
                     </div>
-                    <p>
+                    <p className={'fade-effect'}>
                         {t('about.profile')}
                     </p>
                     <p>
