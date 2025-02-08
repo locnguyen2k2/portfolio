@@ -6,16 +6,16 @@ import IconButton from "../../atoms/Button/IconButton";
 
 export default function Card(props) {
     return (
-        <div className={`card ${props.className ? props.className : ""} fade-effect`}
+        <div className={`card ${props.className ? props.className : ""}`}
              style={{
                  ...(props.style && props.style),
-                 ...(props?.blur && {'backdrop-filter': 'blur(12px)'})
+                 ...(props?.blur && {backdropFilter: 'blur(12px)'})
              }}
         >
-            <div className="card-header">
-                {props.image && <Image border={true} image={props.image}/>}
+            <div className="card-header fade-effect">
+                {props.image && <Image image={props.image}/>}
             </div>
-            <div className="card-body">
+            <div className="card-body fade-effect">
                 {
                     props?.title && <Label content={props.title}/>
                 }

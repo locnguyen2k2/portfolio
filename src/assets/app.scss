@@ -88,6 +88,8 @@ main {
     position: relative;
     overflow-y: scroll;
     height: calc(100vh - 56px);
+    max-width: 1200px;
+    margin: 0 auto;
 
     /* Slider CSS */
     .slider {

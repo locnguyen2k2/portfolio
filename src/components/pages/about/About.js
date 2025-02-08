@@ -93,20 +93,16 @@ export default function About() {
                     <p className={'fade-effect'}>
                         {t('about.profile')}
                     </p>
-                    <p>
-                        {t('works.title.works')}:
-                    </p>
+                    <Label content={t('works.title.works')}/>
                     <Works className={'slider'}/>
-                    <p>
-                        {t('projects.title.projects')}:
-                    </p>
+                    <Label content={t('projects.title.projects')}/>
                     <Project className={'slider'} data={projects}/>
                     <div className={'contact'}>
                         <Label content={t('about.title.contact')}/>
                         <p>
                             {t('about.contact')} <a
                             href={'mailto:locnguyen071102@gmail.com'}><i>Email</i></a>, <a
-                            href={'https://www.linkedin.com/in/nguyen-loc-171793311/'}><i> LinkedIn</i></a>,
+                            href={'https://www.linkedin.com/in/loc-nguyen-171793311/'}><i> LinkedIn</i></a>,
                             <a href={'https://www.facebook.com/nguyentanloc0711/'}><i> Facebook</i></a>.
                         </p>
                     </div>

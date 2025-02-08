@@ -8,7 +8,7 @@ export default function Image(props) {
                      style={{
                          ...(props?.style && props.style),
                          ...(props?.blur && {
-                             'backdrop-filter': 'blur(8px)'
+                             backdropFilter: 'blur(8px)'
                          })
                      }}
                      alt={`picture-${props.image}`} src={require(`./../../../assets/public/${props.image}`)}/>

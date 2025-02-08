@@ -3,7 +3,6 @@ import CardList from "../../organisms/List/CardList";
 import './skill.scss';
 import Label from "../../atoms/Lable/Label";
 import Skeleton from "../../molecules/Skeleton/Skeleton";
-import {useEffect, useState} from "react";
 
 const frontend = [{
     body: <img
@@ -110,7 +109,7 @@ const tools = [{
 
 export default function Skill() {
     return (<div className={'skills'}>
-        <Label content={``}/>
+        <Label content={`My tech stacks`}/>
         <Skeleton/>
         <CardList effect={true} title={'Backend'} data={backend}/>
         <CardList effect={true} title={'Database'} data={database}/>
