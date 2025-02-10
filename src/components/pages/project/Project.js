@@ -92,7 +92,7 @@ export default function Project(props) {
                 <VerticalLeftOutlined
                     onClick={onNext}/>
             </div> : <></>}
-            <CardList effect={true} title={props.data ? '' : 'My works & projects'} trans={trans}
+            <CardList effect={true} title={props.data ? '' : t('projects&works')} trans={trans}
                       data={props.data ? props.data : data}/>
         </div>
     </>)

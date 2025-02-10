@@ -4,6 +4,7 @@
     "about": "Thông tin",
     "projects": "Các dự án & Công việc",
     "skill": "Kỹ năng",
+    "contact": "Liên hệ",
     "resume": "Hồ sơ"
   },
   "mailer": {
@@ -26,19 +27,20 @@
     "contact": "Liên hệ với tôi thông qua các kênh: "
   },
   "works": {
-    "title": {
-      "works": "Công việc"
-    },
+    "title": "Công việc",
     "datech": {
       "name": "CTY TNHH MTV Đăng An Tech (DA.Tech)",
       "time": "04/2024 - Hiện tại",
-      "body": "Tham gia vào dự án hệ thống POS Việt 247 với vị trí lập trình viên frontend (React)."
+      "body": "Tham gia vào dự án hệ thống POS Việt 247 với vị trí lập trình viên frontend (React), cùng các thành viên phát triển giao diện và tích hợp hóa đơn điện tử(Viettel, Mobifone)."
     }
   },
+  "skills": {
+    "title": "Các cộng nghệ sử dụng"
+  },
+  "projects&works": "Công việc và dự án",
+  "social": "Mạng xã hội: ",
   "projects": {
-    "title": {
-      "projects": "Sản phẩm đã làm"
-    },
+    "title": "Các dự án",
     "ems": {
       "name": "Quản lý đề thi và câu hỏi trắc nghiệm",
       "body": "Hệ thống gồm: Tạo bộ đề ngẫu nhiên với tỷ lệ đầu vào, quản lý đề thi, quản lý câu hỏi và phân loại theo loại và độ khó, quản lý chương, quản lý chương học phần, quản lý học phần, quản lý lớp học phần."

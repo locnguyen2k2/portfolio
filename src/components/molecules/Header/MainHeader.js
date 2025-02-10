@@ -68,19 +68,24 @@ export default function MainHeader({...props}) {
                     {path.map((item, index) => (
                         <li key={index}>
                             {
-                                item?.link ?
-                                    <Link className={`${isActiveTab === item.link ? 'active' : ''}`}
-                                          to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
-                                    :
-                                    // eslint-disable-next-line
-                                    <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.f82143ff0378e700db98.pdf')}>
-                                        <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
-                                    </a>}
+                                item.link && <Link className={`${isActiveTab === item.link ? 'active' : ''}`}
+                                                   to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
+
+                            }
+                            {
+                                item.name === 'resume' &&
+                                <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.f82143ff0378e700db98.pdf')}>
+                                    <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
+                                </a>
+                            }
                         </li>
                     ))}
                 </ul>
             </div>
             <div className={"right"}>
+                <IconButton width={35} height={35} handleAction={() => toggleTheme()}
+                            icon={theme === 'dark' ? <SunOutlined/> : <MoonOutlined/>}/>
+                
                 <div className={'image'}>
                     <span className={'label'}
                           style={{display: 'flex', alignItems: 'center'}}>{languages[language]?.name}</span>
@@ -89,8 +94,6 @@ export default function MainHeader({...props}) {
                                     <Image style={{width: '100%', height: '100%'}}
                                            image={languages[language]?.flag || 'vn_flag.png'}/>}/>
                 </div>
-                <IconButton width={35} height={35} handleAction={() => toggleTheme()}
-                            icon={theme === 'dark' ? <SunOutlined/> : <MoonOutlined/>}/>
 
                 <div className={`mobile-menu`} onClick={toggleMenu}>
                     <div className="bars">

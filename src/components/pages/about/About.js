@@ -78,6 +78,18 @@ export default function About() {
             <div className={'welcome fade-effect'}>
                 <Label content={t('greeting')}/>
             </div>
+            <div className={"quote"} style={{
+                display: "flex",
+                justifyContent: "center"
+            }}>
+                <p style={{
+                    maxWidth: "500px"
+                }}>
+                    “Try and leave this world a little better than you found it, and when your turn comes to die you can
+                    die happy in feeling that at any rate you have not wasted your time but have done your best.”
+                    <br/><u><i style={{fontSize: "0.9rem"}}>Robert Baden-Powell</i></u>
+                </p>
+            </div>
             <div className={'my-self'}>
                 <div className={'content'}>
                     <div className={'info'}>
@@ -93,20 +105,21 @@ export default function About() {
                     <p className={'fade-effect'}>
                         {t('about.profile')}
                     </p>
-                    <Label content={t('works.title.works')}/>
+                    <Label content={t('works.title')}/>
                     <Works className={'slider'}/>
-                    <Label content={t('projects.title.projects')}/>
+                    <Label content={t('projects.title')}/>
                     <Project className={'slider'} data={projects}/>
                     <div className={'contact'}>
                         <Label content={t('about.title.contact')}/>
                         <p>
-                            {t('about.contact')} <a
-                            href={'mailto:locnguyen071102@gmail.com'}><i>Email</i></a>, <a
-                            href={'https://www.linkedin.com/in/loc-nguyen-171793311/'}><i> LinkedIn</i></a>,
-                            <a href={'https://www.facebook.com/nguyentanloc0711/'}><i> Facebook</i></a>.
+                            {t('about.contact')}
+                            <br/><a href={'mailto:locnguyen071102@gmail.com'}><i>Email</i></a>,
+                            <a href={'https://www.linkedin.com/in/loc-nguyen-171793311/'}><i> LinkedIn</i></a>,
+                            <a href={'https://www.facebook.com/nguyentanloc0711/'}><i> Facebook</i></a>,
+                            <a href={'https://www.tiktok.com/@_locnguyen.dev'}><i> Tiktok</i></a>.
                         </p>
                     </div>
-                    <Label content={t('about.title.feedback')}/>
+                    {/*<Label content={t('about.title.feedback')}/>*/}
                     <div className={'feedback-info'}>
                         <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
                                      title={t('mailer.name')} type={'text'}/>
