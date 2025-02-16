@@ -4,11 +4,11 @@ import Label from "../../atoms/Lable/Label";
 import {useTranslation} from "react-i18next";
 import {useContext, useState} from "react";
 import {Context} from "../../../Context";
-import CustomInput from "../../atoms/Input/Input";
-import IconButton from "../../atoms/Button/IconButton";
 import axios from "axios";
 import Project from "../project/Project";
 import Works from "../works/Works";
+import * as _ from 'lodash';
+import ContactForm from "../../organisms/Forms/Contact";
 
 export default function About() {
     const {t} = useTranslation();
@@ -55,18 +55,28 @@ export default function About() {
         }]
 
     async function sendEmail() {
-        alert(t('mailer.sending'))
-        axios.post('https://laboratory-management-system.onrender.com/apis/feed-back', {
-            from: email,
-            content: content,
-            key: process.env.REACT_APP_MAILER_PASSWORD
-        }).then((result) => {
-            alert(t('mailer.success'))
-        }).catch(() => alert(t('mailer.failed'))).finally(() => {
-            setContent("");
-            setEmail("");
-            setName("");
-        })
+        let error = false;
+        if (_.isEmpty(content.replaceAll(" ", "")) ||
+            _.isEmpty(name.replaceAll(" ", "")) ||
+            _.isEmpty(email.replaceAll(" ", ""))) {
+            error = true;
+            alert(t('mailer.isValid'))
+        }
+
+        if (!error) {
+            alert(t('mailer.sending'))
+            axios.post('https://laboratory-management-system.onrender.com/apis/feed-back', {
+                from: email,
+                content: `${name}: ${content}`,
+                key: process.env.REACT_APP_MAILER_PASSWORD
+            }).then((result) => {
+                alert(t('mailer.success'))
+            }).catch(() => alert(t('mailer.failed'))).finally(() => {
+                setContent("");
+                setEmail("");
+                setName("");
+            })
+        }
     }
 
     const onSubmit = async () => {
@@ -100,7 +110,7 @@ export default function About() {
                         <Image style={{
                             width: '205px',
                             height: '269px'
-                        }} blur={true} image={'avatar.png'}/>
+                        }} border={true} blur={true} image={'avatar.png'}/>
                     </div>
                     <p className={'fade-effect'}>
                         {t('about.profile')}
@@ -118,22 +128,17 @@ export default function About() {
                             <a href={'https://www.facebook.com/nguyentanloc0711/'}><i> Facebook</i></a>,
                             <a href={'https://www.tiktok.com/@_locnguyen.dev'}><i> Tiktok</i></a>.
                         </p>
+                        {/*<Label content={t('about.title.feedback')}/>*/}
+                        <ContactForm
+                            onSubmit={onSubmit}
+                            name={name}
+                            email={email}
+                            content={content}
+                            setEmail={setEmail}
+                            setName={setName}
+                            setContent={setContent}
+                        />
                     </div>
-                    {/*<Label content={t('about.title.feedback')}/>*/}
-                    <div className={'feedback-info'}>
-                        <CustomInput value={name} onChange={(e) => setName(e.target.value)} width={'100%'} lines={3}
-                                     title={t('mailer.name')} type={'text'}/>
-                        <CustomInput
-                            type={'email'}
-                            value={email} onChange={(e) => setEmail(e.target.value)} width={'100%'}
-                            lines={3}
-                            title={t('mailer.email')} type={'email'}/>
-                    </div>
-                    <CustomInput value={content} onChange={(e) => setContent(e.target.value)} width={'100%'}
-                                 lines={10} title={t('mailer.content')} type={'textarea'}/>
-                    <IconButton border={true} width={100} height={'max-content'}
-                                handleAction={onSubmit}
-                                icon={<p style={{padding: 0, textAlign: 'center', fontSize: 'small'}}>Send</p>}/>
                 </div>
             </div>
         </div>

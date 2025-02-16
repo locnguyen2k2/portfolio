@@ -10,15 +10,11 @@ export default function CardList(props) {
                 {
                     props.data.map((item, key) => {
                         return (<Card key={key} image={item.image}
-                                      title={item.title}
-                                      body={item.body}
+                                      {...item}
                                       blur={true}
                                       style={props?.trans && {
                                           transform: `translateX(${props.trans})`
                                       }}
-                                      github={item.github}
-                                      link={item.link}
-                                      tags={item?.tags ? item.tags : []}
                         />)
                     })
 

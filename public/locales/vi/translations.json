@@ -8,6 +8,7 @@
     "resume": "Hồ sơ"
   },
   "mailer": {
+    "isValid": "Vui lòng nhập đủ thông tin!",
     "sending": "Đã gửi phản hồi!",
     "success": "Gửi phản hồi thành công!",
     "failed": "Gửi phản hồi thất bại!",

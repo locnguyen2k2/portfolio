@@ -8,6 +8,7 @@
     "resume": "Resume"
   },
   "mailer": {
+    "isValid": "Name, email or content is empty",
     "sending": "Your mail is sending!",
     "success": "Successfully!",
     "failed": "Failed!",

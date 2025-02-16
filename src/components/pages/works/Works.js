@@ -1,5 +1,5 @@
 import './../project/Project.scss'
-import CardList from "../../organisms/List/CardList";
+import CardList from "../../organisms/Lists/CardList";
 import {useTranslation} from "react-i18next";
 import {VerticalLeftOutlined, VerticalRightOutlined} from "@ant-design/icons";
 import {useEffect, useState} from "react";

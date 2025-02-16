@@ -9,11 +9,18 @@ export default function Card(props) {
         <div className={`card ${props.className ? props.className : ""}`}
              style={{
                  ...(props.style && props.style),
-                 ...(props?.blur && {backdropFilter: 'blur(12px)'})
+                 ...(props?.blur && {backdropFilter: 'blur(3px)'})
              }}
         >
-            <div className="card-header fade-effect">
+            <div className="card-header fade-effect"
+                 style={{
+                     display: "flex",
+                     flexDirection: "column",
+                     alignItems: "center",
+                 }}
+            >
                 {props.image && <Image image={props.image}/>}
+                {props.time && <h3><i>{props.time}</i></h3>}
             </div>
             <div className="card-body fade-effect">
                 {

@@ -10,7 +10,14 @@ import {useTranslation} from "react-i18next";
 
 export default function MainHeader({...props}) {
     const {t} = useTranslation();
-    const {theme, language, toggleTheme, toggleLanguage} = useContext(Context);
+    const {
+        isLoading,
+        toggleHandleChangeLoadingStatus,
+        theme,
+        language,
+        toggleHandleChangeTheme,
+        toggleHandleChangeLanguage
+    } = useContext(Context);
     const [isClickBar, setIsClickBar] = useState(false);
     const [isActiveTab, setIsActiveTab] = useState('/');
     const [barsState] = useState([`CloseLHead`, `OpenLHeadOne`, `CloseLHead`, `OpenLHeadTwo`]);
@@ -83,13 +90,13 @@ export default function MainHeader({...props}) {
                 </ul>
             </div>
             <div className={"right"}>
-                <IconButton width={35} height={35} handleAction={() => toggleTheme()}
+                <IconButton width={35} height={35} handleAction={() => toggleHandleChangeTheme()}
                             icon={theme === 'dark' ? <SunOutlined/> : <MoonOutlined/>}/>
-                
+
                 <div className={'image'}>
                     <span className={'label'}
                           style={{display: 'flex', alignItems: 'center'}}>{languages[language]?.name}</span>
-                    <IconButton width={35} height={35} handleAction={() => toggleLanguage()}
+                    <IconButton width={35} height={35} handleAction={() => toggleHandleChangeLanguage()}
                                 icon={
                                     <Image style={{width: '100%', height: '100%'}}
                                            image={languages[language]?.flag || 'vn_flag.png'}/>}/>

@@ -1,4 +1,4 @@
-import CardList from "../../organisms/List/CardList";
+import CardList from "../../organisms/Lists/CardList";
 
 import './skill.scss';
 import Label from "../../atoms/Lable/Label";
