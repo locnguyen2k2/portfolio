@@ -11,6 +11,13 @@ export default function Project(props) {
     const [currentSlide, setCurrentSlide] = useState(0);
     const data = props.data ? props.data : [
         {
+            title: `${t('works.teknix.name')}`,
+            body: t('works.teknix.body'),
+            image: 'teknix.svg',
+            time: `${t('works.teknix.time')}`,
+            link: 'https://www.teknix.vn/',
+            tags: ['NestJS', 'NodeJS', 'SwaggerAPI', 'TypeScript', 'PostgresQL', 'Prisma', 'Go', 'Prometheus', 'Kraken', 'Grafana', 'Docker', 'Neo4j', 'Redis', 'RabbitMQ']
+        },{
             title: `${t('works.datech.name')}`,
             body: t('works.datech.body'),
             image: 'viet247-logo.png',

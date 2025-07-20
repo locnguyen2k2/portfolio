@@ -29,6 +29,11 @@
   },
   "works": {
     "title": "Works",
+    "teknix": {
+      "name": "Teknix Corporation",
+      "time": "03/2025 - Present",
+      "body": "Participated in building projects as a Backend Developer: Centralized Wallet (Centralized wallet system), Affiliate Community (Reward points system)."
+    },
     "datech": {
       "name": "DANG AN TECH COMPANY LIMITED (DA.Tech)",
       "time": "04/2024 - Present",

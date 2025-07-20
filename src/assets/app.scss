@@ -148,6 +148,18 @@ main {
         }
       }
     }
+    .project.slider.works {
+      .list-card {
+        width: 100%;
+        overflow: hidden;
+
+        .cards {
+          width: calc(100% * 2);
+          flex-direction: row;
+          flex-wrap: nowrap;
+        }
+      }
+    }
   }
 }
 

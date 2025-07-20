@@ -29,6 +29,11 @@
   },
   "works": {
     "title": "Công việc",
+    "teknix": {
+      "name": "Teknix Corporation",
+      "time": "03/2025 - Hiện tại",
+      "body": "Tham gia xây dựng các dự án với vai trò Backend Developer: Centralized Wallet( Hệ thống ví tập trung), Affiliate Community( Hệ thống điểm thưởng)."
+    },
     "datech": {
       "name": "CTY TNHH MTV Đăng An Tech (DA.Tech)",
       "time": "04/2024 - Hiện tại",

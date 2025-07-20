@@ -9,19 +9,13 @@ export default function Works(props) {
     const [trans, setTrans] = useState('');
     const [width, setWidth] = useState(500);
     const [currentSlide, setCurrentSlide] = useState(0);
-    const data = props.data ? props.data : [{
-        title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
-        body: t('works.datech.body'),
-        image: 'viet247-logo.png',
-        link: 'https://viet247.vn',
-        tags: ['React', 'JavaScript']
-    },
+    const data = props.data ? props.data : [
         {
-            title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
-            body: t('works.datech.body'),
-            image: 'viet247-logo.png',
-            link: 'https://viet247.vn',
-            tags: ['React', 'JavaScript']
+            title: `${t('works.teknix.name')} - (${t('works.teknix.time')})`,
+            body: t('works.teknix.body'),
+            image: 'teknix.svg',
+            link: 'https://www.teknix.vn/',
+            tags: ['NetJS', 'Go', 'PostgresQL', 'Prisma', 'SwaggerAPI', 'TypeScript', 'NodeJS', 'Prometheus']
         },
         {
             title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
@@ -30,20 +24,28 @@ export default function Works(props) {
             link: 'https://viet247.vn',
             tags: ['React', 'JavaScript']
         },
-        {
-            title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
-            body: t('works.datech.body'),
-            image: 'viet247-logo.png',
-            link: 'https://viet247.vn',
-            tags: ['React', 'JavaScript']
-        },
-        {
-            title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
-            body: t('works.datech.body'),
-            image: 'viet247-logo.png',
-            link: 'https://viet247.vn',
-            tags: ['React', 'JavaScript']
-        }]
+        // {
+        //     title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
+        //     body: t('works.datech.body'),
+        //     image: 'viet247-logo.png',
+        //     link: 'https://viet247.vn',
+        //     tags: ['React', 'JavaScript']
+        // },
+        // {
+        //     title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
+        //     body: t('works.datech.body'),
+        //     image: 'viet247-logo.png',
+        //     link: 'https://viet247.vn',
+        //     tags: ['React', 'JavaScript']
+        // },
+        // {
+        //     title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
+        //     body: t('works.datech.body'),
+        //     image: 'viet247-logo.png',
+        //     link: 'https://viet247.vn',
+        //     tags: ['React', 'JavaScript']
+        // }
+    ]
 
     const onNext = () => {
         let slide = (currentSlide < data.length - 1) ? currentSlide + 1 : 0;
@@ -77,7 +79,7 @@ export default function Works(props) {
     }, []);
 
     return (<>
-        <div className={`project ${props.className ? props.className : ''}`}>
+        <div className={`project ${props.className ? props.className : ''} works`}>
             {props.className === 'slider' ? <div className={'slide-control'}>
                 <VerticalRightOutlined
                     onClick={onPrev}/>

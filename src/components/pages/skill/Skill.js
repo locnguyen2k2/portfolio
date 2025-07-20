@@ -5,7 +5,8 @@ import Label from "../../atoms/Lable/Label";
 import Skeleton from "../../molecules/Skeleton/Skeleton";
 import {useTranslation} from "react-i18next";
 
-const frontend = [{
+const frontend = [
+    {
     body: <img
         src="https://img.shields.io/badge/React-FFF?logo=react&logoColor=0170FE&link=https%3A%2F%2Freact.dev"
         alt="React Badge"/>,
@@ -63,6 +64,10 @@ const backend = [{
     body: <img
         src="https://img.shields.io/badge/TypeScript-FFF?logo=TypeScript&logoColor=3178C6&link=https%3A%2F%2Fwww.typescriptlang.org%2F"
         alt="TypeScript Badge"/>,
+},  {
+    body: <img
+        src="https://img.shields.io/badge/Go-FFF?logo=go&logoColor=0170FE&link=https%3A%2F%go.dev"
+        alt="React Badge"/>,
 }, {
     body: <img
         src="https://img.shields.io/badge/JavaScript-FFF?logo=JavaScript&logoColor=F7DF1E&link=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript"
@@ -85,6 +90,14 @@ const database = [{
     body: <img
         src="https://img.shields.io/badge/MySQL-4479A1?logo=MySQL&logoColor=FFF&link=https%3A%2F%2Fwww.mysql.com%2F"
         alt="MySQL Badge"/>,
+},{
+    body: <img
+        src="https://img.shields.io/badge/PostgresQL-4479A1?logo=PostgresQL&logoColor=FFF&link=https%3A%2F%2Fwww.mysql.com%2F"
+        alt="MySQL Badge"/>,
+},{
+    body: <img
+        src="https://img.shields.io/badge/Prisma-4479A1?logo=Prisma&logoColor=FFF&link=https%3A%2F%2Fwww.mysql.com%2F"
+        alt="MySQL Badge"/>,
 }, {
     body: <img
         src="https://img.shields.io/badge/MongoDB-00ed64?logo=MongoDB&logoColor=FFF&link=https%3A%2F%2Fwww.mongodb.com/docs%2F"
@@ -94,6 +107,18 @@ const database = [{
 const devops = [{
     body: <img
         src="https://img.shields.io/badge/Gitlab-FFF?logo=gitlab&logoColor=fc6d26&link=https%3A%2F%2Fdocs.gitlab.com"
+        alt="Gitlab Badge"/>,
+},{
+    body: <img
+        src="https://img.shields.io/badge/Prometheus-FFF?logo=Prometheus&logoColor=fc6d26&link=https%3A%2F%2Fdocs.gitlab.com"
+        alt="Gitlab Badge"/>,
+},{
+    body: <img
+        src="https://img.shields.io/badge/Grafana-FFF?logo=Grafana&logoColor=fc6d26&link=https%3A%2F%2Fdocs.gitlab.com"
+        alt="Gitlab Badge"/>,
+},{
+    body: <img
+        src="https://img.shields.io/badge/Docker-FFF?logo=Docker&logoColor=3178C6&link=https%3A%2F%2Fdocs.gitlab.com"
         alt="Gitlab Badge"/>,
 }, {
     body: <img
