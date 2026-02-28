@@ -1,15 +1,15 @@
-import {GithubOutlined, MoonOutlined, SunOutlined} from '@ant-design/icons';
+import { GithubOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons';
 import IconButton from "../../atoms/Button/IconButton";
-import {Context} from "../../../Context";
-import {useContext, useEffect, useState} from "react";
+import { Context } from "../../../Context";
+import { useContext, useEffect, useState } from "react";
 import './Header.scss';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Image from "../../atoms/Image/Image";
-import {languages} from "../../../i18n";
-import {useTranslation} from "react-i18next";
+import { languages } from "../../../i18n";
+import { useTranslation } from "react-i18next";
 
-export default function MainHeader({...props}) {
-    const {t} = useTranslation();
+export default function MainHeader({ ...props }) {
+    const { t } = useTranslation();
     const {
         isLoading,
         toggleHandleChangeLoadingStatus,
@@ -48,7 +48,7 @@ export default function MainHeader({...props}) {
         },
         {
             title: "Source",
-            icon: <GithubOutlined/>,
+            icon: <GithubOutlined />,
             link: `https://github.com/locnguyen2k2`,
         }
     ]
@@ -62,7 +62,7 @@ export default function MainHeader({...props}) {
             <div className={`model ${isClickBar ? 'open' : ''}`}></div>
             <div className={"left"}>
                 <Link className={`logo`}
-                      to={`/`}>
+                    to={`/`}>
                     <span>LOCNGUYEN</span>
                 </Link>
             </div>
@@ -72,12 +72,12 @@ export default function MainHeader({...props}) {
                         <li key={index}>
                             {
                                 item.link && <Link className={`${isActiveTab === item.link ? 'active' : ''}`}
-                                                   to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
+                                    to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
 
                             }
                             {
                                 item.name === 'resume' &&
-                                <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.f82143ff0378e700db98.pdf')}>
+                                <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.d506dedd591fc052c551.pdf')}>
                                     <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
                                 </a>
                             }
@@ -87,15 +87,15 @@ export default function MainHeader({...props}) {
             </div>
             <div className={"right"}>
                 <IconButton width={35} height={35} handleAction={() => toggleHandleChangeTheme()}
-                            icon={theme === 'dark' ? <SunOutlined/> : <MoonOutlined/>}/>
+                    icon={theme === 'dark' ? <SunOutlined /> : <MoonOutlined />} />
 
                 <div className={'image'}>
                     <span className={'label'}
-                          style={{display: 'flex', alignItems: 'center'}}>{languages[language]?.name}</span>
+                        style={{ display: 'flex', alignItems: 'center' }}>{languages[language]?.name}</span>
                     <IconButton width={35} height={35} handleAction={() => toggleHandleChangeLanguage()}
-                                icon={
-                                    <Image style={{width: '100%', height: '100%'}}
-                                           image={languages[language]?.flag || 'vn_flag.png'}/>}/>
+                        icon={
+                            <Image style={{ width: '100%', height: '100%' }}
+                                image={languages[language]?.flag || 'vn_flag.png'} />} />
                 </div>
 
                 <div className={`mobile-menu`} onClick={toggleMenu}>
@@ -115,10 +115,10 @@ export default function MainHeader({...props}) {
                                     {
                                         item?.link ?
                                             <Link className={`${isActiveTab === item.link ? 'active' : ''}`}
-                                                  to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
+                                                to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
                                             :
                                             // eslint-disable-next-line
-                                            <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.f82143ff0378e700db98.pdf')}>
+                                            <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.d506dedd591fc052c551.pdf')}>
                                                 <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
                                             </a>}
                                 </li>
