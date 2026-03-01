@@ -78,12 +78,62 @@
 
     .card-body {
       .body {
-        height: 90px;
+        height: 290px;
         padding-right: 10px;
         overflow-y: scroll;
         scrollbar-width: thin;
         scroll-behavior: smooth;
         scrollbar-color: #e9c46a #264653;
+      }
+
+      .body-structured {
+        .body-role {
+          margin: 5px;
+          font-weight: 600;
+        }
+
+        .body-highlights {
+          margin: 5px 5px 5px 20px;
+          padding: 0;
+
+          li {
+            margin: 4px 0;
+          }
+        }
+
+        .body-projects {
+          margin: 5px;
+
+          .body-project {
+            margin: 10px 0;
+          }
+
+          .body-project-title {
+            font-weight: 700;
+            margin: 6px 0;
+          }
+
+          .body-project-summary {
+            margin: 4px 0;
+          }
+
+          .body-project-tech {
+            margin: 4px 0;
+          }
+
+          .body-project-resp-title {
+            margin: 6px 0 2px 0;
+          }
+
+          .body-project-resp {
+            margin: 0 0 0 20px;
+            padding: 0;
+
+            li {
+              margin: 4px 0;
+            }
+          }
+        }
       }
     }
   }

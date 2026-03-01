@@ -31,13 +31,47 @@
     "title": "Works",
     "teknix": {
       "name": "Teknix Corporation",
-      "time": "03/2025 - Present",
-      "body": "Participated in building projects as a Backend Developer: Centralized Wallet (Centralized wallet system), Affiliate Community (Reward points system)."
+      "time": "03/2025 - 03/2026",
+      "body": {
+        "role": "Back-End Developer (NestJS & Go)",
+        "projects": [
+          {
+            "title": "Centralized Wallet",
+            "summary": "Developed a backend API for centralized wallet operations supporting transaction on multiple networks",
+            "technologies": "NestJS, PostgresQL, CockroachDB, Clickhouse, OTEL, Permify, RabbitMQ, Ably.",
+            "responsibilities": [
+              "Wallet management and balance tracking across multiple blockchains.",
+              "Implemented real-time transaction processing for internal transfers, withdrawals, deposits, and swaps, including balance updates via message queue handlers, rollback mechanisms for failed transactions, and real-time notifications.",
+              "Built and integrated a financial fraud detection and transaction monitoring system by implementing a Sentinel platform for real-time transaction analysis and monitoring.",
+              "Designed and implemented permission system using Permify RBAC service with feature-based access control, ensuring secure API endpoints for dashboard operations."
+            ]
+          },
+          {
+            "title": "Real-time Chat & Social Platform",
+            "summary": "Implemented features including posts, approving management and reel-time notifications.",
+            "technologies": "Go (Gin), MongoDB, Peertube, R2 Cloudflare, NATs.",
+            "responsibilities": [
+              "Post Management: Multi-format post creation supporting images, text content, and rich media with metadata",
+              "Reels Management: Comprehensive reel system supporting video uploads, article-based reels, and scheduled publishing",
+              "Comment Management: Dynamic comment creation and management",
+              "Playlist Management: Dynamic playlist creation and management",
+              "Approval Workflow: Content moderation system with approval management for reels",
+              "Notifications: Real-time push notifications for likes, comments, and content updates"
+            ]
+          }
+        ]
+      }
     },
     "datech": {
       "name": "DANG AN TECH COMPANY LIMITED (DA.Tech)",
-      "time": "04/2024 - Present",
-      "body": "Frontend developer(React): Collaborated with teammates to develop & converted the frontend for POS System Viet247.vn and integrated economical invoices(Viettel, Mobifone)"
+      "time": "04/2024 - 03/2025",
+      "body": {
+        "role": "Frontend Developer (React)",
+        "highlights": [
+          "Collaborated with teammates to develop and convert the frontend for POS System Viet247.vn.",
+          "Integrated e-invoices (Viettel, Mobifone)."
+        ]
+      }
     }
   },
   "skills": {

@@ -31,13 +31,47 @@
     "title": "Công việc",
     "teknix": {
       "name": "Teknix Corporation",
-      "time": "03/2025 - Hiện tại",
-      "body": "Tham gia xây dựng các dự án với vai trò Backend Developer: Centralized Wallet( Hệ thống ví tập trung), Affiliate Community( Hệ thống điểm thưởng)."
+      "time": "03/2025 - 03/2026",
+      "body": {
+        "role": "Backend Developer (NestJS & Go)",
+        "projects": [
+          {
+            "title": "Centralized Wallet",
+            "summary": "Tham gia xây dựng backend APIs cho hệ thống ví tập trung, hỗ trợ giao dịch trên nhiều mạng.",
+            "technologies": "NestJS, PostgresQL, CockroachDB, Clickhouse, OTEL, Permify, RabbitMQ, Ably.",
+            "responsibilities": [
+              "Quản lý ví và theo dõi số dư trên nhiều blockchain.",
+              "Xây dựng xử lý giao dịch real-time cho chuyển nội bộ, rút, nạp và swap; cập nhật số dư thông qua message queue handlers; cơ chế rollback cho giao dịch thất bại; và thông báo real-time.",
+              "Xây dựng và tích hợp hệ thống phát hiện gian lận tài chính và giám sát giao dịch bằng cách triển khai nền tảng Sentinel cho phân tích/giám sát giao dịch real-time.",
+              "Thiết kế và triển khai hệ thống phân quyền sử dụng Permify RBAC với kiểm soát truy cập theo tính năng, đảm bảo bảo mật các API endpoints cho dashboard."
+            ]
+          },
+          {
+            "title": "Real-time Chat & Social Platform",
+            "summary": "Tham gia phát triển các tính năng như bài viết, duyệt nội dung và thông báo real-time.",
+            "technologies": "Go (Gin), MongoDB, Peertube, R2 Cloudflare, NATs.",
+            "responsibilities": [
+              "Post Management: Tạo bài viết đa định dạng hỗ trợ hình ảnh, nội dung văn bản, rich media và metadata",
+              "Reels Management: Xây dựng hệ thống reels hỗ trợ upload video, reels dạng bài viết và lên lịch đăng",
+              "Comment Management: Tạo và quản lý bình luận",
+              "Playlist Management: Tạo và quản lý playlist",
+              "Approval Workflow: Hệ thống kiểm duyệt nội dung với quy trình approve reels",
+              "Notifications: Push notifications real-time cho like, comment và cập nhật nội dung"
+            ]
+          }
+        ]
+      }
     },
     "datech": {
       "name": "CTY TNHH MTV Đăng An Tech (DA.Tech)",
-      "time": "04/2024 - Hiện tại",
-      "body": "Tham gia vào dự án hệ thống POS Việt 247 với vị trí lập trình viên frontend (React), cùng các thành viên phát triển giao diện và tích hợp hóa đơn điện tử(Viettel, Mobifone)."
+      "time": "04/2024 - 03/2025",
+      "body": {
+        "role": "Frontend Developer (React)",
+        "highlights": [
+          "Phối hợp cùng team phát triển/chuyển đổi giao diện cho hệ thống POS Viet247.vn.",
+          "Tích hợp hóa đơn điện tử (Viettel, Mobifone)."
+        ]
+      }
     }
   },
   "skills": {

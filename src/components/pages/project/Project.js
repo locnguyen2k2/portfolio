@@ -1,25 +1,32 @@
 import './Project.scss'
 import CardList from "../../organisms/Lists/CardList";
-import {useTranslation} from "react-i18next";
-import {VerticalLeftOutlined, VerticalRightOutlined} from "@ant-design/icons";
-import {useEffect, useState} from "react";
+import { useTranslation } from "react-i18next";
+import { VerticalLeftOutlined, VerticalRightOutlined } from "@ant-design/icons";
+import { useEffect, useState } from "react";
 
 export default function Project(props) {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const [trans, setTrans] = useState('');
     const [width, setWidth] = useState(500);
     const [currentSlide, setCurrentSlide] = useState(0);
     const data = props.data ? props.data : [
         {
             title: `${t('works.teknix.name')}`,
-            body: t('works.teknix.body'),
+            body: {
+                role: t('works.teknix.body.role'),
+                highlights: t('works.teknix.body.highlights', { returnObjects: true, defaultValue: [] }),
+                projects: t('works.teknix.body.projects', { returnObjects: true, defaultValue: [] })
+            },
             image: 'teknix.svg',
             time: `${t('works.teknix.time')}`,
             link: 'https://www.teknix.vn/',
             tags: ['NestJS', 'NodeJS', 'SwaggerAPI', 'TypeScript', 'PostgresQL', 'Prisma', 'Go', 'Prometheus', 'Kraken', 'Grafana', 'Docker', 'Neo4j', 'Redis', 'RabbitMQ']
-        },{
+        }, {
             title: `${t('works.datech.name')}`,
-            body: t('works.datech.body'),
+            body: {
+                role: t('works.datech.body.role'),
+                highlights: t('works.datech.body.highlights', { returnObjects: true, defaultValue: [] })
+            },
             image: 'viet247-logo.png',
             time: `${t('works.datech.time')}`,
             link: 'https://viet247.vn',
@@ -100,12 +107,12 @@ export default function Project(props) {
         <div className={`project ${props.className ? props.className : ''}`}>
             {props.className === 'slider' ? <div className={'slide-control'}>
                 <VerticalRightOutlined
-                    onClick={onPrev}/>
+                    onClick={onPrev} />
                 <VerticalLeftOutlined
-                    onClick={onNext}/>
+                    onClick={onNext} />
             </div> : <></>}
             <CardList effect={true} title={props.data ? '' : t('projects&works')} trans={trans}
-                      data={props.data ? props.data : data}/>
+                data={props.data ? props.data : data} />
         </div>
     </>)
 }

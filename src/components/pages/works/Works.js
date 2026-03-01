@@ -1,25 +1,33 @@
 import './../project/Project.scss'
 import CardList from "../../organisms/Lists/CardList";
-import {useTranslation} from "react-i18next";
-import {VerticalLeftOutlined, VerticalRightOutlined} from "@ant-design/icons";
-import {useEffect, useState} from "react";
+import { useTranslation } from "react-i18next";
+import { VerticalLeftOutlined, VerticalRightOutlined } from "@ant-design/icons";
+import { useEffect, useState } from "react";
 
 export default function Works(props) {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
+    const defaultWidth = 800
     const [trans, setTrans] = useState('');
-    const [width, setWidth] = useState(500);
+    const [width, setWidth] = useState(defaultWidth);
     const [currentSlide, setCurrentSlide] = useState(0);
     const data = props.data ? props.data : [
         {
             title: `${t('works.teknix.name')} - (${t('works.teknix.time')})`,
-            body: t('works.teknix.body'),
+            body: {
+                role: t('works.teknix.body.role'),
+                highlights: t('works.teknix.body.highlights', { returnObjects: true, defaultValue: [] }),
+                projects: t('works.teknix.body.projects', { returnObjects: true, defaultValue: [] })
+            },
             image: 'teknix.svg',
             link: 'https://www.teknix.vn/',
             tags: ['NetJS', 'Go', 'PostgresQL', 'Prisma', 'SwaggerAPI', 'TypeScript', 'NodeJS', 'Prometheus']
         },
         {
             title: `${t('works.datech.name')} - (${t('works.datech.time')})`,
-            body: t('works.datech.body'),
+            body: {
+                role: t('works.datech.body.role'),
+                highlights: t('works.datech.body.highlights', { returnObjects: true })
+            },
             image: 'viet247-logo.png',
             link: 'https://viet247.vn',
             tags: ['React', 'JavaScript']
@@ -60,20 +68,20 @@ export default function Works(props) {
     }
 
     const currentWidth = () => {
-        if (window.innerWidth < 500) {
+        if (window.innerWidth < defaultWidth) {
             setWidth(window.innerWidth);
         } else {
-            setWidth(500)
+            setWidth(defaultWidth)
         }
     }
 
     useEffect(() => {
         currentWidth()
         window.addEventListener('resize', () => {
-            if (window.innerWidth < 500) {
+            if (window.innerWidth < defaultWidth) {
                 setWidth(window.innerWidth);
             } else {
-                setWidth(500)
+                setWidth(defaultWidth)
             }
         })
     }, []);
@@ -82,11 +90,11 @@ export default function Works(props) {
         <div className={`project ${props.className ? props.className : ''} works`}>
             {props.className === 'slider' ? <div className={'slide-control'}>
                 <VerticalRightOutlined
-                    onClick={onPrev}/>
+                    onClick={onPrev} />
                 <VerticalLeftOutlined
-                    onClick={onNext}/>
+                    onClick={onNext} />
             </div> : <></>}
-            <CardList effect={true} title={``} trans={trans} data={props.data ? props.data : data}/>
+            <CardList effect={true} title={``} trans={trans} data={props.data ? props.data : data} />
         </div>
     </>)
 }
