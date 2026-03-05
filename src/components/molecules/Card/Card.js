@@ -29,39 +29,41 @@ export default function Card(props) {
                 {
                     typeof props.body === 'string' || props.body == null
                         ? <p className={'body'}>{props.body}</p>
-                        : <div className={'body body-structured'}>
-                            {props.body?.role && <p className={'body-role'}>{props.body.role}</p>}
-                            {Array.isArray(props.body?.highlights) && props.body.highlights.length > 0 && (
-                                <ul className={'body-highlights'}>
-                                    {props.body.highlights.map((text, idx) => (
-                                        <li key={idx}><p>{text}</p></li>
-                                    ))}
-                                </ul>
-                            )}
+                        : typeof props.body === 'object' && props.body.type && props.body.type === 'img'
+                            ? <div className={'body body-structured'}>{props.body}</div>
+                            : <div className={'body body-structured'}>
+                                {props.body?.role && <p className={'body-role'}>{props.body.role}</p>}
+                                {Array.isArray(props.body?.highlights) && props.body.highlights.length > 0 && (
+                                    <ul className={'body-highlights'}>
+                                        {props.body.highlights.map((text, idx) => (
+                                            <li key={idx}><p>{text}</p></li>
+                                        ))}
+                                    </ul>
+                                )}
 
-                            {Array.isArray(props.body?.projects) && props.body.projects.length > 0 && (
-                                <div className={'body-projects'}>
-                                    {props.body.projects.map((project, projectIdx) => (
-                                        <div className={'body-project'} key={projectIdx}>
-                                            {project?.title && <p className={'body-project-title'}>{project.title}</p>}
-                                            {project?.summary && <p className={'body-project-summary'}>{project.summary}</p>}
-                                            {project?.technologies && <p className={'body-project-tech'}><b>Technologies:</b> {project.technologies}</p>}
+                                {Array.isArray(props.body?.projects) && props.body.projects.length > 0 && (
+                                    <div className={'body-projects'}>
+                                        {props.body.projects.map((project, projectIdx) => (
+                                            <div className={'body-project'} key={projectIdx}>
+                                                {project?.title && <p className={'body-project-title'}>{project.title}</p>}
+                                                {project?.summary && <p className={'body-project-summary'}>{project.summary}</p>}
+                                                {project?.technologies && <p className={'body-project-tech'}><b>Technologies:</b> {project.technologies}</p>}
 
-                                            {Array.isArray(project?.responsibilities) && project.responsibilities.length > 0 && (
-                                                <>
-                                                    <p className={'body-project-resp-title'}><b>Responsibility:</b></p>
-                                                    <ul className={'body-project-resp'}>
-                                                        {project.responsibilities.map((text, respIdx) => (
-                                                            <li key={respIdx}><p>{text}</p></li>
-                                                        ))}
-                                                    </ul>
-                                                </>
-                                            )}
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                                                {Array.isArray(project?.responsibilities) && project.responsibilities.length > 0 && (
+                                                    <>
+                                                        <p className={'body-project-resp-title'}><b>Responsibility:</b></p>
+                                                        <ul className={'body-project-resp'}>
+                                                            {project.responsibilities.map((text, respIdx) => (
+                                                                <li key={respIdx}><p>{text}</p></li>
+                                                            ))}
+                                                        </ul>
+                                                    </>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                 }
                 <div className="card-footer">
                     <div className={'tags'}>

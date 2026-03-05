@@ -1,9 +1,9 @@
 import Image from "../../atoms/Image/Image";
 import './about.scss'
 import Label from "../../atoms/Lable/Label";
-import {useTranslation} from "react-i18next";
-import {useContext, useState} from "react";
-import {Context} from "../../../Context";
+import { useTranslation } from "react-i18next";
+import { useContext, useState } from "react";
+import { Context } from "../../../Context";
 import axios from "axios";
 import Project from "../project/Project";
 import Works from "../works/Works";
@@ -11,8 +11,8 @@ import * as _ from 'lodash';
 import ContactForm from "../../organisms/Forms/Contact";
 
 export default function About() {
-    const {t} = useTranslation();
-    const {language} = useContext(Context);
+    const { t } = useTranslation();
+    const { language } = useContext(Context);
     const [name, setName] = useState("");
     const [content, setContent] = useState("");
     const [email, setEmail] = useState("");
@@ -86,7 +86,7 @@ export default function About() {
     return (
         <div id={'about'} className={`${language}`}>
             <div className={'welcome fade-effect'}>
-                <Label content={t('greeting')}/>
+                <Label content={t('greeting')} />
             </div>
             <div className={"quote"} style={{
                 display: "flex",
@@ -97,33 +97,33 @@ export default function About() {
                 }}>
                     “Try and leave this world a little better than you found it, and when your turn comes to die you can
                     die happy in feeling that at any rate you have not wasted your time but have done your best.”
-                    <br/><u><i style={{fontSize: "0.9rem"}}>Robert Baden-Powell</i></u>
+                    <br /><u><i style={{ fontSize: "0.9rem" }}>Robert Baden-Powell</i></u>
                 </p>
             </div>
             <div className={'my-self'}>
                 <div className={'content'}>
                     <div className={'info'}>
                         <div className={'fade-effect'}>
-                            <Label content={'Loc Nguyen'}/>
+                            <Label content={'Loc Nguyen'} />
                             <p><i>{t('about.major')}</i></p>
                         </div>
                         <Image style={{
                             width: '205px',
                             height: '269px'
-                        }} border={true} blur={true} image={'avatar.png'}/>
+                        }} border={true} blur={true} />
                     </div>
                     <p className={'fade-effect'}>
                         {t('about.profile')}
                     </p>
-                    <Label content={t('works.title')}/>
-                    <Works className={'slider'}/>
-                    <Label content={t('projects.title')}/>
-                    <Project className={'slider'} data={projects}/>
+                    <Label content={t('works.title')} />
+                    <Works className={'slider'} />
+                    <Label content={t('projects.title')} />
+                    <Project className={'slider'} data={projects} />
                     <div className={'contact'}>
-                        <Label content={t('about.title.contact')}/>
+                        <Label content={t('about.title.contact')} />
                         <p>
                             {t('about.contact')}
-                            <br/><a href={'mailto:locnguyen071102@gmail.com'}><i>Email</i></a>,
+                            <br /><a href={'mailto:locnguyen071102@gmail.com'}><i>Email</i></a>,
                             <a href={'https://www.linkedin.com/in/loc-nguyen-171793311/'}><i> LinkedIn</i></a>,
                             <a href={'https://www.facebook.com/nguyentanloc0711/'}><i> Facebook</i></a>,
                             <a href={'https://www.tiktok.com/@_locnguyen.dev'}><i> Tiktok</i></a>.

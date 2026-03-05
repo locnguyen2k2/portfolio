@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 
 export default function Project(props) {
     const { t } = useTranslation();
+    const defaultWidth = 800
     const [trans, setTrans] = useState('');
-    const [width, setWidth] = useState(500);
+    const [width, setWidth] = useState(defaultWidth);
     const [currentSlide, setCurrentSlide] = useState(0);
     const data = props.data ? props.data : [
         {
@@ -85,20 +86,20 @@ export default function Project(props) {
     }
 
     const currentWidth = () => {
-        if (window.innerWidth < 500) {
+        if (window.innerWidth < defaultWidth) {
             setWidth(window.innerWidth);
         } else {
-            setWidth(500)
+            setWidth(defaultWidth)
         }
     }
 
     useEffect(() => {
         currentWidth()
         window.addEventListener('resize', () => {
-            if (window.innerWidth < 500) {
+            if (window.innerWidth < defaultWidth) {
                 setWidth(window.innerWidth);
             } else {
-                setWidth(500)
+                setWidth(defaultWidth)
             }
         })
     }, [window.location.pathname]);

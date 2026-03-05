@@ -90,15 +90,6 @@ const databases = [
     },
 ];
 
-// Database Tools & ORMs
-const databaseTools = [
-    {
-        body: <img
-            src="https://img.shields.io/badge/Prisma-4479A1?logo=Prisma&logoColor=FFF&link=https%3A%2F%2Fwww.prisma.io%2F"
-            alt="Prisma Badge" />,
-    },
-];
-
 // API & Communication
 const apiCommunication = [
     {
@@ -163,17 +154,6 @@ const devops = [
     },
 ];
 
-// Development Tools
-const developmentTools = [
-    {
-        body: <img
-            src='https://img.shields.io/badge/WebStorm-FFF?logo=webstorm&logoColor=307FFF&link=https%3A%2F%2Fwww.jetbrains.com/help/webstorm/getting-started-with-webstorm.html' alt='WebStorm Badge' />,
-    }, {
-        body: <img
-            src='https://img.shields.io/badge/VS%20Code-FFF?logo=vscode&logoColor=fc6d26&link=https%3A%2F%2Fcode.visualstudio.com/docs' alt='VS Code Badge' />,
-    },
-];
-
 export default function Skill() {
     const { t } = useTranslation();
     return (<div className={'skills'}>
@@ -185,12 +165,10 @@ export default function Skill() {
             <CardList effect={true} title={'Backend Frameworks'} data={backendFrameworks} />
             <CardList effect={true} title={'Frontend Technologies'} data={frontendTech} />
             <CardList effect={true} title={'Databases'} data={databases} />
-            <CardList effect={true} title={'Database Tools'} data={databaseTools} />
             <CardList effect={true} title={'API & Communication'} data={apiCommunication} />
             <CardList effect={true} title={'API Tools'} data={apiTools} />
             <CardList effect={true} title={'Monitoring & Observability'} data={monitoring} />
             <CardList effect={true} title={'DevOps & Infrastructure'} data={devops} />
-            <CardList effect={true} title={'Development Tools'} data={developmentTools} />
         </div>
     </div>)
 }
