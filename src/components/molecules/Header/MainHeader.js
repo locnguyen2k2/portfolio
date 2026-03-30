@@ -1,4 +1,4 @@
-import { GithubOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons';
+import { FileTextOutlined, GithubOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons';
 import IconButton from "../../atoms/Button/IconButton";
 import { Context } from "../../../Context";
 import { useContext, useEffect, useState } from "react";
@@ -45,6 +45,11 @@ export default function MainHeader({ ...props }) {
         {
             title: "Resume",
             name: "resume",
+        },
+        {
+            title: "Docsaurus",
+            icon: <FileTextOutlined />,
+            link: `https://locnguyen2k2-docusaurus.vercel.app/docs/category/backend`,
         },
         {
             title: "Source",
