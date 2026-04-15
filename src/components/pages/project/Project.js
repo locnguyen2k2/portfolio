@@ -11,6 +11,14 @@ export default function Project(props) {
 
     const data = useMemo(() => props.data ? props.data : [
         {
+            title: t('projects.abacNestjs.name'),
+            body: t('projects.abacNestjs.body'),
+            github: 'https://github.com/locnguyen2k2/ddd-nest-template',
+            image: 'abac-nestjs.jpg',
+            time: '04/2026 - Present',
+            tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'Prisma', 'Redis', 'JWT', 'json-logic-js', 'DDD', 'CQRS', 'ABAC']
+        },
+        {
             title: `${t('works.teknix.name')}`,
             body: {
                 role: t('works.teknix.body.role'),
@@ -71,7 +79,7 @@ export default function Project(props) {
             image: 'labs-app.jpg',
             time: '01/2024',
             tags: ['React-Native', 'Axios', 'Redux', 'TailwindCSS']
-        }], [props.data, t]);
+        },], [props.data, t]);
 
     const getYear = (timeStr) => {
         const years = timeStr.match(/\d{4}/g);

@@ -102,6 +102,10 @@
     "hiCoffeeApp": {
       "name": "Ứng dụng Hi-Coffee",
       "body": "Ứng dụng hổ trợ nhân viên đặt món tại quầy(thông qua Hi-Coffee POS APIs)."
+    },
+    "abacNestjs": {
+      "name": "ABAC NestJS",
+      "body": "Hệ thống kiểm soát truy cập dựa trên thuộc tính (ABAC) được xây dựng với NestJS áp dụng các nguyên lý Domain-Driven Design. Tính năng bao gồm kiến trúc đa tenant, phân quyền dựa trên chính sách sử dụng JSON Logic, xác thực JWT và quản lý vai trò toàn diện với đánh giá điều kiện phức tạp cho kiểm soát truy cập chi tiết."
     }
   }
 }

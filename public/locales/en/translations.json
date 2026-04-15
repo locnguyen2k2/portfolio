@@ -102,6 +102,10 @@
     "hiCoffeeApp": {
       "name": "Hi-Coffee Application",
       "body": "The order application is build for staffs to help customers ordering products at shop(by Hi-Coffee APIs)."
+    },
+    "abacNestjs": {
+      "name": "Domain-Driven Design Nest Template",
+      "body": "An Attributes-Based Access Control system built with NestJS implementing Domain-Driven Design principles. Features multi-tenant architecture, policy-based authorization using JSON Logic, JWT authentication, and comprehensive role management with complex condition evaluation for fine-grained access control."
     }
   }
 }
