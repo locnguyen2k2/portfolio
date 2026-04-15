@@ -1,6 +1,7 @@
-@import './../../../assets/color';
+@import "./../../../assets/color";
 
-.my-self, .welcome {
+.my-self,
+.welcome {
   position: relative;
   display: flex;
   justify-content: center;
@@ -23,14 +24,19 @@
     justify-content: space-between;
   }
 
-  p, a {
+  p,
+  a {
     text-align: justify;
     hyphens: auto;
-    font-size: 13px;
   }
-  
+
+  a {
+    font-family: "Lemonada-Medium";
+  }
+
   p {
     padding: 8px;
+    font-size: 13px;
   }
 
   .content {
@@ -68,10 +74,9 @@
   }
 }
 
-
 #about {
   p {
-    font-family: 'Lemonada-Medium';
+    font-family: "Lemonada-Medium";
   }
 
   .quote p {
@@ -83,7 +88,7 @@
 
 #about.vi {
   i {
-    font-family: 'Handjet';
+    font-family: "Handjet";
   }
 }
 

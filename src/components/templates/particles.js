@@ -1,8 +1,8 @@
-import Particles, {initParticlesEngine} from "@tsparticles/react";
-import {useEffect, useMemo, useState} from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { useEffect, useMemo, useState } from "react";
 // import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
 // import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import {loadSlim} from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
+import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 
@@ -41,6 +41,11 @@ const ParticlesComponent = (props) => {
                     onHover: {
                         enable: true,
                         mode: 'grab',
+                        parallax: {
+                            enable: true,
+                            force: 60,
+                            smooth: 10,
+                        },
                     },
                 },
                 modes: {
@@ -87,7 +92,7 @@ const ParticlesComponent = (props) => {
                     type: '',
                 },
                 size: {
-                    value: {min: 1, max: 3},
+                    value: { min: 1, max: 3 },
                 },
             },
             detectRetina: true,
@@ -96,7 +101,7 @@ const ParticlesComponent = (props) => {
     );
 
 
-    return <Particles id={props.id} init={particlesLoaded} options={options}/>;
+    return <Particles id={props.id} init={particlesLoaded} options={options} />;
 };
 
 export default ParticlesComponent;

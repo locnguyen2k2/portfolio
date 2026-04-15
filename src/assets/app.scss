@@ -3,22 +3,22 @@
 
 @font-face {
   font-family: AlumniSans-Medium;
-  src: url('./public/fonts/AlumniSans-Medium.woff');
+  src: url("./public/fonts/AlumniSans-Medium.woff");
 }
 
 @font-face {
   font-family: Lemonada-Medium;
-  src: url('./public/fonts/Lemonada-Medium.woff');
+  src: url("./public/fonts/Lemonada-Medium.woff");
 }
 
 @font-face {
   font-family: RainyHearts;
-  src: url('./public/fonts/rainyhearts.ttf');
+  src: url("./public/fonts/rainyhearts.ttf");
 }
 
 @font-face {
   font-family: Handjet;
-  src: url('./public/fonts/Handjet-Bold.ttf');
+  src: url("./public/fonts/Handjet-Bold.ttf");
 }
 
 :root {
@@ -31,13 +31,23 @@
   box-sizing: border-box;
 }
 
-a, p, i, .label, h1 {
-  font-family: 'RainyHearts', 'Handjet';
+a,
+p,
+i,
+.label,
+h1 {
+  font-family: "RainyHearts", "Handjet";
 }
 
 .vi {
-  a, p, i, .label, h1, input, textarea {
-    font-family: "AlumniSans-Medium", 'Times New Roman';
+  a,
+  p,
+  i,
+  .label,
+  h1,
+  input,
+  textarea {
+    font-family: "AlumniSans-Medium", "Times New Roman";
   }
 }
 
@@ -54,10 +64,11 @@ li {
   list-style: none;
 }
 
-a, button {
+a,
+button {
   cursor: url("./public/link.png"), auto !important;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .border {
@@ -90,7 +101,24 @@ main {
   position: relative;
   overflow: hidden;
   height: calc(100vh + 20px);
-  background: url('./public/wallpaper.gif') center/cover no-repeat;
+  background-color: #030303;
+  // background-image: radial-gradient(600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), var(--mouse-color, rgba(255, 203, 106, 0.384)), transparent 40%) !important;
+
+  .glowing-blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: var(--mouse-x, 0px);
+    top: var(--mouse-y, 0px);
+    background: var(--mouse-color, rgba(255, 203, 106, 0.384));
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+  }
+
+  // background: url('./public/wallpaper.gif') center/cover no-repeat;
 
   > .container {
     z-index: 1;
@@ -108,7 +136,7 @@ main {
         left: 50%;
         z-index: 999;
         display: flex;
-        color: #FFFFFF;
+        color: #ffffff;
         font-size: 20px;
         position: absolute;
         width: calc(100% - 50px);
@@ -217,4 +245,3 @@ main {
     }
   }
 }
-
