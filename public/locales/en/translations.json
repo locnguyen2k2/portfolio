@@ -18,13 +18,15 @@
   },
   "greeting": "Hi, welcome to my website!",
   "about": {
+    "bio": "About my journey",
+    "love": "Love",
     "title": {
       "contact": "Contact with me",
       "feedback": "Feedback"
     },
     "name": "Loc Nguyen",
     "major": "Software Engineer",
-    "profile": "I am a software engineer looking for a web developer position. I specialize in web development, which is my genuine interest and passion, driving me to continuously learn, practice, and strive to improve my skills, solve problems.",
+    "profile": "Loc Nguyen is a software engineer with a genuine interest and passion for web development, driving him to continuously learn, practice, and strive to improve his skills, solve problems. Besides coding, he also enjoys to take some photos and videos about his daily life, and coffee.",
     "contact": "The easiest way to connect with me: "
   },
   "works": {

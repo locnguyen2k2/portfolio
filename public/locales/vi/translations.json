@@ -18,6 +18,8 @@
   },
   "greeting": "Xin chào.",
   "about": {
+    "bio": "Về hành trình của tôi",
+    "love": "Yêu thích",
     "title": {
       "contact": "Liên hệ với tôi",
       "feedback": "Phản hồi"

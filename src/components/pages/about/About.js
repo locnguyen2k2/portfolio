@@ -4,87 +4,15 @@ import Label from "../../atoms/Lable/Label";
 import { useTranslation } from "react-i18next";
 import { useContext, useState } from "react";
 import { Context } from "../../../Context";
-import axios from "axios";
-import Project from "../project/Project";
 import Works from "../works/Works";
 import * as _ from 'lodash';
-import ContactForm from "../../organisms/Forms/Contact";
 
 export default function About() {
     const { t } = useTranslation();
     const { language } = useContext(Context);
-    const [name, setName] = useState("");
-    const [content, setContent] = useState("");
-    const [email, setEmail] = useState("");
-
-    const projects = [
-        {
-            title: t('projects.ems.name'),
-            body: t('projects.ems.body'),
-            image: 'ems.jpg',
-            link: 'https://exam-management-system-z76m.onrender.com/graphql',
-            github: 'https://github.com/locnguyen2k2/exam-management-system/',
-            tags: ['NestJS', 'MongoDB', 'GraphQL', 'Apollo', 'TypeScript']
-        }, {
-            title: t('projects.lms.name'),
-            body: t('projects.lms.body'),
-            github: 'https://github.com/locnguyen2k2/laboratory-management-system',
-            link: 'https://laboratory-management-system.onrender.com/apis',
-            image: 'labs.jpg',
-            tags: ['NestJS', 'MySQL', 'TypeORM', 'SwaggerAPI', 'TypeScript']
-        }, {
-            title: t('projects.hiCoffeePos.name'),
-            body: t('projects.hiCoffeePos.body'),
-            image: 'hicoffee-management.jpg',
-            link: '',
-            github: 'https://github.com/locnguyen2k2/hi-coffee-management-system',
-            tags: ['Php(core - MVC)', 'JavaScript', 'Ajax', 'Axios', 'WebSocket(Ratchet)', 'Phpmailer', 'Bootstrap5', 'HTML', 'CSS'],
-        }, {
-            title: t('projects.hiCoffeeApp.name'),
-            body: t('projects.hiCoffeeApp.body'),
-            github: 'https://github.com/locnguyen2k2/hi-coffee-order-application',
-            link: '',
-            image: 'hicoffee-mobile.jpg',
-            tags: ['React-Native', 'Axios', 'Redux', 'TailwindCSS']
-        }, {
-            title: t('projects.lmsApp.name'),
-            body: t('projects.lmsApp.body'),
-            github: 'https://github.com/locnguyen2k2/laboratory-management-application',
-            image: 'labs-app.jpg',
-            tags: ['React-Native', 'Axios', 'Redux', 'TailwindCSS']
-        }]
-
-    async function sendEmail() {
-        let error = false;
-        if (_.isEmpty(content.replaceAll(" ", "")) ||
-            _.isEmpty(name.replaceAll(" ", "")) ||
-            _.isEmpty(email.replaceAll(" ", ""))) {
-            error = true;
-            alert(t('mailer.isValid'))
-        }
-
-        if (!error) {
-            alert(t('mailer.sending'))
-            axios.post('https://laboratory-management-system.onrender.com/apis/feed-back', {
-                from: email,
-                content: `${name}: ${content}`,
-                key: process.env.REACT_APP_MAILER_PASSWORD
-            }).then((result) => {
-                alert(t('mailer.success'))
-            }).catch(() => alert(t('mailer.failed'))).finally(() => {
-                setContent("");
-                setEmail("");
-                setName("");
-            })
-        }
-    }
-
-    const onSubmit = async () => {
-        await sendEmail()
-    }
 
     return (
-        <div id={'about'} className={`${language}`}>
+        <div id={'about'} className={`${language}`} style={{ backdropFilter: 'blur(3px)' }}>
             <div className={'welcome fade-effect'}>
                 <Label content={t('greeting')} />
             </div>
@@ -115,30 +43,35 @@ export default function About() {
                     <p className={'fade-effect'}>
                         {t('about.profile')}
                     </p>
-                    <Label content={t('works.title')} />
-                    <Works className={'slider'} />
-                    <Label content={t('projects.title')} />
-                    <Project className={'slider'} data={projects} />
-                    <div className={'contact'}>
-                        <Label content={t('about.title.contact')} />
-                        <p>
-                            {t('about.contact')}
-                            <br /><a href={'mailto:locnguyen071102@gmail.com'}><i>Email</i></a>,
-                            <a href={'https://www.linkedin.com/in/loc-nguyen-171793311/'}><i> LinkedIn</i></a>,
-                            <a href={'https://www.facebook.com/nguyentanloc0711/'}><i> Facebook</i></a>,
-                            <a href={'https://www.tiktok.com/@_locnguyen.dev'}><i> Tiktok</i></a>.
-                        </p>
-                        {/*<Label content={t('about.title.feedback')}/>*/}
-                        <ContactForm
-                            onSubmit={onSubmit}
-                            name={name}
-                            email={email}
-                            content={content}
-                            setEmail={setEmail}
-                            setName={setName}
-                            setContent={setContent}
-                        />
+                    <div>
+                        <div className={'fade-effect'}>
+                            <Label content={'BIO'} />
+                            <p><i>{t('about.bio')}</i></p>
+                        </div>
                     </div>
+                    <p>
+                        <ul>
+                            <li><b>2002</b> - Born in Vinh Long(Old is called Tra Vinh), Vietnam</li>
+                            <li><b>2024</b> - Completed Engineer's degree in Software Engineering Major at Can Tho University Of Technology, Vietnam</li>
+                            <li><b>2024</b> - Worked at DANG AN TECH COMPANY LIMITED as a Frontend Developer</li>
+                            <li><b>2025</b> - Worked at Teknix Corporation as a Backend Developer</li>
+                        </ul>
+                    </p>
+                    <div className={'fade-effect'}>
+                        <Label content={'I ♥'} />
+                    </div>
+                    <p>
+                        Coffee, Music, Photography, Movies, Traveling
+                    </p>
+                    <div className={'fade-effect'}>
+                        <Label content={t('about.title.contact')} />
+                    </div>
+                    <p style={{ display: 'flex' }}>
+                        <a href={'mailto:locnguyen071102@gmail.com'}><p>Email</p></a>
+                        <a href={'https://www.linkedin.com/in/loc-nguyen-171793311/'}><p> LinkedIn</p></a>
+                        <a href={'https://www.facebook.com/nguyentanloc0711/'}><p> Facebook</p></a>
+                        <a href={'https://www.tiktok.com/@_locnguyen.dev'}><p> Tiktok</p></a>
+                    </p>
                 </div>
             </div>
         </div>

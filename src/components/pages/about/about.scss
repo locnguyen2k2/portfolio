@@ -4,12 +4,11 @@
   position: relative;
   display: flex;
   justify-content: center;
+  i {
+    font-size: 18px;
+  }
 
   .info {
-    i {
-      font-size: 18px;
-    }
-
     > .image {
       margin: 8px;
 
@@ -22,6 +21,16 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+  }
+
+  p, a {
+    text-align: justify;
+    hyphens: auto;
+    font-size: 13px;
+  }
+  
+  p {
+    padding: 8px;
   }
 
   .content {
@@ -55,16 +64,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-    }
-
-    p, a {
-      text-align: justify;
-      hyphens: auto;
-      font-size: 13px;
-    }
-
-    p {
-      padding: 8px;
     }
   }
 }
