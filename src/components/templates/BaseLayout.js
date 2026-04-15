@@ -1,46 +1,32 @@
-import {Context} from '../../Context';
+import { Context } from '../../Context';
 import Footer from "../molecules/Footer/Footer";
-import {Outlet, useLocation} from "react-router-dom";
-import {useContext, useEffect, useState} from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { useContext, useEffect, useRef, useState } from "react";
 import MainHeader from "../molecules/Header/MainHeader";
 
 export default function BaseLayout() {
-    const {theme = 'dark', language = 'en'} = useContext(Context);
+    const { theme = 'dark', language = 'en' } = useContext(Context);
     const location = useLocation();
     const [currentRoute, setCurrentRoute] = useState(location.pathname);
+    const mainRef = useRef(null);
 
-    // const exams = () => {
-    //     const formData = new FormData();
-    //     formData.append('operations', JSON.stringify({query: `mutation Login{login(loginArgs: {email: "teacher@ctuet.edu.vn", password: "teacher@123"}){access_token}}`}),);
-    //     formData.append('map', JSON.stringify({}));
-    //     try {
-    //         axios({
-    //             method: 'post',
-    //             url: 'https://exam-management-system-z76m.onrender.com/graphql',
-    //             headers: {'apollo-require-preflight': true, 'content-type': 'multipart/form-data'},
-    //             data: formData,
-    //         });
-    //     } catch (e) {
-    //         console.log('Preparing for Q&E Management System ...')
-    //     }
-    // }
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            if (mainRef.current) {
+                const { clientX, clientY } = e;
+                const rect = mainRef.current.getBoundingClientRect();
+                const x = clientX - rect.left;
+                const y = clientY - rect.top;
 
-    // const labs = () => {
-    //     try {
-    //         axios.get('https://laboratory-management-system.onrender.com/apis/categories');
-    //     } catch (error) {
-    //         console.log('Prepared for LIMS Management System ...')
-    //     }
-    // }
+                mainRef.current.style.setProperty('--mouse-x', `${x}px`);
+                mainRef.current.style.setProperty('--mouse-y', `${y}px`);
+                mainRef.current.style.setProperty('--mouse-color', `hsla(200, 80%, 70%, 0.3)`);
+            }
+        };
 
-    // useEffect(() => {
-    // setTimeout(() => {
-    //     labs()
-    // }, 20000);
-    // setTimeout(() => {
-    //     exams()
-    // }, 20000)
-    // });
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
 
     useEffect(() => {
         if (location.pathname !== currentRoute) {
@@ -55,14 +41,15 @@ export default function BaseLayout() {
         }
     }, [language, currentRoute]);
 
-    return (<main className={`${theme}`}>
+    return (<main ref={mainRef} className={`${theme}`}>
+        <div className="glowing-blob"></div>
         <div className={'dark-filter'}></div>
-        <MainHeader currentRoute={currentRoute}/>
+        <MainHeader currentRoute={currentRoute} />
 
         <div className={`container`}>
-            <Outlet/>
+            <Outlet />
         </div>
 
-        <Footer/>
+        <Footer />
     </main>)
 }

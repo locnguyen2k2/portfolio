@@ -49,14 +49,12 @@ export default function About() {
                             <p><i>{t('about.bio')}</i></p>
                         </div>
                     </div>
-                    <p>
-                        <ul>
-                            <li><b>2002</b> - Born in Vinh Long(Old is called Tra Vinh), Vietnam</li>
-                            <li><b>2024</b> - Completed Engineer's degree in Software Engineering Major at Can Tho University Of Technology, Vietnam</li>
-                            <li><b>2024</b> - Worked at DANG AN TECH COMPANY LIMITED as a Frontend Developer</li>
-                            <li><b>2025</b> - Worked at Teknix Corporation as a Backend Developer</li>
-                        </ul>
-                    </p>
+                    <ul>
+                        <li><p><b>2002</b> - Born in Vinh Long(Old is called Tra Vinh), Vietnam</p></li>
+                        <li><p><b>2024</b> - Completed Engineer's degree in Software Engineering Major at Can Tho University Of Technology, Vietnam</p></li>
+                        <li><p><b>2024</b> - Worked at DANG AN TECH COMPANY LIMITED as a Frontend Developer</p></li>
+                        <li><p><b>2025</b> - Worked at Teknix Corporation as a Backend Developer</p></li>
+                    </ul>
                     <div className={'fade-effect'}>
                         <Label content={'I ♥'} />
                     </div>
@@ -66,12 +64,12 @@ export default function About() {
                     <div className={'fade-effect'}>
                         <Label content={t('about.title.contact')} />
                     </div>
-                    <p style={{ display: 'flex' }}>
-                        <a href={'mailto:locnguyen071102@gmail.com'}><p>Email</p></a>
-                        <a href={'https://www.linkedin.com/in/loc-nguyen-171793311/'}><p> LinkedIn</p></a>
-                        <a href={'https://www.facebook.com/nguyentanloc0711/'}><p> Facebook</p></a>
-                        <a href={'https://www.tiktok.com/@_locnguyen.dev'}><p> Tiktok</p></a>
-                    </p>
+                    <div className={'fade-effect'} style={{ display: 'flex' }}>
+                        <p><a href={'mailto:locnguyen071102@gmail.com'}>Email</a></p>
+                        <p><a href={'https://www.linkedin.com/in/loc-nguyen-171793311/'}> LinkedIn</a></p>
+                        <p><a href={'https://www.facebook.com/nguyentanloc0711/'}> Facebook</a></p>
+                        <p><a href={'https://www.tiktok.com/@_locnguyen.dev'}> Tiktok</a></p>
+                    </div>
                 </div>
             </div>
         </div>
