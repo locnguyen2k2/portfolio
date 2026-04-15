@@ -1,16 +1,15 @@
 import './Project.scss'
-import CardList from "../../organisms/Lists/CardList";
+import Card from "../../molecules/Card/Card";
+import Label from "../../atoms/Lable/Label";
 import { useTranslation } from "react-i18next";
-import { VerticalLeftOutlined, VerticalRightOutlined } from "@ant-design/icons";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 
 export default function Project(props) {
     const { t } = useTranslation();
-    const defaultWidth = 800
-    const [trans, setTrans] = useState('');
-    const [width, setWidth] = useState(defaultWidth);
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const data = props.data ? props.data : [
+    const [scrollProgress, setScrollProgress] = useState(0);
+    const timelineRef = useRef(null);
+
+    const data = useMemo(() => props.data ? props.data : [
         {
             title: `${t('works.teknix.name')}`,
             body: {
@@ -52,11 +51,11 @@ export default function Project(props) {
         }, {
             title: t('projects.hiCoffeePos.name'),
             body: t('projects.hiCoffeePos.body'),
-            time: '09/2022 – 12/2023 (prj 1 - 3)',
+            time: '09/2022 – 12/2023',
             image: 'hicoffee-management.jpg',
             link: '',
             github: 'https://github.com/locnguyen2k2/hi-coffee-management-system',
-            tags: ['Php(core - MVC)', 'JavaScript', 'Ajax', 'Axios', 'WebSocket(Ratchet)', 'Phpmailer', 'Bootstrap5', 'HTML', 'CSS'],
+            tags: ['Php', 'JavaScript', 'Ajax', 'Axios', 'WebSocket', 'Phpmailer', 'Bootstrap5', 'HTML', 'CSS'],
         }, {
             title: t('projects.hiCoffeeApp.name'),
             body: t('projects.hiCoffeeApp.body'),
@@ -70,50 +69,130 @@ export default function Project(props) {
             body: t('projects.lmsApp.body'),
             github: 'https://github.com/locnguyen2k2/laboratory-management-application',
             image: 'labs-app.jpg',
+            time: '01/2024',
             tags: ['React-Native', 'Axios', 'Redux', 'TailwindCSS']
-        }]
+        }], [props.data, t]);
 
-    const onNext = () => {
-        let slide = (currentSlide < data.length - 1) ? currentSlide + 1 : 0;
-        setTrans(`-${slide * width}px`);
-        setCurrentSlide(slide);
-    }
+    const getYear = (timeStr) => {
+        const years = timeStr.match(/\d{4}/g);
+        return years ? years[years.length - 1] : 'Present';
+    };
 
-    const onPrev = () => {
-        let slide = (currentSlide >= 0) ? currentSlide - 1 : data.length - 1;
-        setTrans(`-${(slide < 0 ? data.length - 1 : slide) * width}px`);
-        setCurrentSlide(slide);
-    }
+    const groupedData = useMemo(() => data.reduce((acc, item) => {
+        const year = getYear(item.time);
+        if (!acc[year]) acc[year] = [];
+        acc[year].push(item);
+        return acc;
+    }, {}), [data]);
 
-    const currentWidth = () => {
-        if (window.innerWidth < defaultWidth) {
-            setWidth(window.innerWidth);
-        } else {
-            setWidth(defaultWidth)
-        }
-    }
+    const sortedYears = useMemo(() => Object.keys(groupedData).sort((a, b) => b - a), [groupedData]);
 
     useEffect(() => {
-        currentWidth()
-        window.addEventListener('resize', () => {
-            if (window.innerWidth < defaultWidth) {
-                setWidth(window.innerWidth);
-            } else {
-                setWidth(defaultWidth)
-            }
-        })
-    }, [window.location.pathname]);
+        const container = document.querySelector('.container');
+        if (!container) return;
 
-    return (<>
-        <div className={`project ${props.className ? props.className : ''}`}>
-            {props.className === 'slider' ? <div className={'slide-control'}>
-                <VerticalRightOutlined
-                    onClick={onPrev} />
-                <VerticalLeftOutlined
-                    onClick={onNext} />
-            </div> : <></>}
-            <CardList effect={true} title={props.data ? '' : t('projects&works')} trans={trans}
-                data={props.data ? props.data : data} />
+        const handleScroll = () => {
+            const scrollTop = container.scrollTop;
+            const scrollHeight = container.scrollHeight;
+            const clientHeight = container.clientHeight;
+            const totalHeight = scrollHeight - clientHeight;
+
+            if (totalHeight <= 0) {
+                setScrollProgress(0);
+            } else {
+                const progress = (scrollTop / totalHeight) * 100;
+                setScrollProgress(Math.min(100, Math.max(0, progress)));
+            }
+        };
+
+        handleScroll();
+        container.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('resize', handleScroll);
+
+        // Multi-stage check to handle image loading and dynamic content
+        const timers = [
+            setTimeout(handleScroll, 100),
+            setTimeout(handleScroll, 500),
+            setTimeout(handleScroll, 1000),
+            setTimeout(handleScroll, 2000),
+        ];
+
+        return () => {
+            container.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleScroll);
+            timers.forEach(clearTimeout);
+        };
+    }, [data, sortedYears]);
+
+    useEffect(() => {
+        const container = document.querySelector('.container');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                root: container,
+                rootMargin: '10% 0px 10% 0px'
+            }
+        );
+
+        const updateObserver = () => {
+            const items = document.querySelectorAll('.timeline-item');
+            items.forEach((item) => {
+                observer.observe(item);
+                // Trigger visibility for items already in view
+                const rect = item.getBoundingClientRect();
+                const containerRect = container ? container.getBoundingClientRect() : { top: 0, bottom: window.innerHeight };
+                if (rect.top < containerRect.bottom && rect.bottom > containerRect.top) {
+                    item.classList.add('visible');
+                }
+            });
+        };
+
+        const timer = setTimeout(updateObserver, 200);
+
+        return () => {
+            const items = document.querySelectorAll('.timeline-item');
+            items.forEach((item) => observer.unobserve(item));
+            clearTimeout(timer);
+        };
+    }, [data, sortedYears]);
+
+    return (
+        <div className={`project-page ${props.className ? props.className : ''}`}>
+            <div className="scroll-progress" style={{ width: `${scrollProgress}%` }}></div>
+
+            {!props.data && (
+                <div className="page-header">
+                    <Label content={t('projects&works')} />
+                </div>
+            )}
+
+            <div className="timeline-container" ref={timelineRef}>
+                <div className="timeline-axis"></div>
+
+                {sortedYears.map((year) => (
+                    <div key={year} className="year-section">
+                        <div className="year-marker">
+                            <span>{year}</span>
+                        </div>
+
+                        {groupedData[year].map((item, index) => (
+                            <div key={`${year}-${index}`} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+                                <div className="timeline-dot"></div>
+                                <div className="timeline-content">
+                                    <Card {...item} blur={true} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ))}
+            </div>
         </div>
-    </>)
+    )
 }
