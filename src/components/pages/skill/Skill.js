@@ -3,154 +3,175 @@ import CardList from "../../organisms/Lists/CardList";
 import './skill.scss';
 import Label from "../../atoms/Lable/Label";
 import Skeleton from "../../molecules/Skeleton/Skeleton";
+import Tag from "../../atoms/Tag/Tag";
 import { useTranslation } from "react-i18next";
 
 // Programming Languages
 const languages = [
     {
-        body: <img
-            src="https://img.shields.io/badge/TypeScript-FFF?logo=TypeScript&logoColor=3178C6&link=https%3A%2F%2Fwww.typescriptlang.org%2F"
-            alt="TypeScript Badge" />,
+        body: <Tag color="#3178C6">
+            <img src="https://img.shields.io/badge/TypeScript-FFF?logo=TypeScript&logoColor=3178C6" alt="TypeScript" />
+            TypeScript
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/JavaScript-FFF?logo=JavaScript&logoColor=F7DF1E&link=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript"
-            alt="JavaScript Badge" />,
-    }, {
-        body: <img
-            src="https://img.shields.io/badge/Go-FFF?logo=go&logoColor=0170FE&link=https%3A%2F%2Fgo.dev"
-            alt="Go Badge" />,
-    }, {
-        body: <img
-            src="https://img.shields.io/badge/Php-FFF?logo=php&logoColor=7A86B8&link=https%3A%2F%2Fwww.php.net"
-            alt="PHP Badge" />,
+        body: <Tag color="#F7DF1E">
+            <img src="https://img.shields.io/badge/JavaScript-FFF?logo=JavaScript&logoColor=F7DF1E" alt="JavaScript" />
+            JavaScript
+        </Tag>,
     },
-];
-
-// Frontend Frameworks & Libraries
-const frontendFrameworks = [
     {
-        body: <img
-            src="https://img.shields.io/badge/React-FFF?logo=react&logoColor=0170FE&link=https%3A%2F%2Freact.dev"
-            alt="React Badge" />,
-    }, {
-        body: <img
-            src="https://img.shields.io/badge/Ant%20Design-FFF?logo=Ant-Design&logoColor=0170FE&link=https%3A%2F%2Fant.design%2F"
-            alt="Ant Design Badge" />,
+        body: <Tag color="#339933">
+            <img src="https://img.shields.io/badge/-Node.js-FFF?logo=node.js&logoColor=339933" alt="Node.js" />
+            Node.js
+        </Tag>,
     },
-];
-
-// Backend Frameworks
-const backendFrameworks = [
     {
-        body: <img
-            src="https://img.shields.io/badge/Nestjs-FFF?logo=nestjs&logoColor=da2640&link=https%3A%2F%2Fdocs.nestjs.com"
-            alt="NestJS Badge" />,
+        body: <Tag color="#FF6600">
+            <img src="https://img.shields.io/badge/-RabbitMQ-FFF?logo=RabbitMQ&logoColor=FF6600" alt="RabbitMQ" />
+            RabbitMQ
+        </Tag>,
     },
-];
-
-// Frontend Technologies
-const frontendTech = [
     {
-        body: <img
-            src="https://img.shields.io/badge/HTML5-FFF?logo=HTML5&logoColor=E34F26&link=https%3A%2F%2Fhtml.spec.whatwg.org%2Fmultipage%2F"
-            alt="HTML5 Badge" />,
+        body: <Tag color="#da2640">
+            <img src="https://img.shields.io/badge/-Nestjs-FFF?logo=nestjs&logoColor=da2640" alt="NestJS" />
+            NestJS
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/CSS3-FFF?logo=CSS3&logoColor=1572B6&link=https%3A%2F%2Fwww.w3.org%2FStyle%2FCSS%2FOverview.en.html"
-            alt="CSS3 Badge" />,
+        body: <Tag color="#0170FE">
+            <img src="https://img.shields.io/badge/Go-FFF?logo=go&logoColor=0170FE" alt="Go" />
+            Go
+        </Tag>,
+    },
+    {
+        body: <Tag color="#00ADD8">
+            <img src="https://img.shields.io/badge/-Gin-FFF?logo=gin&logoColor=00ADD8" alt="Gin" />
+            Gin
+        </Tag>,
+    },
+    {
+        body: <Tag color="#e10098">
+            <img src="https://img.shields.io/badge/-GraphQL-FFF?logo=graphql&logoColor=e10098" alt="GraphQL" />
+            GraphQL
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/Sass-FFF?logo=sass&link=https%3A%2F%2Fsass-lang.com"
-            alt="Sass Badge" />,
+        body: <Tag color="#5A29E4">
+            <img src="https://img.shields.io/badge/-Axios-FFF?logo=Axios&logoColor=5A29E4" alt="Axios" />
+            Axios
+        </Tag>,
+    },
+    {
+        body: <Tag color="#0170FE">
+            <img src="https://img.shields.io/badge/-React-FFF?logo=react&logoColor=0170FE" alt="React" />
+            React
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/Tailwind%20CSS-FFF?logo=Tailwind-CSS&logoColor=06B6D4&link=https%3A%2F%2Ftailwindcss.com%2F"
-            alt="Tailwind CSS Badge" />,
+        body: <Tag color="#0170FE">
+            <img src="https://img.shields.io/badge/-AntDesign-FFF?logo=Ant-Design&logoColor=0170FE" alt="Ant Design" />
+            Ant Design
+        </Tag>,
+    },
+    {
+        body: <Tag color="#E34F26">
+            <img src="https://img.shields.io/badge/-HTML5-FFF?logo=HTML5&logoColor=E34F26" alt="HTML5" />
+            HTML5
+        </Tag>,
+    }, {
+        body: <Tag color="#1572B6">
+            <img src="https://img.shields.io/badge/-CSS3-FFF?logo=CSS3&logoColor=1572B6" alt="CSS3" />
+            CSS3
+        </Tag>,
+    }, {
+        body: <Tag color="#CF649A">
+            <img src="https://img.shields.io/badge/-Sass-FFF?logo=sass&logoColor=CF649A" alt="Sass" />
+            Sass
+        </Tag>,
+    }, {
+        body: <Tag color="#06B6D4">
+            <img src="https://img.shields.io/badge/-TailwindCSS-FFF?logo=Tailwind-CSS&logoColor=06B6D4" alt="Tailwind CSS" />
+            Tailwind CSS
+        </Tag>,
     },
 ];
 
 // Databases
 const databases = [
     {
-        body: <img
-            src="https://img.shields.io/badge/MySQL-4479A1?logo=MySQL&logoColor=FFF&link=https%3A%2F%2Fwww.mysql.com%2F"
-            alt="MySQL Badge" />,
+        body: <Tag color="#4479A1">
+            <img src="https://img.shields.io/badge/-MySQL-FFF?logo=MySQL&logoColor=4479A1" alt="MySQL" />
+            MySQL
+        </Tag>,
+    },
+    {
+        body: <Tag color="#336791">
+            <img src="https://img.shields.io/badge/-PostgreSQL-FFF?logo=PostgreSQL&logoColor=336791" alt="PostgreSQL" />
+            PostgreSQL
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/PostgreSQL-4479A1?logo=PostgreSQL&logoColor=FFF&link=https%3A%2F%2Fwww.postgresql.org%2F"
-            alt="PostgreSQL Badge" />,
+        body: <Tag color="#47A248">
+            <img src="https://img.shields.io/badge/-MongoDB-FFF?logo=MongoDB&logoColor=47A248" alt="MongoDB" />
+            MongoDB
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/MongoDB-00ed64?logo=MongoDB&logoColor=FFF&link=https%3A%2F%2Fwww.mongodb.com/docs%2F"
-            alt="MongoDB Badge" />,
-    }, {
-        body: <img
-            src="https://img.shields.io/badge/ClickHouse-4479A1?logo=ClickHouse&logoColor=FFF&link=https%3A%2F%2Fclickhouse.com%2F"
-            alt="ClickHouse Badge" />,
+        body: <Tag color="#4479A1">
+            <img src="https://img.shields.io/badge/-ClickHouse-FFF?logo=ClickHouse&logoColor=4479A1" alt="ClickHouse" />
+            ClickHouse
+        </Tag>,
     },
 ];
 
 // API & Communication
 const apiCommunication = [
-    {
-        body: <img
-            src="https://img.shields.io/badge/GraphQL-FFF?logo=graphql&logoColor=e10098&link=https%3A%2F%2Fgraphql.org"
-            alt="GraphQL Badge" />,
-    }, {
-        body: <img
-            src="https://img.shields.io/badge/RabbitMQ-FF6600?logo=RabbitMQ&logoColor=FFF&link=https%3A%2F%2Fwww.rabbitmq.com%2F"
-            alt="RabbitMQ Badge" />,
-    }, {
-        body: <img
-            src="https://img.shields.io/badge/Axios-FFF?logo=Axios&logoColor=5A29E4&link=https%3A%2F%2Fwww.axios.com%2F"
-            alt="Axios Badge" />,
-    },
-];
 
-// API Documentation & Testing
-const apiTools = [
     {
-        body: <img
-            src="https://img.shields.io/badge/Swagger-FFF?logo=swagger&logoColor=38B832&link=https%3A%2F%2Fswagger.io"
-            alt="Swagger Badge" />,
+        body: <Tag color="#85EA2D">
+            <img src="https://img.shields.io/badge/-Swagger-FFF?logo=swagger&logoColor=85EA2D" alt="Swagger" />
+            Swagger
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/Postman-FFF?logo=postman&logoColor=FF6C37&link=https%3A%2F%2Fwww.postman.com"
-            alt="Postman Badge" />,
+        body: <Tag color="#FF6C37">
+            <img src="https://img.shields.io/badge/-Postman-FFF?logo=postman&logoColor=FF6C37" alt="Postman" />
+            Postman
+        </Tag>,
     },
 ];
 
 // Monitoring & Observability
 const monitoring = [
     {
-        body: <img
-            src="https://img.shields.io/badge/OpenTelemetry-FFF?logo=OpenTelemetry&logoColor=000000&link=https%3A%2F%2Fopentelemetry.io%2F"
-            alt="OpenTelemetry Badge" />,
+        body: <Tag color="#F46800">
+            <img src="https://img.shields.io/badge/-Grafana-FFF?logo=Grafana&logoColor=F46800" alt="Grafana" />
+            Grafana
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/Prometheus-FFF?logo=Prometheus&logoColor=fc6d26&link=https%3A%2F%2Fprometheus.io%2F"
-            alt="Prometheus Badge" />,
+        body: <Tag color="#E6522C">
+            <img src="https://img.shields.io/badge/-Prometheus-FFF?logo=Prometheus&logoColor=E6522C" alt="Prometheus" />
+            Prometheus
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/Grafana-FFF?logo=Grafana&logoColor=fc6d26&link=https%3A%2F%2Fgrafana.com%2F"
-            alt="Grafana Badge" />,
+        body: <Tag color="#000000">
+            <img src="https://img.shields.io/badge/-OpenTelemetry-FFF?logo=OpenTelemetry&logoColor=000000" alt="OpenTelemetry" />
+            OpenTelemetry
+        </Tag>,
     },
 ];
 
 // DevOps & Infrastructure
 const devops = [
     {
-        body: <img
-            src="https://img.shields.io/badge/Docker-FFF?logo=Docker&logoColor=3178C6&link=https%3A%2F%2Fwww.docker.com%2F"
-            alt="Docker Badge" />,
+        body: <Tag color="#181717">
+            <img src="https://img.shields.io/badge/-GitHub-FFF?logo=github&logoColor=181717" alt="GitHub" />
+            GitHub
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/GitLab-FFF?logo=gitlab&logoColor=fc6d26&link=https%3A%2F%2Fdocs.gitlab.com"
-            alt="GitLab Badge" />,
+        body: <Tag color="#FC6D26">
+            <img src="https://img.shields.io/badge/-GitLab-FFF?logo=gitlab&logoColor=FC6D26" alt="GitLab" />
+            GitLab
+        </Tag>,
     }, {
-        body: <img
-            src="https://img.shields.io/badge/GitHub-FFF?logo=github&logoColor=000000&link=https%3A%2F%2Fgithub.com"
-            alt="GitHub Badge" />,
+        body: <Tag color="#2496ED">
+            <img src="https://img.shields.io/badge/-Docker-FFF?logo=Docker&logoColor=2496ED" alt="Docker" />
+            Docker
+        </Tag>,
     },
 ];
 
@@ -160,13 +181,9 @@ export default function Skill() {
         <Label content={t('skills.title')} />
         <Skeleton />
         <div className={'skills-grid'}>
-            <CardList effect={true} title={'Programming Languages'} data={languages} />
-            <CardList effect={true} title={'Frontend Frameworks'} data={frontendFrameworks} />
-            <CardList effect={true} title={'Backend Frameworks'} data={backendFrameworks} />
-            <CardList effect={true} title={'Frontend Technologies'} data={frontendTech} />
+            <CardList effect={true} title={'Technologies'} data={languages} />
             <CardList effect={true} title={'Databases'} data={databases} />
             <CardList effect={true} title={'API & Communication'} data={apiCommunication} />
-            <CardList effect={true} title={'API Tools'} data={apiTools} />
             <CardList effect={true} title={'Monitoring & Observability'} data={monitoring} />
             <CardList effect={true} title={'DevOps & Infrastructure'} data={devops} />
         </div>

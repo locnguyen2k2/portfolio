@@ -194,7 +194,7 @@ export default function Project(props) {
                             <div key={`${year}-${index}`} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
                                 <div className="timeline-dot"></div>
                                 <div className="timeline-content">
-                                    <Card {...item} blur={true} />
+                                    <Card {...item} blur={true} borderColor={true} />
                                 </div>
                             </div>
                         ))}

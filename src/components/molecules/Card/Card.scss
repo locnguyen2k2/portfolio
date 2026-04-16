@@ -1,5 +1,45 @@
 .card {
   display: flex;
+  position: relative;
+  overflow: hidden;
+
+  .card-header,
+  .card-body {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-border {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2.5px;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(380px circle at calc(var(--mouse-x, 0px) - var(--card-left, 0px)) calc(var(--mouse-y, 0px) - var(--card-top, 0px)), var(--card-color, #ffffff) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+  }
+
+  &:hover .card-border::after {
+    opacity: 1;
+  }
 
   h1 {
     font-size: 1rem;

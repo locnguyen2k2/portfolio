@@ -1,0 +1,79 @@
+.tech-tag {
+  position: relative;
+  padding: 8px 14px;
+  margin: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  overflow: hidden;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-1px);
+  }
+
+  .tag-border {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.05);
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(80px circle at calc(var(--mouse-x, 0px) - var(--tag-left, 0px)) calc(var(--mouse-y, 0px) - var(--tag-top, 0px)), var(--tag-color, #ffffff) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+  }
+
+  &:hover .tag-border::after {
+    opacity: 1;
+  }
+
+  .tag-content {
+    z-index: 1;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "RainyHearts", sans-serif;
+
+    img {
+      height: 21px;
+      width: auto;
+      filter: grayscale(1) brightness(1.5);
+      transition:
+        filter 0.3s ease,
+        transform 0.3s ease;
+    }
+  }
+
+  &:hover {
+    .tag-content {
+      color: #ffffff;
+      img {
+        filter: grayscale(0) brightness(1);
+        transform: scale(1.1);
+      }
+    }
+  }
+}
