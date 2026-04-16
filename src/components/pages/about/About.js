@@ -2,17 +2,15 @@ import Image from "../../atoms/Image/Image";
 import './about.scss'
 import Label from "../../atoms/Lable/Label";
 import { useTranslation } from "react-i18next";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Context } from "../../../Context";
-import Works from "../works/Works";
-import * as _ from 'lodash';
 
 export default function About() {
     const { t } = useTranslation();
     const { language } = useContext(Context);
 
     return (
-        <div id={'about'} className={`${language}`} style={{ backdropFilter: 'blur(3px)' }}>
+        <div id={'about'} className={`${language}`} style={{ backdropFilter: 'blur(0.4px)' }}>
             <div className={'welcome fade-effect'}>
                 <Label content={t('greeting')} />
             </div>
@@ -37,8 +35,8 @@ export default function About() {
                         </div>
                         <Image style={{
                             width: '205px',
-                            height: '269px'
-                        }} border={true} blur={true} />
+                            height: '229px'
+                        }} blur={true} />
                     </div>
                     <p className={'fade-effect'}>
                         {t('about.profile')}
@@ -68,7 +66,6 @@ export default function About() {
                         <p><a href={'mailto:locnguyen071102@gmail.com'}>Email</a></p>
                         <p><a href={'https://www.linkedin.com/in/loc-nguyen-171793311/'}> LinkedIn</a></p>
                         <p><a href={'https://www.facebook.com/nguyentanloc0711/'}> Facebook</a></p>
-                        <p><a href={'https://www.tiktok.com/@_locnguyen.dev'}> Tiktok</a></p>
                     </div>
                 </div>
             </div>

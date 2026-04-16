@@ -1,17 +1,46 @@
 import './Card.scss'
+import React, { useRef, useEffect, useState } from 'react';
 import Image from "../../atoms/Image/Image";
 import { GithubOutlined, LinkOutlined } from "@ant-design/icons";
 import Label from "../../atoms/Lable/Label";
 import IconButton from "../../atoms/Button/IconButton";
 
 export default function Card(props) {
+    const cardRef = useRef(null);
+    const [randomColor] = useState(() => {
+        const colors = ['#3178C6', '#F7DF1E', '#0170FE', '#7A86B8', '#da2640', '#E34F26', '#1572B6', '#06B6D4', '#4479A1', '#00ed64', '#e10098', '#FF6600', '#5A29E4', '#38B832', '#FF6C37', '#fc6d26'];
+        return colors[Math.floor(Math.random() * colors.length)];
+    });
+
+    useEffect(() => {
+        const updatePos = () => {
+            if (cardRef.current) {
+                const rect = cardRef.current.getBoundingClientRect();
+                cardRef.current.style.setProperty('--card-left', `${rect.left}px`);
+                cardRef.current.style.setProperty('--card-top', `${rect.top}px`);
+            }
+            requestAnimationFrame(updatePos);
+        };
+        const id = requestAnimationFrame(updatePos);
+        return () => cancelAnimationFrame(id);
+    }, []);
+
     return (
         <div className={`card ${props.className ? props.className : ""}`}
+            ref={cardRef}
             style={{
                 ...(props.style && props.style),
-                ...(props?.blur && { backdropFilter: 'blur(3px)' })
+                ...(props?.blur && { backdropFilter: 'blur(3px)' }),
+                ...(props?.borderColor && {
+                    '--card-color': randomColor
+                })
             }}
         >
+            {
+                props?.borderColor && (
+                    <div className="card-border"></div>
+                )
+            }
             <div className="card-header fade-effect"
                 style={{
                     display: "flex",
@@ -29,7 +58,7 @@ export default function Card(props) {
                 {
                     typeof props.body === 'string' || props.body == null
                         ? <p className={'body'}>{props.body}</p>
-                        : typeof props.body === 'object' && props.body.type && props.body.type === 'img'
+                        : typeof props.body === 'object' && props.body.type
                             ? <div className={'body body-structured'}>{props.body}</div>
                             : <div className={'body body-structured'}>
                                 {props.body?.role && <p className={'body-role'}>{props.body.role}</p>}
