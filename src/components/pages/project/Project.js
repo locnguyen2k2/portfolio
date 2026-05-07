@@ -16,7 +16,8 @@ export default function Project(props) {
             github: 'https://github.com/locnguyen2k2/ddd-nest-template',
             image: 'abac-nestjs.jpg',
             time: '04/2026 - Present',
-            tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'Prisma', 'Redis', 'JWT', 'json-logic-js', 'DDD', 'CQRS', 'ABAC']
+            link: 'https://cjool-admin-dashboard.vercel.app/',
+            tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'Prisma', 'Redis', 'JWT', 'DDD', 'Krakend', 'ABAC']
         },
         {
             title: `${t('works.teknix.name')}`,
