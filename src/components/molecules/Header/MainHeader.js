@@ -82,7 +82,7 @@ export default function MainHeader({ ...props }) {
                             }
                             {
                                 item.name === 'resume' &&
-                                <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.456ba832916749dd24a9.pdf')}>
+                                <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.9071ea0661919950a8d1.pdf')}>
                                     <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
                                 </a>
                             }
@@ -123,7 +123,7 @@ export default function MainHeader({ ...props }) {
                                                 to={`${item.link}`}><span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span></Link>
                                             :
                                             // eslint-disable-next-line
-                                            <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.456ba832916749dd24a9.pdf')}>
+                                            <a onClick={() => window.open('https://locnguyen2k2-portfolio.vercel.app/static/media/CV_NguyenTanLoc.9071ea0661919950a8d1.pdf')}>
                                                 <span>{item.icon && item.icon} {item?.name && t(`navigation.${item.name}`)}</span>
                                             </a>}
                                 </li>
