@@ -103,19 +103,19 @@ main {
   height: calc(100vh + 20px);
   background-color: #030303;
 
-  .glowing-blob {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    left: var(--mouse-x, 0px);
-    top: var(--mouse-y, 0px);
-    background: var(--mouse-color, rgba(255, 203, 106, 0.384));
-    filter: blur(80px);
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-  }
+  // .glowing-blob {
+    // position: absolute;
+    // width: 500px;
+    // height: 500px;
+    // left: var(--mouse-x, 0px);
+    // top: var(--mouse-y, 0px);
+    // background: var(--mouse-color, rgba(255, 203, 106, 0.384));
+    // filter: blur(80px);
+    // border-radius: 50%;
+    // z-index: 0;
+    // pointer-events: none;
+    // transform: translate(-50%, -50%);
+  // }
 
   .bg-layer {
     position: absolute;
