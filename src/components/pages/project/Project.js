@@ -17,7 +17,7 @@ export default function Project(props) {
             image: 'abac-nestjs.jpg',
             time: '04/2026 - Present',
             link: 'https://cjool-admin-dashboard.vercel.app/',
-            tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'Prisma', 'Redis', 'JWT', 'DDD', 'Krakend', 'ABAC']
+            tags: ['NestJS', 'TypeScript', 'PostgreSQL', 'MongoDB', 'Prisma', 'Redis', 'RabbitMQ', 'DDD', 'Krakend', 'ABAC']
         },
         {
             title: `${t('works.teknix.name')}`,

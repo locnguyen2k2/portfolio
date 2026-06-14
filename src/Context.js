@@ -1,11 +1,11 @@
-import {createContext, useState} from "react";
-import {savedLanguage} from "./i18n";
+import { createContext, useState } from "react";
+import { savedLanguage } from "./i18n";
 
 export const Context = createContext();
-export const ContextProvider = ({children}) => {
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+export const ContextProvider = ({ children }) => {
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
     const [language, setLanguage] = useState(savedLanguage);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading,] = useState(false);
 
     const toggleHandleChangeTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';

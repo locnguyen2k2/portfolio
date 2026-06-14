@@ -48,7 +48,7 @@ export default function MainHeader({ ...props }) {
         },
         {
             title: "Docsaurus",
-            icon: <FileTextOutlined />,
+            name: "document",
             link: `https://cjool117-docusaurus.vercel.app/docs/category/backend`,
         },
         {

@@ -5,7 +5,8 @@
     "projects": "Projects & Works",
     "skill": "Skills",
     "contact": "Contact",
-    "resume": "Resume"
+    "resume": "Resume",
+    "document": "Documents"
   },
   "mailer": {
     "isValid": "Name, email or content is empty",
@@ -24,6 +25,10 @@
       "contact": "Contact with me",
       "feedback": "Feedback"
     },
+    "2002": "Born in Vinh Long(Old is called Tra Vinh), Vietnam",
+    "2024_1": "Completed Engineer's degree in Software Engineering Major at Can Tho University Of Technology, Vietnam",
+    "2024_2": "Worked at DANG AN TECH COMPANY LIMITED as a Frontend Developer",
+    "2025": "Worked at Teknix Corporation as a Backend Developer",
     "name": "Loc Nguyen",
     "major": "Software Engineer",
     "profile": "Loc Nguyen is a software engineer with a genuine interest and passion for web development, driving him to continuously learn, practice, and strive to improve his skills, solve problems. Besides coding, he also enjoys to take some photos and videos about his daily life, and coffee.",
