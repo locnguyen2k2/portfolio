@@ -31,7 +31,7 @@ export default function About() {
                     <div className={'info'}>
                         <div className={'fade-effect'}>
                             <Label content={'Loc Nguyen'} />
-                            <p><i>{t('about.major')}</i></p>
+                            <p><i>{t('about.major')} - BE(1yoe) | FE(1yoe)</i></p>
                         </div>
                         <Image style={{
                             width: '205px',
@@ -48,10 +48,10 @@ export default function About() {
                         </div>
                     </div>
                     <ul>
-                        <li><p><b>2002</b> - Born in Vinh Long(Old is called Tra Vinh), Vietnam</p></li>
-                        <li><p><b>2024</b> - Completed Engineer's degree in Software Engineering Major at Can Tho University Of Technology, Vietnam</p></li>
-                        <li><p><b>2024</b> - Worked at DANG AN TECH COMPANY LIMITED as a Frontend Developer</p></li>
-                        <li><p><b>2025</b> - Worked at Teknix Corporation as a Backend Developer</p></li>
+                        <li><p><b>2002</b> - {t('about.2002')}</p></li>
+                        <li><p><b>2024</b> - {t('about.2024_1')}</p></li>
+                        <li><p><b>2024</b> - {t('about.2024_2')}</p></li>
+                        <li><p><b>2025</b> - {t('about.2025')}</p></li>
                     </ul>
                     <div className={'fade-effect'}>
                         <Label content={'I ♥'} />

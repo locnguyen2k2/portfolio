@@ -2,10 +2,11 @@
   "navigation": {
     "home": "Trang chủ",
     "about": "Thông tin",
-    "projects": "Các dự án & Công việc",
+    "projects": "Kinh nghiệm & Trải nghiệm",
     "skill": "Kỹ năng",
     "contact": "Liên hệ",
-    "resume": "Hồ sơ"
+    "resume": "Hồ sơ",
+    "document": "Tài liệu"
   },
   "mailer": {
     "isValid": "Vui lòng nhập đủ thông tin!",
@@ -24,9 +25,13 @@
       "contact": "Liên hệ với tôi",
       "feedback": "Phản hồi"
     },
+    "2002": "Sinh ra và lớn lên tại Trà Vinh( nay là Vĩnh Long), Vietnam",
+    "2024_1": "Hoàn thành chương trình đại học với chuyên ngành Kỹ sư phần mềm tại trường đại học Kỹ thuật - Công nghệ Cần Thơ",
+    "2024_2": "Làm việc tại DANG AN TECH COMPANY LIMITED với vai trò lập trình viên Frontend",
+    "2025": "Làm việc tại Teknix Corporation với vai trò lập trình viên Backend",
     "name": "Nguyễn Tấn Lộc",
     "major": "Kỹ sư phần mềm",
-    "profile": "Tôi là kỹ sư phần mềm đang tìm cơ hội ứng tuyển vị trí lập trình viên fullstack với sở trường gồm JavaScript, TypeScript, NestJS, React, MySQL và MongoDB và một số khác trong các dự án cá nhân. Chính sự yêu thích cũng như niềm đam mê với lập trình web luôn thúc đẩy tôi tiếp tục học và luyện tập để nâng cao kỹ năng bản thân và giải quyết các vấn đề.",
+    "profile": "Là một kỹ sư phần mềm đang tìm cơ hội việc làm tại vị trí lập trình viên Web Developer với một số khía cạnh nổi bật như: JavaScript, TypeScript, NodeJS(NestJS), Go(Gin), PostgresQL, MySQL và MongoDB và một số công nghệ khác trong các năm làm việc thực tế tại các công ty cũng như trong các dự án cá nhân và cùng với đó là sự yêu thích cũng như niềm đam mê với lập trình web luôn thúc đẩy bản thân phải tiếp tục học và trao dồi thêm để nâng cao kỹ năng chuyên môn. Với mục tiêu, tham gia và phát triển các hệ thống một cách hiệu quả.",
     "contact": "Liên hệ với tôi thông qua các kênh: "
   },
   "works": {
@@ -104,7 +109,7 @@
       "body": "Ứng dụng hổ trợ nhân viên đặt món tại quầy(thông qua Hi-Coffee POS APIs)."
     },
     "abacNestjs": {
-      "name": "ABAC NestJS",
+      "name": "Domain Drivent Design - Attributes Base Access Control",
       "body": "Hệ thống kiểm soát truy cập dựa trên thuộc tính (ABAC) được xây dựng với NestJS áp dụng các nguyên lý Domain-Driven Design. Tính năng bao gồm kiến trúc đa tenant, phân quyền dựa trên chính sách sử dụng JSON Logic, xác thực JWT và quản lý vai trò toàn diện với đánh giá điều kiện phức tạp cho kiểm soát truy cập chi tiết."
     }
   }
