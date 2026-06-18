@@ -11,6 +11,15 @@ export default function Project(props) {
 
     const data = useMemo(() => props.data ? props.data : [
         {
+            title: t('projects.emsDashboard.name'),
+            body: t('projects.emsDashboard.body'),
+            github: 'https://github.com/locnguyen2k2/cjool-ems-dashboard',
+            image: 'ems-dashboard.png',
+            time: '06/2026 - Present',
+            link: 'https://cjool117-ems-system.vercel.app/',
+            tags: ['NextJS', 'TypeScript', 'React', 'Ant Design', 'Atomic']
+        },
+        {
             title: t('projects.abacNestjs.name'),
             body: t('projects.abacNestjs.body'),
             github: 'https://github.com/locnguyen2k2/ddd-nest-template',

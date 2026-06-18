@@ -88,6 +88,10 @@
   "projects&works": "My works and projects",
   "projects": {
     "title": "My projects",
+    "emsDashboard": {
+      "name": "Quizzes & Exam papers management dashboard",
+      "body": "Developed a management system for managing quizzes and exam papers and automatic generation of exam papers, and provided data management support for the system."
+    },
     "ems": {
       "name": "Quizzes & Exam papers management system",
       "body": "Developed a management system for managing quizzes and exam papers and automatic generation of exam papers, and provided data management support for the system."

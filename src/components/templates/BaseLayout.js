@@ -37,8 +37,8 @@ export default function BaseLayout() {
 
     useEffect(() => {
         if (language !== localStorage.getItem('language')) {
-            window.location.href = currentRoute;
             localStorage.setItem('language', language);
+            window.location.reload();
         }
     }, [language, currentRoute]);
 
