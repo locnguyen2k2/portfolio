@@ -1,4 +1,4 @@
-import { FileTextOutlined, GithubOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons';
+import { GithubOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons';
 import IconButton from "../../atoms/Button/IconButton";
 import { Context } from "../../../Context";
 import { useContext, useEffect, useState } from "react";
@@ -11,8 +11,6 @@ import { useTranslation } from "react-i18next";
 export default function MainHeader({ ...props }) {
     const { t } = useTranslation();
     const {
-        isLoading,
-        toggleHandleChangeLoadingStatus,
         theme,
         language,
         toggleHandleChangeTheme,
