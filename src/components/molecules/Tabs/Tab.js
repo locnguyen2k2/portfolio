@@ -1,5 +1,4 @@
 import {
-    FileMarkdownOutlined,
     CloseOutlined
 } from "@ant-design/icons";
 import { useEffect, useRef, useState } from "react";
@@ -7,6 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import "./tab.scss";
 import { sidebarIcons } from "../Sidebar/Sidebar";
+import { Icon } from "@iconify/react";
 
 export default function Tab({
     tabs,
@@ -85,6 +85,36 @@ export default function Tab({
                     </button>
                 </div>
             ))}
+            <div
+                className={`tab`}
+                onClick={() => {
+                    const link = document.createElement("a");
+                    link.href = `https://locnguyen2k2-portfolio.vercel.app/static/media/${process.env.RESUME_FILENAME}.pdf`;
+                    link.download = "CV_LOCNGUYEN2k2_2026.pdf";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }}
+            >
+                <div className="tab-left">
+                    <span className="tab-icon">
+                        <Icon icon="material-symbols:download" />
+                    </span>
+
+                    <span className="tab-title">
+                        Resume
+                    </span>
+                </div>
+
+                <button
+                    className="tab-close"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                    }}
+                >
+                    <CloseOutlined />
+                </button>
+            </div>
         </div>
     );
 }
