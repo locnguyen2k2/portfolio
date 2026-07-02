@@ -82,37 +82,30 @@
     }
   },
   "skills": {
-    "title": "Các cộng nghệ sử dụng"
+    "title": "Các cộng nghệ sử dụng",
+    "description": "Các công nghệ và công cụ tôi sử dụng để xây dựng các ứng dụng web hiện đại."
   },
-  "projects&works": "Công việc và dự án",
+  "contact": {
+    "title": "Liên hệ",
+    "description": "Nếu bạn có dự án, cơ hội hợp tác hoặc đơn giản chỉ muốn trò chuyện, hãy liên hệ với tôi."
+  },
+  "projects&works": "Dự án",
   "social": "Mạng xã hội: ",
   "projects": {
     "title": "Các dự án",
-    "emsDashboard": {
-      "name": "Hệ thống Dashboard quản lý ngân hàng đề",
-      "body": "Hệ thống gồm: Tạo bộ đề ngẫu nhiên với tỷ lệ đầu vào, quản lý đề thi, quản lý câu hỏi và phân loại theo loại và độ khó, quản lý chương, quản lý chương học phần, quản lý học phần, quản lý lớp học phần."
-    },
+    "description": "Các dự án tôi đã xây dựng và tham gia phát triển.",
     "ems": {
+      "title": "EMS",
       "name": "Quản lý đề thi và câu hỏi trắc nghiệm",
       "body": "Hệ thống gồm: Tạo bộ đề ngẫu nhiên với tỷ lệ đầu vào, quản lý đề thi, quản lý câu hỏi và phân loại theo loại và độ khó, quản lý chương, quản lý chương học phần, quản lý học phần, quản lý lớp học phần."
     },
     "lms": {
+      "title": "LMS",
       "name": "Quản lý phòng thí nghiệm",
       "body": "Hệ thống RESTful APIs, quản lý việc mượn, trả và chuyển đổi các trang thiết bị giữa các phòng, một số chức năng liên quan như quản lý thiết bị, dụng cụ, hóa chất, phòng, người dùng và phân quyền."
     },
-    "lmsApp": {
-      "name": "Ứng dụng quản lý việc mượng & trả trang thiết bị phòng thí nghiệm",
-      "body": "Giúp người dùng dễ dàng muượn, trả trang thiết bị tại phòng thí nghiệm và theo dõi thông tin cũng như số lượng hiện có của trang thiết bị theo từng phòng."
-    },
-    "hiCoffeePos": {
-      "name": "Hi-Coffee POS",
-      "body": "Hệ thống POS phục vụ ngành FnB (chưa gồm quản lý nguyên vật liệu) được thiết kế để phục vụ việc đặt món tại quán, hổ trợ quản lý danh mục sản phẩm, khu vực, phòng, bàn và nhóm các chức năng như quản lý người dùng, phân quyền, đơn đặt, thanh toán(tiền mặt), quản lý hóa và thống kê doanh thu (bàn, món) theo từng mốc thời gian!"
-    },
-    "hiCoffeeApp": {
-      "name": "Ứng dụng Hi-Coffee",
-      "body": "Ứng dụng hổ trợ nhân viên đặt món tại quầy(thông qua Hi-Coffee POS APIs)."
-    },
     "abacNestjs": {
+      "title": "DDD",
       "name": "Domain Drivent Design - Attributes Base Access Control",
       "body": "Hệ thống kiểm soát truy cập dựa trên thuộc tính (ABAC) được xây dựng với NestJS áp dụng các nguyên lý Domain-Driven Design. Tính năng bao gồm kiến trúc đa tenant, phân quyền dựa trên chính sách sử dụng JSON Logic, xác thực JWT và quản lý vai trò toàn diện với đánh giá điều kiện phức tạp cho kiểm soát truy cập chi tiết."
     }

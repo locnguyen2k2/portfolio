@@ -9,6 +9,24 @@ import { useTranslation } from "react-i18next";
 // Programming Languages
 const languages = [
     {
+        body: <Tag color="#339933">
+            <img src="https://img.shields.io/badge/-Node.js-FFF?logo=node.js&logoColor=339933" alt="Node.js" />
+            Node.js
+        </Tag>,
+    },
+    {
+        body: <Tag color="#da2640">
+            <img src="https://img.shields.io/badge/-Nestjs-FFF?logo=nestjs&logoColor=da2640" alt="NestJS" />
+            NestJS
+        </Tag>,
+    },
+    {
+        body: <Tag color="#0170FE">
+            <img src="https://img.shields.io/badge/Go-FFF?logo=go&logoColor=0170FE" alt="Go" />
+            Go
+        </Tag>,
+    },
+    {
         body: <Tag color="#3178C6">
             <img src="https://img.shields.io/badge/TypeScript-FFF?logo=TypeScript&logoColor=3178C6" alt="TypeScript" />
             TypeScript
@@ -20,10 +38,15 @@ const languages = [
         </Tag>,
     },
     {
-        body: <Tag color="#339933">
-            <img src="https://img.shields.io/badge/-Node.js-FFF?logo=node.js&logoColor=339933" alt="Node.js" />
-            Node.js
-        </Tag>,
+        body: (
+            <Tag color="#326CE5">
+                <img
+                    src="https://img.shields.io/badge/KrakenD-FFF?logo=krakend&logoColor=326CE5"
+                    alt="KrakenD"
+                />
+                KrakenD
+            </Tag>
+        ),
     },
     {
         body: <Tag color="#FF6600">
@@ -32,20 +55,9 @@ const languages = [
         </Tag>,
     },
     {
-        body: <Tag color="#da2640">
-            <img src="https://img.shields.io/badge/-Nestjs-FFF?logo=nestjs&logoColor=da2640" alt="NestJS" />
-            NestJS
-        </Tag>,
-    }, {
-        body: <Tag color="#0170FE">
-            <img src="https://img.shields.io/badge/Go-FFF?logo=go&logoColor=0170FE" alt="Go" />
-            Go
-        </Tag>,
-    },
-    {
-        body: <Tag color="#00ADD8">
-            <img src="https://img.shields.io/badge/-Gin-FFF?logo=gin&logoColor=00ADD8" alt="Gin" />
-            Gin
+        body: <Tag color="#85EA2D">
+            <img src="https://img.shields.io/badge/-Swagger-FFF?logo=swagger&logoColor=85EA2D" alt="Swagger" />
+            Swagger
         </Tag>,
     },
     {
@@ -119,22 +131,6 @@ const databases = [
     },
 ];
 
-// API & Communication
-const apiCommunication = [
-
-    {
-        body: <Tag color="#85EA2D">
-            <img src="https://img.shields.io/badge/-Swagger-FFF?logo=swagger&logoColor=85EA2D" alt="Swagger" />
-            Swagger
-        </Tag>,
-    }, {
-        body: <Tag color="#FF6C37">
-            <img src="https://img.shields.io/badge/-Postman-FFF?logo=postman&logoColor=FF6C37" alt="Postman" />
-            Postman
-        </Tag>,
-    },
-];
-
 // Monitoring & Observability
 const monitoring = [
     {
@@ -177,13 +173,13 @@ const devops = [
 
 export default function Skill() {
     const { t } = useTranslation();
-    return (<div className={'skills'}>
-        <Label content={t('skills.title')} />
+    return (<div className={'skills'} id={'skills'}>
+        <i style={{ fontSize: "0.9rem" }}>// {t('skills.description')}</i>
+        <div style={{ display: "flex", alignItems: "center" }}> <span className={'tag'}>&lt;h1&gt;</span><Label content={t('skills.title')} /><span className={'tag'}>&lt;/h1&gt;</span></div>
         <Skeleton />
         <div className={'skills-grid'}>
             <CardList effect={true} title={'Technologies'} data={languages} />
             <CardList effect={true} title={'Databases'} data={databases} />
-            <CardList effect={true} title={'API & Communication'} data={apiCommunication} />
             <CardList effect={true} title={'Monitoring & Observability'} data={monitoring} />
             <CardList effect={true} title={'DevOps & Infrastructure'} data={devops} />
         </div>

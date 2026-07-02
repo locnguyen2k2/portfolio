@@ -1,5 +1,7 @@
 .skills {
-  > .label {
+  height: 100%;
+
+  >.label {
     text-align: center;
     //transition: top 0.5s ease-in-out 0s;
   }
@@ -10,14 +12,13 @@
     gap: 24px;
     margin: 20px auto;
     padding: 10px;
-    max-width: 1400px;
+    max-width: 1800px;
 
     .list-card {
       background: rgba(255, 255, 255, 0.02);
       padding: 20px;
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
       transition:
         transform 0.3s ease,
         border-color 0.3s ease;
@@ -91,7 +92,7 @@
   }
 
   // Remove the old generic styles that might conflict
-  > div {
+  >div {
     display: none;
   }
 }

@@ -10,6 +10,11 @@
     font-size: 18px;
   }
 
+  .profile,
+  .info {
+    margin-top: 76px;
+  }
+
   .info {
     >.image {
       margin: 8px;
@@ -21,7 +26,8 @@
     }
 
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
   }
 
@@ -45,7 +51,7 @@
     position: relative;
     height: max-content;
     width: 100vw;
-    max-width: 800px;
+    max-width: 1800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,14 +82,22 @@
 }
 
 #about {
+  height: 100%;
+
+  .label {
+    margin: 0 !important;
+  }
+
   p {
     font-family: "Lemonada-Medium";
   }
 
-  .quote p {
-    font-size: 0.7rem;
-    padding: 8px;
-    text-align: justify;
+  .quote {
+    p {
+      font-size: 0.7rem;
+      padding: 8px;
+      text-align: justify;
+    }
   }
 }
 
@@ -95,7 +109,6 @@
 
 .welcome {
   .label {
-    margin: 76px 0;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.36);
   }

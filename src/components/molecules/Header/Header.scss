@@ -16,8 +16,8 @@
   z-index: 9999;
   height: 56px;
   width: 100vw;
-  background: rgba(255, 255, 255, .3);
-  backdrop-filter: blur(8px);
+  // background: rgba(255, 255, 255, .3);
+  // backdrop-filter: blur(8px);
 
   .left {
     flex: .2;
@@ -25,6 +25,33 @@
     a {
       margin: 0 20px;
     }
+
+    .dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 20px;
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 5px;
+
+        &.r {
+          background-color: #ff605c;
+        }
+
+        &.y {
+          background-color: #ffbd44;
+        }
+
+        &.g {
+          background-color: #00ca4e;
+        }
+      }
+    }
+
   }
 
   .center {
@@ -35,10 +62,6 @@
     flex: .1;
     justify-content: center;
     align-items: center;
-
-    .label {
-      font-size: 1.2rem;
-    }
 
     .mobile-menu {
       position: relative;
@@ -58,7 +81,7 @@
         overflow-y: scroll;
         height: calc(100vh - 56px);
         transition: ease-in-out .4s right;
-        background-color: rgba(151, 148, 148, 0.9);
+        background-color: $bg;
 
         li {
           width: 100%;

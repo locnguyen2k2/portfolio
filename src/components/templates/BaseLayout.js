@@ -3,13 +3,76 @@ import Footer from "../molecules/Footer/Footer";
 import { Outlet, useLocation } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
 import MainHeader from "../molecules/Header/MainHeader";
-import TigerAnimation from '../atoms/TigerAnimation/TigerAnimation';
+import Sidebar from '../molecules/Sidebar/Sidebar';
+import Tab from '../molecules/Tabs/Tab';
+import Breadcrumb from '../molecules/Breadcrumbs/Breadcrumb';
 
+export const tabs = [
+    {
+        title: 'navigation.about',
+        tab: 'about',
+        prefix: "html"
+    },
+    {
+        title: 'navigation.skill',
+        tab: 'skills',
+        prefix: 'json'
+
+    },
+    {
+        root: "projects&works",
+        children: [
+            {
+                title: 'projects.abacNestjs.title',
+                tab: 'ddd-dashboard',
+                prefix: "ts",
+            },
+            {
+                title: 'works.teknix.title',
+                tab: 'teknix',
+                prefix: "ts"
+            },
+            {
+                title: 'works.datech.title',
+                tab: 'datech',
+                prefix: "js"
+            },
+            {
+                title: 'projects.ems.title',
+                tab: 'ems',
+                prefix: 'graphql'
+            },
+            {
+                title: 'projects.lms.title',
+                tab: 'lms',
+                prefix: 'ts'
+            }
+        ]
+    },
+    {
+        title: 'Contact',
+        tab: 'contact',
+        prefix: "bash"
+    }
+]
 export default function BaseLayout() {
     const { theme = 'dark', language = 'en' } = useContext(Context);
     const location = useLocation();
     const [currentRoute, setCurrentRoute] = useState(location.pathname);
+    const [fileActiveOn, setFileActiveOn] = useState('about');
+    const [scrollProgress, setScrollProgress] = useState(0);
+
+    const [activeTab, setActiveTab] = useState(tabs.find((tab) => tab.tab === location.pathname.slice(1)) ? location.pathname.slice(1) : 'about');
     const mainRef = useRef(null);
+
+    const navigateTo = (id) => {
+        setFileActiveOn(id);
+
+        document.getElementById(id)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    };
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -29,6 +92,44 @@ export default function BaseLayout() {
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
+
+    useEffect(() => {
+        const container = document.querySelector('.container');
+        if (!container) return;
+
+        const handleScroll = () => {
+            const scrollTop = container.scrollTop;
+            const scrollHeight = container.scrollHeight;
+            const clientHeight = container.clientHeight;
+            const totalHeight = scrollHeight - clientHeight;
+
+            if (totalHeight <= 0) {
+                setScrollProgress(0);
+            } else {
+                const progress = (scrollTop / totalHeight) * 100;
+                setScrollProgress(Math.min(100, Math.max(0, progress)));
+            }
+        };
+
+        handleScroll();
+        container.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('resize', handleScroll);
+
+        // Multi-stage check to handle image loading and dynamic content
+        const timers = [
+            setTimeout(handleScroll, 100),
+            setTimeout(handleScroll, 500),
+            setTimeout(handleScroll, 1000),
+            setTimeout(handleScroll, 2000),
+        ];
+
+        return () => {
+            container.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleScroll);
+            timers.forEach(clearTimeout);
+        };
+    }, []);
+
     useEffect(() => {
         if (location.pathname !== currentRoute) {
             setCurrentRoute(`${location.pathname}`);
@@ -42,19 +143,23 @@ export default function BaseLayout() {
         }
     }, [language, currentRoute]);
 
-    return (<main ref={mainRef} className={`${theme}`}>
-        <div className="bg-layer dark"></div>
-        <div className="bg-layer light"></div>
-        <div className="glowing-blob"></div>
-        <div className={'dark-filter'}></div>
-        <MainHeader currentRoute={currentRoute} />
+    return (
+        <main ref={mainRef} className={`${theme}`}>
+            <div className="scroll-progress" style={{ width: `${scrollProgress}%` }}></div>
+            <div className="bg-layer dark"></div>
+            <div className="bg-layer light"></div>
+            <div className="glowing-blob"></div>
+            <div className={'dark-filter'}></div>
+            <MainHeader currentRoute={currentRoute} />
+            <Sidebar tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} />
+            <Tab tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} />
+            <Breadcrumb tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} />
 
-        <div className={`container`}>
-            <Outlet />
-        </div>
+            <div className={`container`}>
+                <Outlet />
+            </div>
 
-        <TigerAnimation />
-
-        <Footer />
-    </main>)
+            <Footer />
+        </main>
+    );
 }
