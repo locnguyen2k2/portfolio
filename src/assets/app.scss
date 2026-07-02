@@ -100,7 +100,7 @@ button {
 
   .object-brace {
     color: var(--accent);
-    font-size: 1.3rem;
+    font-size: 0.78rem;
     user-select: none;
   }
 
@@ -116,18 +116,19 @@ button {
 
   .object-key {
     width: 90px;
-
+    font-size: 0.78rem;
     color: var(--cyan);
   }
 
   .object-colon {
     color: var(--text-subtle);
-
+    font-size: 0.78rem;
     margin: 0 12px;
   }
 
   .object-value {
     flex: 1;
+    font-size: 0.78rem;
 
     color: var(--text);
 
@@ -346,10 +347,10 @@ main {
     top: 56px;
     left: 0;
     height: 3px;
-    background: $orange-400;
+    background: $accent;
     z-index: 10000;
     transition: width 0.1s ease-out;
-    box-shadow: 0 0 10px rgba($orange-400, 0.5);
+    box-shadow: 0 0 10px rgba($accent, 0.5);
   }
 
   .tag {
