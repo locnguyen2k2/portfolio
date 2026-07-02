@@ -61,8 +61,6 @@ export default function BaseLayout() {
     const [currentRoute, setCurrentRoute] = useState(location.pathname);
     const [fileActiveOn, setFileActiveOn] = useState('about');
     const [scrollProgress, setScrollProgress] = useState(0);
-
-    const [activeTab, setActiveTab] = useState(tabs.find((tab) => tab.tab === location.pathname.slice(1)) ? location.pathname.slice(1) : 'about');
     const mainRef = useRef(null);
 
     const navigateTo = (id) => {
