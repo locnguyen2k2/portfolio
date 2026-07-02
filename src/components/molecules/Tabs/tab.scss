@@ -1,0 +1,161 @@
+@import "./../../../assets/color.scss";
+
+.tabs {
+    position: fixed;
+    z-index: 2;
+    top: 56px;
+    left: 256px;
+    width: calc(100% - 256px);
+    height: 40px;
+    display: flex;
+    border-bottom: 1px solid $border;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    min-width: 150px;
+    max-width: 220px;
+    padding: 0 10px;
+    border-right: 1px solid $border;
+    cursor: pointer;
+    transition:
+        background .18s,
+        color .18s;
+    transition:
+        background-color .18s ease,
+        color .18s ease,
+        box-shadow .18s ease,
+        transform .18s ease;
+
+    &:hover {
+        background: $bg-highlight;
+
+        .tab-close {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    &.on {
+        background: $bg;
+
+        .tab-title {
+            color: $text;
+        }
+
+        .tab-icon {
+            color: $cyan;
+        }
+
+        box-shadow: inset 0 1px rgba(255, 255, 255, .04);
+    }
+}
+
+.tab-left {
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    flex: 1;
+}
+
+.tab-icon {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 16px;
+
+    margin-right: 8px;
+
+    color: $cyan;
+
+    transition: color .2s;
+}
+
+.tab-title {
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    color: $text-muted;
+
+    font-size: .88rem;
+
+    transition: color .2s;
+}
+
+.tab-close {
+
+    width: 20px;
+    height: 20px;
+
+    margin-left: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: $text-subtle;
+
+    border-radius: 4px;
+
+    opacity: 0;
+
+    transform: scale(.85);
+
+    transition:
+        opacity .15s,
+        background .15s,
+        transform .15s,
+        color .15s;
+
+    cursor: pointer;
+
+    &:hover {
+        color: $text;
+    }
+}
+
+.tab-indicator {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    height: 2px;
+
+    background: $accent;
+
+    border-radius: 0 0 2px 2px;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    transition:
+        transform .28s cubic-bezier(.4, 0, .2, 1),
+        width .28s cubic-bezier(.4, 0, .2, 1);
+}

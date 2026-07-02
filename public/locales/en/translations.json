@@ -22,7 +22,7 @@
     "bio": "About my journey",
     "love": "Love",
     "title": {
-      "contact": "Contact with me",
+      "contact": "Get in touch",
       "feedback": "Feedback"
     },
     "2002": "Born in Vinh Long(Old is called Tra Vinh), Vietnam",
@@ -31,12 +31,13 @@
     "2025": "Worked at Teknix Corporation as a Backend Developer",
     "name": "Loc Nguyen",
     "major": "Software Engineer",
-    "profile": "Loc Nguyen is a software engineer with a genuine interest and passion for web development, driving him to continuously learn, practice, and strive to improve his skills, solve problems. Besides coding, he also enjoys to take some photos and videos about his daily life, and coffee.",
+    "profile": "Software Engineer with experience in backend and frontend web development, specializing in scalable APIs, transaction workflows, real-time applications, and business management systems. Proficient in NestJS, Go, React, PostgreSQL, and MongoDB, with a strong focus on writing clean, maintainable, and reliable software.",
     "contact": "The easiest way to connect with me: "
   },
   "works": {
     "title": "Works",
     "teknix": {
+      "title": "Teknix Corp",
       "name": "Teknix Corporation",
       "time": "03/2025 - 03/2026",
       "body": {
@@ -70,6 +71,7 @@
       }
     },
     "datech": {
+      "title": "DA.Tech",
       "name": "DANG AN TECH COMPANY LIMITED (DA.Tech)",
       "time": "04/2024 - 03/2025",
       "body": {
@@ -82,37 +84,30 @@
     }
   },
   "skills": {
-    "title": "My tech stacks"
+    "title": "My tech stacks",
+    "description": "Technologies and tools I use to build modern web applications."
   },
   "social": "Socials: ",
-  "projects&works": "My works and projects",
+  "projects&works": "Projects",
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Let's connect and build something great together."
+  },
   "projects": {
     "title": "My projects",
-    "emsDashboard": {
-      "name": "Quizzes & Exam papers management dashboard",
-      "body": "Developed a management system for managing quizzes and exam papers and automatic generation of exam papers, and provided data management support for the system."
-    },
+    "description": "Selected projects showcasing my skills and experience.",
     "ems": {
+      "title": "EMS",
       "name": "Quizzes & Exam papers management system",
       "body": "Developed a management system for managing quizzes and exam papers and automatic generation of exam papers, and provided data management support for the system."
     },
     "lms": {
+      "title": "LMS",
       "name": "Laboratory management system",
       "body": "A RESTful API system have been designed to manage lab equipment, tools, and chemicals. The system provides a comfortable way to transfer, borrow, and return items in management processing."
     },
-    "lmsApp": {
-      "name": "Laboratory borrowing application(android only)",
-      "body": "The application is used to manage information, and borrowing the items for the Laboratory management system."
-    },
-    "hiCoffeePos": {
-      "name": "Hi-Coffee POS",
-      "body": "The POS system for Fnb (not included raw materials management) used to manage products, categories, areas, tables, users, permission, ordering, cash payment, invoices and statistics"
-    },
-    "hiCoffeeApp": {
-      "name": "Hi-Coffee Application",
-      "body": "The order application is build for staffs to help customers ordering products at shop(by Hi-Coffee APIs)."
-    },
     "abacNestjs": {
+      "title": "DDD",
       "name": "Domain-Driven Design Nest Template",
       "body": "An Attributes-Based Access Control system built with NestJS implementing Domain-Driven Design principles. Features multi-tenant architecture, policy-based authorization using JSON Logic, JWT authentication, and comprehensive role management with complex condition evaluation for fine-grained access control."
     }

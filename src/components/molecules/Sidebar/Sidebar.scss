@@ -1,0 +1,167 @@
+@import "./../../../assets/color.scss";
+
+.activity {
+    top: 56px;
+    width: 56px;
+    height: 100vh;
+    flex: none;
+    background: $bg-dark;
+    border-right: 1px solid $border;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    gap: 10px;
+
+    .grow {
+        flex: 1;
+    }
+
+    .act {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .2s ease;
+        position: relative;
+        color: $text-subtle;
+
+        width: 40px;
+        height: 40px;
+
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            color: $text;
+            background: $bg-highlight;
+        }
+
+        &.on {
+            color: $accent;
+            background: $bg-highlight;
+        }
+
+    }
+}
+
+.sidebar {
+    top: 56px;
+    width: 200px;
+    height: 100vh;
+    left: 56px;
+    flex: none;
+    border-right: 1px solid $border;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    overflow: hidden;
+
+    .sidebar-header {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color: $text;
+        padding: 4px 8px;
+    }
+
+    .tree {
+        position: relative;
+        padding: 4px 8px 0;
+        width: 100%;
+
+        .active-indicator {
+            position: absolute;
+            left: 8px;
+            top: 0;
+
+            width: 4px;
+            height: 32px;
+
+            background: $accent;
+            border-radius: 0 4px 4px 0;
+
+            transition: transform .22s cubic-bezier(.4, 0, .2, 1);
+
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .folder {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            padding: 4px 8px;
+            height: 32px;
+
+            .folder-name {
+                color: $text;
+                font-size: 0.9rem;
+            }
+
+            &:hover {
+                background: $bg-highlight;
+            }
+
+            span {
+                color: $yellow;
+            }
+        }
+
+        .file {
+            padding: 4px 8px;
+            width: 100%;
+            height: 32px;
+            margin-bottom: 4px;
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            border-radius: 4px;
+            cursor: pointer;
+
+            transition: background-color .2s ease;
+
+            span {
+                color: $cyan;
+            }
+
+            .file-name {
+                color: $text-muted;
+                font-size: 0.9rem;
+            }
+
+            &:hover {
+                background: $bg-highlight;
+
+                .file-name {
+                    color: $text;
+                }
+            }
+
+            &.active {
+                background: $bg-hover;
+
+                .file-name {
+                    color: $text;
+                }
+
+                span {
+                    color: $accent;
+                }
+            }
+        }
+
+        .nested {
+            padding-left: 16px;
+            margin-left: 4px;
+            border-left: 1px solid $border-light;
+        }
+    }
+}

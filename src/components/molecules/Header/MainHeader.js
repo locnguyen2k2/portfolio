@@ -64,13 +64,14 @@ export default function MainHeader({ ...props }) {
         <div id={'heading'} className={`${language}`}>
             <div className={`model ${isClickBar ? 'open' : ''}`}></div>
             <div className={"left"}>
-                <Link className={`logo`}
+                <div className="dots"><span className="dot r"></span><span className="dot y"></span><span className="dot g"></span></div>
+                {/* <Link className={`logo`}
                     to={`/`}>
                     <span>LOCNGUYEN</span>
-                </Link>
+                </Link> */}
             </div>
             <div className={"center"}>
-                <ul>
+                {/* <ul>
                     {path.map((item, index) => (
                         <li key={index}>
                             {
@@ -86,7 +87,7 @@ export default function MainHeader({ ...props }) {
                             }
                         </li>
                     ))}
-                </ul>
+                </ul> */}
             </div>
             <div className={"right"}>
                 <IconButton width={35} height={35} handleAction={() => toggleHandleChangeTheme()}

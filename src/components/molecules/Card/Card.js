@@ -27,6 +27,7 @@ export default function Card(props) {
 
     return (
         <div className={`card ${props.className ? props.className : ""}`}
+            id={props.id ? props.id : ""}
             ref={cardRef}
             style={{
                 ...(props.style && props.style),
