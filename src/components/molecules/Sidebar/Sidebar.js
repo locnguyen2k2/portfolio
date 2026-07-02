@@ -161,7 +161,7 @@ export default function Sidebar({ tabs, fileActiveOn, navigateTo }) {
                         }
                         <div
                             className={`file`}
-                            onClick={() => window.open(`https://locnguyen2k2-portfolio.vercel.app/static/media/${process.env.RESUME_FILENAME}.pdf`)}
+                            onClick={() => window.open(`https://locnguyen2k2-portfolio.vercel.app/static/media/${process.env.REACT_APP_RESUME_FILENAME}.pdf`)}
                         >
                             <span>{sidebarIcons['pdf']}</span>
                             <div className="file-name">resume.pdf</div>
