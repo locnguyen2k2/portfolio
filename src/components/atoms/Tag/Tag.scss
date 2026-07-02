@@ -50,7 +50,7 @@
 
   .tag-content {
     z-index: 1;
-    font-size: 16px;
+    font-size: 0.78rem;
     color: rgba(255, 255, 255, 0.8);
     display: flex;
     align-items: center;
@@ -70,6 +70,7 @@
   &:hover {
     .tag-content {
       color: #ffffff;
+
       img {
         filter: grayscale(0) brightness(1);
         transform: scale(1.1);

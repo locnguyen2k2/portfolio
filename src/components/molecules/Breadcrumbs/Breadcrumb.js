@@ -30,7 +30,6 @@ export default function Breadcrumb({
     const { t } = useTranslation();
     const path = findPath(tabs, fileActiveOn);
 
-    console.log('Breadcrumb path:', path.length > 1 ? path[0].root : null); // Debugging line to check the path
     return (
         <div className="breadcrumb">
             {path.map((item, index) => (

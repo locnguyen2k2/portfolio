@@ -39,7 +39,7 @@
 
         .body.body-structured p,
         .body {
-          font-size: 0.7rem;
+          font-size: 0.78rem;
           font-family: Lemonada-Medium;
         }
       }
@@ -51,7 +51,7 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: rgba($muted-300, 0.3);
+      background: $accent;
       transform: translateX(-50%);
 
       &::after {
