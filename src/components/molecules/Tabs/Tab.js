@@ -89,7 +89,7 @@ export default function Tab({
                 className={`tab`}
                 onClick={() => {
                     const link = document.createElement("a");
-                    link.href = `https://locnguyen2k2-portfolio.vercel.app/static/media/${process.env.RESUME_FILENAME}.pdf`;
+                    link.href = `https://locnguyen2k2-portfolio.vercel.app/static/media/${process.env.REACT_APP_RESUME_FILENAME}.pdf`;
                     link.download = "CV_LOCNGUYEN2k2_2026.pdf";
                     document.body.appendChild(link);
                     link.click();
