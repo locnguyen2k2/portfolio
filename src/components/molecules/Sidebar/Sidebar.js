@@ -21,6 +21,8 @@ export const sidebarIcons = {
     html: <Icon icon="material-icon-theme:html" />,
     md: <Icon icon="material-icon-theme:markdown" />,
     bash: <Icon icon="catppuccin:bash" />,
+    docker: <Icon icon="material-icon-theme:docker" />,
+    pdf: <Icon icon="material-icon-theme:pdf" />,
 };
 export default function Sidebar({ tabs, fileActiveOn, navigateTo }) {
     const [activeOn, setActiveOn] = useState('explorer');
@@ -157,9 +159,34 @@ export default function Sidebar({ tabs, fileActiveOn, navigateTo }) {
                                 )
                             })
                         }
+                        <div
+                            className={`file`}
+                            onClick={() => window.open(`https://locnguyen2k2-portfolio.vercel.app/static/media/${process.env.RESUME_FILENAME}.pdf`)}
+                        >
+                            <span>{sidebarIcons['pdf']}</span>
+                            <div className="file-name">resume.pdf</div>
+                        </div>
+                    </div>
+
+
+                    <div className="folder">
+                        <span>
+                            <CaretDownFilled />
+                        </span>
+
+                        <div className="folder-name">
+                            Docsaurus
+                        </div>
+                    </div>
+
+                    <div className="nested">
+                        <div className={`file`} onClick={() => window.open('https://cjool117-docusaurus.vercel.app/docs/category/backend')}>
+                            <span>{sidebarIcons['docker']}</span>
+                            <div className="file-name">Dockerfile</div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 }
