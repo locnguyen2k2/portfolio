@@ -1,47 +1,75 @@
-/* ============================
-   Kanagawa Theme Palette
-   ============================ */
+/* ==========================================================
+   Kanagawa Theme
+   ========================================================== */
 
-// Backgrounds
+/* Background */
 $bg: #1F1F28;
 $bg-dark: #16161D;
-$bg-gutter: #181820;
-$bg-highlight: #2A2A37;
+$bg-sidebar: #181820;
+$bg-panel: #252535;
+$bg-surface: #2A2A37;
 $bg-hover: #2D4F67;
+$bg-active: #223249;
+$bg-selection: rgba(126, 156, 216, 0.18);
 
-// Text
+/* Text */
 $text: #DCD7BA;
+$text-secondary: #C8C093;
 $text-muted: #A6A69C;
 $text-subtle: #727169;
+$text-disabled: #5C5C66;
 
-// Borders
+/* Border */
 $border: #363646;
 $border-light: #54546D;
+$border-focus: #7E9CD8;
 
-// Accent
+/* Accent */
 $accent: #7E9CD8;
 $accent-hover: #98BBF5;
+$accent-active: #6A8BC6;
 
-// Orange
+/* Status */
+$success: #98BB6C;
+$warning: #E6C384;
+$error: #C34043;
+$info: #7FB4CA;
+
+/* Extra */
 $orange: #FFA066;
-
-// Green
-$green: #98BB6C;
-
-// Yellow
-$yellow: #E6C384;
-
-// Red
-$red: #C34043;
-
-// Purple
 $purple: #957FB8;
-
-// Cyan
-$cyan: #7FB4CA;
-
-// Pink
 $pink: #D27E99;
+
+$syntax-keyword: #957FB8;
+$syntax-function: #7E9CD8;
+$syntax-variable: #DCD7BA;
+$syntax-property: #7FB4CA;
+$syntax-string: #98BB6C;
+$syntax-number: #FFA066;
+$syntax-boolean: #FFA066;
+$syntax-comment: #727169;
+$syntax-operator: #C8C093;
+$syntax-tag: #E46876;
+$syntax-attribute: #7FB4CA;
+
+$shadow-sm: rgba(0, 0, 0, .12);
+$shadow: rgba(0, 0, 0, .24);
+$shadow-lg: rgba(0, 0, 0, .45);
+
+$scrollbar: #363646;
+$scrollbar-hover: #54546D;
+
+$pdf-bg: #1B1B24;
+$pdf-page: #F8F5E9;
+$pdf-selection: rgba(126, 156, 216, .35);
+
+$terminal-bg: #16161D;
+$terminal-header: #252535;
+$terminal-text: #DCD7BA;
+$terminal-green: #98BB6C;
+$terminal-red: #C34043;
+$terminal-yellow: #E6C384;
+$terminal-blue: #7E9CD8;
 
 $primary-50: #ecfeff;
 $primary-100: #cffafe;
@@ -331,7 +359,7 @@ $amber-900: #78350f;
 
 $orange-50: #fff7ed;
 $orange-100: #ffedd5;
-$orange-200: $yellow;
+$orange-200: $orange;
 $orange-300: #fdba74;
 //$orange-400:                #fb923c;
 $orange-400: $orange;

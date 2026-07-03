@@ -232,12 +232,12 @@ button {
 
   .prompt {
 
-    color: $green;
+    color: $success;
   }
 
   .command {
 
-    color: $cyan;
+    color: $info;
   }
 
   .output {
@@ -267,7 +267,7 @@ button {
 
       width: 90px;
 
-      color: $yellow;
+      color: $warning;
     }
 
     svg {
@@ -277,7 +277,7 @@ button {
 
     a {
 
-      color: $cyan;
+      color: $info;
 
       text-decoration: none;
 
