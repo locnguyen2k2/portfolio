@@ -28,7 +28,7 @@ export default function Project(props) {
             },
             image: 'teknix.svg',
             time: `${t('works.teknix.time')}`,
-            link: 'https://www.teknix.vn/',
+            // link: 'https://www.teknix.vn/',
             tags: ['NestJS', 'NodeJS', 'SwaggerAPI', 'TypeScript', 'PostgresQL', 'Prisma', 'Go', 'Prometheus', 'Kraken', 'Grafana', 'Docker', 'Neo4j', 'Redis', 'RabbitMQ'],
             id: 'teknix'
         }, {
@@ -39,7 +39,7 @@ export default function Project(props) {
             },
             image: 'viet247-logo.png',
             time: `${t('works.datech.time')}`,
-            link: 'https://viet247.vn',
+            // link: 'https://viet247.vn',
             tags: ['React', 'JavaScript', 'Ant-Design'],
             id: 'datech'
         },
@@ -48,7 +48,7 @@ export default function Project(props) {
             body: t('projects.ems.body'),
             image: 'ems-dashboard.png',
             time: '08/2024 – Present',
-            link: 'https://exam-management-system-z76m.onrender.com/graphql',
+            link: 'https://cjool117-ems-system.vercel.app/',
             github: 'https://github.com/locnguyen2k2/exam-management-system/',
             tags: ['NestJS', 'MongoDB', 'Apollo-GraphQL', 'TypeScript', 'OAuth2(GoogleAPIConsole)', 'NodeMailer', 'Render', 'NextJS', 'TypeScript', 'React', 'Ant Design', 'Atomic'],
             id: 'ems'
