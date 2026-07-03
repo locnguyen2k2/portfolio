@@ -360,20 +360,6 @@ main {
     user-select: none;
   }
 
-  // .glowing-blob {
-  // position: absolute;
-  // width: 500px;
-  // height: 500px;
-  // left: var(--mouse-x, 0px);
-  // top: var(--mouse-y, 0px);
-  // background: var(--mouse-color, rgba(255, 203, 106, 0.384));
-  // filter: blur(80px);
-  // border-radius: 50%;
-  // z-index: 0;
-  // pointer-events: none;
-  // transform: translate(-50%, -50%);
-  // }
-
   .bg-layer {
     position: absolute;
     top: 0;
@@ -499,9 +485,9 @@ main {
   .card {
     flex-direction: column;
 
-    .card-body {
-      margin: 0 !important;
-    }
+    // .card-body {
+    //   margin: 0 !important;
+    // }
   }
 }
 
