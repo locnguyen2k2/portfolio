@@ -39,7 +39,7 @@
         transform .18s ease;
 
     &:hover {
-        background: $bg-highlight;
+        background: $bg-surface;
 
         .tab-close {
             opacity: 1;
@@ -55,7 +55,7 @@
         }
 
         .tab-icon {
-            color: $cyan;
+            color: $info;
         }
 
         box-shadow: inset 0 1px rgba(255, 255, 255, .04);
@@ -82,7 +82,7 @@
 
     margin-right: 8px;
 
-    color: $cyan;
+    color: $info;
 
     transition: color .2s;
 }

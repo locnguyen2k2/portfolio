@@ -75,21 +75,21 @@ export default function BaseLayout() {
     };
 
     useEffect(() => {
-        // const handleMouseMove = (e) => {
-        //     if (mainRef.current) {
-        //         const { clientX, clientY } = e;
-        //         const rect = mainRef.current.getBoundingClientRect();
-        //         const x = clientX - rect.left;
-        //         const y = clientY - rect.top;
+        const handleMouseMove = (e) => {
+            if (mainRef.current) {
+                const { clientX, clientY } = e;
+                const rect = mainRef.current.getBoundingClientRect();
+                const x = clientX - rect.left;
+                const y = clientY - rect.top;
 
-        //         mainRef.current.style.setProperty('--mouse-x', `${x}px`);
-        //         mainRef.current.style.setProperty('--mouse-y', `${y}px`);
-        //         mainRef.current.style.setProperty('--mouse-color', `hsla(200, 80%, 70%, 0.3)`);
-        //     }
-        // };
+                mainRef.current.style.setProperty('--mouse-x', `${x}px`);
+                mainRef.current.style.setProperty('--mouse-y', `${y}px`);
+                mainRef.current.style.setProperty('--mouse-color', `hsla(200, 80%, 70%, 0.3)`);
+            }
+        };
 
-        // window.addEventListener('mousemove', handleMouseMove);
-        // return () => window.removeEventListener('mousemove', handleMouseMove);
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
 

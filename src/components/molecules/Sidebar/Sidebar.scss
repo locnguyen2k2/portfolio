@@ -34,12 +34,12 @@
 
         &:hover {
             color: $text;
-            background: $bg-highlight;
+            background: $bg-surface;
         }
 
         &.on {
             color: $accent;
-            background: $bg-highlight;
+            background: $bg-surface;
         }
 
     }
@@ -105,11 +105,11 @@
             }
 
             &:hover {
-                background: $bg-highlight;
+                background: $bg-surface;
             }
 
             span {
-                color: $yellow;
+                color: $warning;
             }
         }
 
@@ -129,7 +129,7 @@
             transition: background-color .2s ease;
 
             span {
-                color: $cyan;
+                color: $info;
             }
 
             .file-name {
@@ -138,7 +138,7 @@
             }
 
             &:hover {
-                background: $bg-highlight;
+                background: $bg-surface;
 
                 .file-name {
                     color: $text;

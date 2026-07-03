@@ -4,21 +4,64 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow-y: scroll;
+
+    .react-pdf__Document {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .react-pdf__Page {
+        margin-bottom: 24px;
+        border-radius: 10px;
+        transition: .2s ease;
+    }
+
+    .react-pdf__Page canvas {
+        display: block;
+
+        border-radius: inherit;
+    }
+
+    .react-pdf__Page__textContent {
+        user-select: text;
+        cursor: text;
+
+        ::selection {
+            background: $pdf-selection;
+        }
+    }
+
+    .react-pdf__Page__annotations {
+        a {
+            transition: .15s;
+
+            &:hover {
+                filter: brightness(1.2);
+            }
+        }
+    }
+
 
     .pdf-toolbar {
-        margin-top: 16px;
+        bottom: 18px;
 
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 16px;
+        gap: 14px;
+
+        margin-top: 12px;
 
         padding: 10px 16px;
 
-        background: $bg-gutter;
+        background: rgba($bg-panel, .92);
 
-        border: 1px solid $border;
-        border-radius: 8px;
+        backdrop-filter: blur(14px);
+        border-radius: 10px;
+        z-index: 20;
     }
 
     .pdf-btn {
@@ -26,28 +69,32 @@
         align-items: center;
         justify-content: center;
 
-        min-width: 90px;
+        gap: 6px;
+
         height: 34px;
 
         padding: 0 14px;
 
-        background: $bg-highlight;
-        color: $text;
+        background: $bg-surface;
 
-        border: 1px solid $border;
+        color: $text-muted;
+
         border-radius: 6px;
-
-        font-size: .85rem;
 
         cursor: pointer;
 
-        transition: all .18s ease;
-        z-index: 2;
+        transition:
+            background .18s,
+            border-color .18s,
+            color .18s,
+            transform .12s;
 
         &:hover:not(:disabled) {
             background: $bg-hover;
+
+            color: $text;
+
             border-color: $accent;
-            color: $accent;
         }
 
         &:active:not(:disabled) {
@@ -55,40 +102,61 @@
         }
 
         &:disabled {
-            opacity: .45;
+            opacity: .4;
             cursor: not-allowed;
         }
     }
 
     .pdf-page-info {
-        z-index: 2;
         display: flex;
         align-items: center;
-        gap: 8px;
 
-        padding: 0 14px;
+        gap: 8px;
 
         height: 34px;
 
-        background: $bg;
+        padding: 0 14px;
 
-        border: 1px solid $border;
         border-radius: 6px;
 
-        color: $text-muted;
+        background: $bg;
+
+        font-size: .9rem;
 
         .label {
             color: $text-subtle;
-            font-size: .82rem;
         }
 
         .current {
             color: $accent;
-            font-weight: 600;
+
+            font-weight: 700;
         }
 
         .divider {
             color: $border-light;
+        }
+
+        span:last-child {
+            color: $text-muted;
+        }
+    }
+
+    .pdf-viewer::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .pdf-viewer::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .pdf-viewer::-webkit-scrollbar-thumb {
+        background: $scrollbar;
+
+        border-radius: 10px;
+
+        &:hover {
+            background: $scrollbar-hover;
         }
     }
 }
