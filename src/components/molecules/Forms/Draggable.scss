@@ -1,0 +1,72 @@
+@import "./../../../assets/color.scss";
+
+.widget-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, .08);
+
+    backdrop-filter: blur(1px);
+}
+
+.window {
+    position: fixed;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(30, 30, 30, .55);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .08);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .45);
+    user-select: none;
+    transition: .2s;
+}
+
+.window-header {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    cursor: move;
+    background: rgba(255, 255, 255, .03);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+}
+
+.window-content {
+    padding: 12px;
+}
+
+.draggable-area {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+    width: calc(100% + 18px);
+    height: calc(100% + 18px);
+    background: $accent;
+    backdrop-filter: blur(18px);
+    border-radius: 8px;
+    cursor: move;
+    position: fixed;
+    font-size: 1rem;
+}
+
+.draggable-form.topRight {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    right: 0;
+    top: 143px
+}
+
+.draggable-form.center {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -8,11 +8,16 @@ import {
     CaretDownFilled,
 } from '@ant-design/icons';
 import { Icon } from "@iconify/react";
-
+import { Document, Page, pdfjs } from "react-pdf";
+import { DraggableForm } from './../Forms/Draggable.js'
 
 import './Sidebar.scss';
 import { useTranslation } from 'react-i18next';
-
+import PDFPreview from '../Preview/PDFPreview.js';
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    "pdfjs-dist/build/pdf.worker.min.mjs",
+    import.meta.url
+).toString();
 export const sidebarIcons = {
     js: <Icon icon="material-icon-theme:javascript" />,
     ts: <Icon icon="material-icon-theme:typescript" />,
@@ -27,9 +32,15 @@ export const sidebarIcons = {
 export default function Sidebar({ tabs, fileActiveOn, navigateTo }) {
     const [activeOn, setActiveOn] = useState('explorer');
     const [indicatorTop, setIndicatorTop] = useState(0);
+    const [openResume, setOpenResume] = useState(false);
     const { t } = useTranslation();
-
     const treeRef = useRef(null);
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
 
     const handleFileClick = (file) => (e) => {
         navigateTo(file);
@@ -161,7 +172,7 @@ export default function Sidebar({ tabs, fileActiveOn, navigateTo }) {
                         }
                         <div
                             className={`file`}
-                            onClick={() => window.open(`https://locnguyen2k2-portfolio.vercel.app/static/media/${process.env.REACT_APP_RESUME_FILENAME}.pdf`)}
+                            onClick={() => setOpenResume(true)}
                         >
                             <span>{sidebarIcons['pdf']}</span>
                             <div className="file-name">resume.pdf</div>
@@ -187,6 +198,10 @@ export default function Sidebar({ tabs, fileActiveOn, navigateTo }) {
                     </div>
                 </div>
             </div >
+
+            {openResume && (
+                <DraggableForm startAt={'center'} onClose={() => setOpenResume(false)} children={<PDFPreview />} />
+            )}
         </>
     );
 }

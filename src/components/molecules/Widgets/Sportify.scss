@@ -1,0 +1,28 @@
+.spotify-widget {
+    width: 420px;
+    border-radius: 14px;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, .08),
+            rgba(255, 255, 255, .02));
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, .08);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .35);
+
+    .spotify-header {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        background: rgba(255, 255, 255, .03);
+        color: #ddd;
+        font-size: .9rem;
+    }
+
+    iframe {
+        display: block;
+    }
+}
