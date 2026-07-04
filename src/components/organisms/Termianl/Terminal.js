@@ -3,6 +3,7 @@ import "./terminal.scss";
 
 
 export default function Terminal({ title = "Loc Nguyen", className = '' }) {
+    const [open, setOpen] = useState(false);
     const API_URL = `${process.env.REACT_APP_CHAT_BOT_API}`;
     const WORKSPACE_ID = `${process.env.REACT_APP_CHAT_BOT_WORKPLACE_ID}`;
     const AUTH_HEADER = `Basic ${process.env.REACT_APP_CHAT_BOT_TOKEN}`;
@@ -16,7 +17,6 @@ export default function Terminal({ title = "Loc Nguyen", className = '' }) {
     const [history, setHistory] = useState([
         { type: "output", text: "Hi, I'm Loc's portfolio assistant. Ask me anything, or try a command below." },
     ]);
-    const [input, setInput] = useState("");
     const [isStreaming, setIsStreaming] = useState(false);
     const bodyRef = useRef(null);
     const inputRef = useRef(null);
@@ -47,7 +47,6 @@ export default function Terminal({ title = "Loc Nguyen", className = '' }) {
 
             appendLine({ type: "command", text: question });
             appendLine({ type: "output", text: "", sources: [] });
-            setInput("");
             setIsStreaming(true);
 
             const controller = new AbortController();
@@ -111,13 +110,8 @@ export default function Terminal({ title = "Loc Nguyen", className = '' }) {
                 inputRef.current?.focus();
             }
         },
-        [isStreaming, appendLine, history, API_URL, AUTH_HEADER, WORKSPACE_ID, updateLastOutput],
+        [isStreaming, history],
     );
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        askQuestion(input);
-    };
 
     const handleCancel = () => {
         abortRef.current?.abort();
@@ -129,17 +123,17 @@ export default function Terminal({ title = "Loc Nguyen", className = '' }) {
     };
 
     return (
-        <div className={`terminal ${className}`}>
+        <div className={`terminal ${className}`} style={{ height: `${open ? 420 : 32}px` }}>
             <div className="terminal-header">
                 <div className="terminal-buttons">
                     <span className="red" />
-                    <span className="yellow" />
-                    <span className="green" />
+                    <span className="yellow" onClick={() => setOpen(false)} />
+                    <span className="green" onClick={() => setOpen(true)} />
                 </div>
                 <div className="terminal-title">{title} - bash</div>
             </div>
 
-            <div className="terminal-body" ref={bodyRef}>
+            {open && <div className="terminal-body" ref={bodyRef}>
                 {history.map((line, i) => (
                     <TerminalLine key={i} line={line} />
                 ))}
@@ -159,18 +153,8 @@ export default function Terminal({ title = "Loc Nguyen", className = '' }) {
                     </div>
                 )}
 
-                <form className="line input-line" onSubmit={handleSubmit}>
+                <form className="line input-line">
                     <span className="prompt">loc@portfolio:~$</span>
-                    <input
-                        ref={inputRef}
-                        className="terminal-input"
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        disabled={isStreaming}
-                        placeholder={isStreaming ? "thinking..." : "ask me something..."}
-                        autoFocus
-                        spellCheck={false}
-                    />
                     {isStreaming ? (
                         <button type="button" className="cancel-button" onClick={handleCancel}>
                             cancel
@@ -179,7 +163,7 @@ export default function Terminal({ title = "Loc Nguyen", className = '' }) {
                         <span className="cursor" />
                     )}
                 </form>
-            </div>
+            </div>}
         </div>
     );
 }

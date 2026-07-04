@@ -55,7 +55,7 @@
 }
 
 .draggable-form.topRight {
-    position: absolute;
+    position: fixed;
     width: fit-content;
     height: fit-content;
     right: 0;
@@ -63,7 +63,7 @@
 }
 
 .draggable-form.center {
-    position: absolute;
+    position: fixed;
     width: fit-content;
     height: fit-content;
     left: 50%;
