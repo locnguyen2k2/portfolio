@@ -8,6 +8,7 @@ import Tab from '../molecules/Tabs/Tab';
 import Breadcrumb from '../molecules/Breadcrumbs/Breadcrumb';
 import SportifyWidget from '../molecules/Widgets/Sportify';
 import { DraggableForm } from '../molecules/Forms/Draggable';
+import Terminal from '../organisms/Termianl/Terminal';
 
 export const tabs = [
     {
@@ -155,6 +156,7 @@ export default function BaseLayout() {
             <Tab tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} />
             <Breadcrumb tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} />
             <DraggableForm children={<SportifyWidget />} />
+            <DraggableForm children={<Terminal title={'Ask me something'} className={'chatbox'} />} />
 
             <div className={`container`}>
                 <Outlet />
