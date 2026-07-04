@@ -1,0 +1,321 @@
+@import "./../../../assets/color.scss";
+
+.terminal.chatbox {
+    width: 553px;
+    height: 420px;
+}
+
+.terminal {
+    position: relative;
+    margin: 32px 0;
+    background: rgb(225 225 225 / 8%);
+    backdrop-filter: blur(8px);
+    border: 1px solid $border;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    font-family: "JetBrains Mono", monospace;
+
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .25);
+
+
+    display: flex;
+    flex-direction: column;
+
+    .terminal-header {
+
+        height: 34px;
+        flex: 0 0 auto;
+
+        display: flex;
+        align-items: center;
+
+        padding: 0 12px;
+
+        background: #22232d;
+
+        border-bottom: 1px solid $border;
+    }
+
+    .terminal-buttons {
+
+        display: flex;
+        gap: 8px;
+
+        span {
+
+            width: 12px;
+            height: 12px;
+
+            border-radius: 50%;
+        }
+
+        .red {
+            background: #e46876;
+        }
+
+        .yellow {
+            background: #e6c384;
+        }
+
+        .green {
+            background: #98bb6c;
+        }
+    }
+
+    .terminal-title {
+
+        flex: 1;
+
+        text-align: center;
+
+        color: $text-subtle;
+
+        font-size: .85rem;
+    }
+
+    .terminal-body {
+
+        flex: 1 1 auto;
+        min-height: 0; // required so overflow-y actually scrolls inside a flex parent
+
+        padding: 18px;
+
+        color: $text;
+
+        overflow-y: auto;
+
+        scrollbar-width: thin;
+        scrollbar-color: $border transparent;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $border;
+            border-radius: 3px;
+        }
+    }
+
+    .line {
+
+        display: flex;
+
+        gap: 12px;
+
+        margin-bottom: 8px;
+    }
+
+    .prompt {
+
+        color: $success;
+
+        flex: 0 0 auto;
+    }
+
+    .command {
+
+        color: $info;
+    }
+
+    .output {
+
+        color: $text-muted;
+
+        margin: 0 0 16px 24px;
+
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    .output-error {
+        color: $warning;
+    }
+
+    .contact {
+
+        margin-left: 24px;
+
+        margin-bottom: 18px;
+    }
+
+    .contact-row {
+
+        display: flex;
+        align-items: center;
+
+        gap: 12px;
+
+        margin: 10px 0;
+
+        span {
+
+            width: 90px;
+
+            color: $warning;
+        }
+
+        svg {
+
+            color: $accent;
+        }
+
+        a {
+
+            color: $info;
+
+            text-decoration: none;
+
+            transition: .2s;
+
+            &:hover {
+
+                color: $text;
+
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .cursor {
+
+        width: 8px;
+        height: 18px;
+
+        background: $text;
+
+        animation: blink 1s steps(1) infinite;
+
+        flex: 0 0 auto;
+    }
+
+    // ------------------------------------------------------------------
+    // Quick-command suggestion chips
+    // ------------------------------------------------------------------
+    .quick-commands {
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        margin: 4px 0 16px 24px;
+    }
+
+    .quick-command {
+
+        font-family: inherit;
+        font-size: .8rem;
+
+        color: $accent;
+        background: transparent;
+
+        border: 1px solid $border;
+        border-radius: 4px;
+
+        padding: 4px 10px;
+        cursor: pointer;
+
+        transition: .15s;
+
+        &:hover {
+            background: $border;
+            color: $text;
+        }
+    }
+
+    // ------------------------------------------------------------------
+    // Live input line
+    // ------------------------------------------------------------------
+    .input-line {
+        margin-top: 4px;
+    }
+
+    .terminal-input {
+
+        flex: 1 1 auto;
+
+        background: transparent;
+        border: none;
+        outline: none;
+
+        font-family: inherit;
+        font-size: inherit;
+
+        color: $text;
+
+        &::placeholder {
+            color: $text-subtle;
+        }
+
+        &:disabled {
+            color: $text-muted;
+        }
+    }
+
+    // ------------------------------------------------------------------
+    // Sources footer under a streamed answer
+    // ------------------------------------------------------------------
+    .sources {
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        margin-top: 8px;
+    }
+
+    .source-tag {
+
+        font-size: .75rem;
+
+        color: $text-subtle;
+
+        border: 1px solid $border;
+        border-radius: 4px;
+
+        padding: 2px 8px;
+    }
+
+    // ------------------------------------------------------------------
+    // Typing indicator shown while waiting for the first token
+    // ------------------------------------------------------------------
+    .typing-dots {
+
+        display: inline-block;
+
+        &::after {
+            content: "...";
+            animation: typing-dots 1.2s steps(4) infinite;
+        }
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes typing-dots {
+    0% {
+        content: "";
+    }
+
+    25% {
+        content: ".";
+    }
+
+    50% {
+        content: "..";
+    }
+
+    75% {
+        content: "...";
+    }
+
+    100% {
+        content: "";
+    }
+}
