@@ -9,7 +9,7 @@ export default function Terminal({ title = "Loc Nguyen", className = '' }) {
     const AUTH_HEADER = `Basic ${process.env.REACT_APP_CHAT_BOT_TOKEN}`;
     const QUICK_COMMANDS = [
         { label: "tech-stack", question: "What is your tech stack?" },
-        { label: "experience", question: "Tell me about your work experience." },
+        { label: "experience", question: "Tell me about your worked experiences." },
         { label: "projects", question: "What projects have you worked on?" },
         { label: "education", question: "What is your education background?" },
         { label: "contact", question: "How can I contact you?" },
