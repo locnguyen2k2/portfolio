@@ -12,7 +12,8 @@ export default function Tab({
     tabs,
     fileActiveOn,
     navigateTo,
-    onClose
+    onClose,
+    isOpenSidebar
 }) {
     const { t } = useTranslation();
     const expandedTabs = tabs.flatMap(tab =>
@@ -43,10 +44,14 @@ export default function Tab({
                 container.scrollLeft,
             width: tabRect.width,
         });
-    }, [fileActiveOn]);
+    }, [fileActiveOn, isOpenSidebar]);
 
     return (
-        <div className="tabs" ref={tabsRef}>
+        <div className="tabs" ref={tabsRef} style={{
+            left: `${isOpenSidebar ? 256 : 56}px`,
+            transition: 'ease-in-out 0.3s',
+            transitionBehavior: 'left',
+        }}>
             <div
                 className="tab-indicator"
                 style={{

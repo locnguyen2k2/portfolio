@@ -26,12 +26,17 @@ export default function Breadcrumb({
     tabs,
     fileActiveOn,
     navigateTo,
+    isOpenSidebar
 }) {
     const { t } = useTranslation();
     const path = findPath(tabs, fileActiveOn);
 
     return (
-        <div className="breadcrumb">
+        <div className="breadcrumb" style={{
+            left: `${isOpenSidebar ? 256 : 56}px`,
+            transition: 'ease-in-out 0.3s',
+            transitionBehavior: 'left',
+        }}>
             {path.map((item, index) => (
                 <div
                     className="breadcrumb-item"

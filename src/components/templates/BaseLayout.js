@@ -4,8 +4,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
 import MainHeader from "../molecules/Header/MainHeader";
 import Sidebar from '../molecules/Sidebar/Sidebar';
-import Tab from '../molecules/Tabs/Tab';
-import Breadcrumb from '../molecules/Breadcrumbs/Breadcrumb';
 import SportifyWidget from '../molecules/Widgets/Sportify';
 import { DraggableForm } from '../molecules/Forms/Draggable';
 import Terminal from '../organisms/Termianl/Terminal';
@@ -64,6 +62,7 @@ export default function BaseLayout() {
     const [currentRoute, setCurrentRoute] = useState(location.pathname);
     const [fileActiveOn, setFileActiveOn] = useState('about');
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [openSidebar, setOpenSidebar] = useState(true);
     const mainRef = useRef(null);
 
     const navigateTo = (id) => {
@@ -75,23 +74,6 @@ export default function BaseLayout() {
         });
     };
 
-    // useEffect(() => {
-    //     const handleMouseMove = (e) => {
-    //         if (mainRef.current) {
-    //             const { clientX, clientY } = e;
-    //             const rect = mainRef.current.getBoundingClientRect();
-    //             const x = clientX - rect.left;
-    //             const y = clientY - rect.top;
-
-    //             mainRef.current.style.setProperty('--mouse-x', `${x}px`);
-    //             mainRef.current.style.setProperty('--mouse-y', `${y}px`);
-    //             mainRef.current.style.setProperty('--mouse-color', `hsla(200, 80%, 70%, 0.3)`);
-    //         }
-    //     };
-
-    //     window.addEventListener('mousemove', handleMouseMove);
-    //     return () => window.removeEventListener('mousemove', handleMouseMove);
-    // }, []);
 
 
     useEffect(() => {
@@ -152,13 +134,16 @@ export default function BaseLayout() {
             <div className="glowing-blob"></div>
             <div className={'dark-filter'}></div>
             <MainHeader currentRoute={currentRoute} />
-            <Sidebar tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} />
-            <Tab tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} />
-            <Breadcrumb tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} />
+            <Sidebar tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} isOpenSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
             <DraggableForm children={<SportifyWidget />} />
             <Terminal title={'Ask me something'} className={'chatbox'} />
 
-            <div className={`container`}>
+            <div className={`container`} style={{
+                width: `${openSidebar ? 'calc(100vw - 512px)' : 'calc(100vw - 288px)'}`,
+                transition: 'ease-in-out 0.3s',
+                transitionBehavior: 'width',
+                padding: "0 12px",
+            }}>
                 <Outlet />
             </div>
 

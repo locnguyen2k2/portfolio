@@ -8,8 +8,11 @@ import {
     CaretDownFilled,
 } from '@ant-design/icons';
 import { Icon } from "@iconify/react";
-import { Document, Page, pdfjs } from "react-pdf";
+import { pdfjs } from "react-pdf";
 import { DraggableForm } from './../Forms/Draggable.js'
+import Tab from './../Tabs/Tab.js';
+import Breadcrumb from './../Breadcrumbs/Breadcrumb.js';
+
 
 import './Sidebar.scss';
 import { useTranslation } from 'react-i18next';
@@ -29,7 +32,7 @@ export const sidebarIcons = {
     docker: <Icon icon="material-icon-theme:docker" />,
     pdf: <Icon icon="material-icon-theme:pdf" />,
 };
-export default function Sidebar({ tabs, fileActiveOn, navigateTo }) {
+export default function Sidebar({ tabs, fileActiveOn, navigateTo, isOpenSidebar, setOpenSidebar }) {
     const [activeOn, setActiveOn] = useState('explorer');
     const [indicatorTop, setIndicatorTop] = useState(0);
     const [openResume, setOpenResume] = useState(false);
@@ -66,10 +69,12 @@ export default function Sidebar({ tabs, fileActiveOn, navigateTo }) {
 
     return (
         <>
-            <div key={1} className="activity">
+            <div key={1} className="activity"
+                style={{ zIndex: 2, }}
+            >
                 <div
                     className={`act ${activeOn === 'explorer' ? 'on' : ''}`}
-                    onClick={() => setActiveOn('explorer')}
+                    onClick={() => { setActiveOn('explorer'); setOpenSidebar(!isOpenSidebar) }}
                 >
                     <MenuFoldOutlined />
                 </div>
@@ -105,7 +110,14 @@ export default function Sidebar({ tabs, fileActiveOn, navigateTo }) {
                 </div>
             </div>
 
-            <div key={2} className="sidebar">
+            <div key={2} className="sidebar" style={{
+                ...(!isOpenSidebar ? {
+                    left: '-144px',
+                    opacity: 0,
+                } : { left: '56px', opacity: 1 }),
+                transition: 'ease-in-out 0.3s',
+                transitionBehavior: 'left',
+            }}>
                 <div className="sidebar-header">
                     <div className="sidebar-header-title">
                         Explorer
@@ -198,6 +210,9 @@ export default function Sidebar({ tabs, fileActiveOn, navigateTo }) {
                     </div>
                 </div>
             </div >
+            <Breadcrumb tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} isOpenSidebar={isOpenSidebar} />
+
+            <Tab tabs={tabs} fileActiveOn={fileActiveOn} navigateTo={navigateTo} isOpenSidebar={isOpenSidebar} />
 
             {openResume && (
                 <DraggableForm startAt={'center'} onClose={() => setOpenResume(false)} children={<PDFPreview />} />

@@ -13,7 +13,7 @@ export default function About() {
 
     return (
         <>
-            <section id={'about'} className={`${language}`} style={{ backdropFilter: 'blur(0.4px)' }}>
+            <div id={'about'} className={`${language}`} style={{ backdropFilter: 'blur(0.4px)' }}>
                 <div className={"quote"} style={{
                     display: "flex",
                     justifyContent: "center"
@@ -97,7 +97,7 @@ export default function About() {
                         </div> */}
                     </div>
                 </div>
-            </section >
+            </div >
             <Skill />
             <Project />
             <div className="contact" id="contact" style={{ height: "100%" }}>

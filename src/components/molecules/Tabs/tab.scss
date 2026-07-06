@@ -12,6 +12,7 @@
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: none;
+    backdrop-filter: blur(12px);
 
     &::-webkit-scrollbar {
         display: none;
