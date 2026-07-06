@@ -86,6 +86,7 @@ button {
   color: $text;
 }
 
+
 .code-object {
   margin: 24px 0;
 
@@ -184,7 +185,7 @@ main {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  height: calc(100vh + 20px);
+  height: 100vh;
   background-color: $bg;
 
   .scroll-progress {
@@ -232,8 +233,8 @@ main {
     position: relative;
     overflow-y: scroll;
     margin: 0 auto;
-    margin-top: 143px;
-    height: calc(100vh - 143px);
+    margin-top: 123px;
+    height: calc(100vh - 123px);
     max-width: 1200px;
 
     /* Slider CSS */
@@ -296,6 +297,24 @@ main {
         }
       }
     }
+  }
+}
+
+
+#ddd-dashboard,
+#teknix,
+#datech,
+#ems,
+#contact,
+#lms,
+#skills,
+#about {
+  scroll-margin-top: 143px;
+}
+
+@media only screen and (max-width: 1500) {
+  main {
+    >.container {}
   }
 }
 

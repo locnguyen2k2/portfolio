@@ -1,6 +1,8 @@
 @import "../../../assets/color";
 
 #heading {
+  background: url("./../../../assets/public/stars.gif") center/auto repeat;
+
   .model.open {
     transition: ease-in-out .4s;
     position: absolute;
@@ -16,8 +18,7 @@
   z-index: 9999;
   height: 56px;
   width: 100vw;
-  // background: rgba(255, 255, 255, .3);
-  // backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
 
   .left {
     flex: .2;
