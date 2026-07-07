@@ -1,18 +1,17 @@
 .tiger-container {
   position: fixed;
-  bottom: 20px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 120px;
+  height: 56px;
   pointer-events: none;
-  z-index: 10;
-  overflow: hidden;
+  overflow: hidden
 }
 
 .tiger-wrapper {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 95px;
+  height: 56px;
   bottom: 0;
   pointer-events: auto;
   animation: tigerRun 25s linear infinite;
@@ -30,26 +29,14 @@
   -webkit-user-drag: none;
 
   &.dark {
-    filter: brightness(0.05);
     transition: filter 0.3s ease;
   }
 
   &.light {
-    filter: brightness(1);
-    opacity: 0;
     transition: opacity 0.3s ease;
 
     -webkit-mask-image: radial-gradient(200px circle at calc(var(--mouse-x, 0px) - var(--tiger-left, 0px)) calc(var(--mouse-y, 0px) - var(--tiger-top, 0px)), black 0%, transparent 70%);
     mask-image: radial-gradient(200px circle at calc(var(--mouse-x, 0px) - var(--tiger-left, 0px)) calc(var(--mouse-y, 0px) - var(--tiger-top, 0px)), black 0%, transparent 70%);
-  }
-}
-
-.tiger-wrapper:hover {
-  .light {
-    opacity: 1;
-  }
-  .dark {
-    filter: brightness(0.1);
   }
 }
 
@@ -58,18 +45,22 @@
     left: 100%;
     transform: scaleX(1);
   }
+
   49% {
     left: -120px;
     transform: scaleX(1);
   }
+
   50% {
     left: -120px;
     transform: scaleX(-1);
   }
+
   99% {
     left: 100%;
     transform: scaleX(-1);
   }
+
   100% {
     left: 100%;
     transform: scaleX(1);

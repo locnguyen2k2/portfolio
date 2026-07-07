@@ -46,9 +46,10 @@
 }
 
 .sidebar {
+    background: url("./../../../assets/public/woackwoack.gif") bottom/auto repeat-x;
     top: 56px;
     width: 200px;
-    height: 100vh;
+    height: calc(100vh - 80px);
     left: 56px;
     flex: none;
     border-right: 1px solid $border;
@@ -59,7 +60,6 @@
     position: fixed;
     overflow: hidden;
     backdrop-filter: blur(12px);
-    background: url("./../../../assets/public/stars.gif") center/auto repeat;
 
     .sidebar-header {
         width: 100%;

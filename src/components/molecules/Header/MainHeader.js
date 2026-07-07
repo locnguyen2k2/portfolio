@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Image from "../../atoms/Image/Image";
 import { languages } from "../../../i18n";
 import { useTranslation } from "react-i18next";
+import TigerAnimation from './../../atoms/TigerAnimation/TigerAnimation'
 
 export default function MainHeader({ ...props }) {
     const { t } = useTranslation();
@@ -71,8 +72,13 @@ export default function MainHeader({ ...props }) {
                 </Link> */}
             </div>
             <div className={"center"}>
-                {/* <ul>
-                    {path.map((item, index) => (
+                <ul style={{ justifyContent: "center" }}>
+                    <li>
+                        <a>
+                            <span style={{ fontSize: '0.9rem' }}>cjool117.portfolio</span>
+                        </a>
+                    </li>
+                    {/* {path.map((item, index) => (
                         <li key={index}>
                             {
                                 item.link && <Link className={`${isActiveTab === item.link ? 'active' : ''}`}
@@ -86,8 +92,8 @@ export default function MainHeader({ ...props }) {
                                 </a>
                             }
                         </li>
-                    ))}
-                </ul> */}
+                    ))} */}
+                </ul>
             </div>
             <div className={"right"}>
                 <IconButton width={35} height={35} handleAction={() => toggleHandleChangeTheme()}

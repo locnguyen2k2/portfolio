@@ -12,6 +12,7 @@ import { pdfjs } from "react-pdf";
 import { DraggableForm } from './../Forms/Draggable.js'
 import Tab from './../Tabs/Tab.js';
 import Breadcrumb from './../Breadcrumbs/Breadcrumb.js';
+import Image from '../../atoms/Image/Image.js';
 
 
 import './Sidebar.scss';
@@ -118,6 +119,7 @@ export default function Sidebar({ tabs, fileActiveOn, navigateTo, isOpenSidebar,
                 transition: 'ease-in-out 0.3s',
                 transitionBehavior: 'left',
             }}>
+
                 <div className="sidebar-header">
                     <div className="sidebar-header-title">
                         Explorer
